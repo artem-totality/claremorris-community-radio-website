@@ -1,10 +1,55 @@
-@import 'variables';
+@use 'global';
+@use 'variables';
 
 .header {
-	border-bottom: 2px solid $shady-main-color;
+	position: sticky;
+	top: 0;
+	z-index: 20;
+	background: rgba(255, 255, 255, 0.92);
+	backdrop-filter: blur(8px);
+	border-bottom: 1px solid variables.$border;
 	&__inner {
 		display: flex;
-		min-height: 120px;
 		align-items: center;
+		justify-content: space-between;
+		padding: variables.$sp-2 0;
+	}
+}
+
+.logo {
+	display: flex;
+	align-items: baseline;
+	gap: 6px;
+	font-weight: 800;
+	letter-spacing: -0.01em;
+	&__mark {
+		background: variables.$primary;
+		color: variables.$on-primary;
+		font-size: 14px;
+		font-weight: 700;
+		padding: 4px 8px;
+		border-radius: variables.$r-sm;
+	}
+	&__freq {
+		font-size: 18px;
+		color: variables.$primary;
+	}
+}
+
+.nav {
+	display: flex;
+	gap: variables.$sp-4;
+	font-size: 14px;
+	font-weight: 500;
+	&__link {
+		color: variables.$text-muted;
+		transition: color 0.3s variables.$ease;
+		padding: 6px 0;
+		border-bottom: 2px solid transparent;
+		&:hover,
+		&:focus-visible {
+			color: variables.$primary;
+			border-bottom-color: variables.$accent;
+		}
 	}
 }
