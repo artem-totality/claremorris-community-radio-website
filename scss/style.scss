@@ -1,0 +1,10 @@
+@import 'variables';
+
+.header {
+	border-bottom: 2px solid $shady-main-color;
+	&__inner {
+		display: flex;
+		min-height: 120px;
+		align-items: center;
+	}
+}
