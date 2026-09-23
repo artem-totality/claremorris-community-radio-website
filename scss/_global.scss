@@ -35,3 +35,31 @@ button {
 	margin: 0 auto;
 	padding: 0 variables.$sp-3;
 }
+
+.block {
+	padding: variables.$sp-6 0;
+	&--alt {
+		background: #f8fafc;
+		border-top: 1px solid variables.$border;
+		border-bottom: 1px solid variables.$border;
+	}
+}
+
+.block-head {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	margin-bottom: variables.$sp-4;
+	h2 {
+		font-size: 36px;
+		font-weight: 700;
+		letter-spacing: -0.01em;
+		color: variables.$primary;
+		margin: 0;
+	}
+	a {
+		font-size: 14px;
+		font-weight: 600;
+		color: variables.$accent;
+	}
+}
