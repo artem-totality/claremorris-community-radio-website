@@ -306,3 +306,11 @@ button {
   font-size: 13px;
   color: #5b7690;
 }
+
+.footer {
+  background: #1c3d5a;
+  color: #cfe1ee;
+  padding: 32px 0;
+  font-size: 13px;
+  text-align: center;
+}

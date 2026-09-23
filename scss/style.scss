@@ -261,3 +261,11 @@
 		color: variables.$text-muted;
 	}
 }
+
+.footer {
+	background: variables.$primary;
+	color: #cfe1ee;
+	padding: variables.$sp-4 0;
+	font-size: 13px;
+	text-align: center;
+}
