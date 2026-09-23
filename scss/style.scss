@@ -53,3 +53,114 @@
 		}
 	}
 }
+
+.hero {
+	background:
+		radial-gradient(circle at 18% 15%, rgba(47, 125, 187, 0.14), transparent 55%),
+		radial-gradient(circle at 82% 85%, rgba(28, 61, 90, 0.1), transparent 50%), variables.$background;
+	padding: variables.$sp-6 0 variables.$sp-5;
+	text-align: center;
+	border-bottom: 1px solid variables.$border;
+	&__eyebrow {
+		display: inline-block;
+		font-size: 13px;
+		font-weight: 600;
+		color: variables.$accent;
+		background: variables.$accent-soft;
+		padding: 6px 14px;
+		border-radius: variables.$r-pill;
+		margin-bottom: variables.$sp-3;
+	}
+	&__header {
+		font-size: 60px;
+		line-height: 1;
+		font-weight: 800;
+		letter-spacing: -0.02em;
+		color: variables.$primary;
+		margin: 0 0 variables.$sp-4;
+
+		span {
+			display: block;
+			font-size: 22px;
+			font-weight: 600;
+			color: variables.$text-muted;
+			letter-spacing: 0;
+			margin-top: variables.$sp-2;
+		}
+	}
+}
+
+.listen-live {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	background: variables.$primary;
+	color: variables.$on-primary;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 16px 32px;
+	border: none;
+	border-radius: variables.$r-pill;
+	cursor: pointer;
+	box-shadow: variables.$shadow-elevated;
+	transition:
+		transform 0.3s variables.$ease,
+		background 0.3s variables.$ease;
+	&:hover {
+		background: variables.$accent;
+		transform: translateY(-2px);
+	}
+	&__dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: #ff5a5a;
+		animation: pulse 1.6s infinite;
+	}
+	@keyframes pulse {
+		0%,
+		100% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0.35;
+		}
+	}
+	&__play {
+		width: 0;
+		height: 0;
+		border-top: 7px solid transparent;
+		border-bottom: 7px solid transparent;
+		border-left: 11px solid variables.$on-primary;
+	}
+}
+
+.now-playing {
+	margin: variables.$sp-5 auto 0;
+	max-width: 420px;
+	background: variables.$background;
+	border: 1px solid variables.$border;
+	border-radius: variables.$r-md;
+	box-shadow: variables.$shadow-card;
+	padding: variables.$sp-3 variables.$sp-4;
+	&__label {
+		font-size: 12px;
+		font-weight: 700;
+		color: variables.$accent;
+		margin-bottom: variables.$sp-1;
+	}
+	hr {
+		border: none;
+		border-top: 1px solid variables.$border;
+		margin: variables.$sp-1 0 variables.$sp-2;
+	}
+	&__track {
+		font-size: 17px;
+		font-weight: 600;
+		color: variables.$primary;
+	}
+	&__artist {
+		color: variables.$text-muted;
+		font-weight: 500;
+	}
+}
