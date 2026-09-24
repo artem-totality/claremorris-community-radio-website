@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Claremorris Community Radio — 94.6FM</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./css/normalize.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header">
+				<div class="header__inner">
+					<div class="header__top">
+						<div class="container">
+							<div class="header__top-inner">
+								<div class="logo">
+									<span class="logo__mark">CCR</span>
+									<span class="logo__freq">94.6 FM</span>
+								</div>
+								<nav class="nav">
+									<a class="nav__link" href="#news">News</a>
+									<a class="nav__link" href="#shows">Shows</a>
+									<a class="nav__link" href="#schedule">Schedule</a>
+									<a class="nav__link" href="#about">About</a>
+								</nav>
+							</div>
+						</div>
+					</div>
+					<div class="player">
+						<div class="container">
+							<div class="player__inner">
+								<button class="player__btn" id="playBtn" aria-label="Play live stream" aria-pressed="false">
+									<span class="icon-play"></span>
+									<span class="icon-pause"><span></span><span></span></span>
+								</button>
+
+								<div class="player__meta">
+									<div class="status"><span class="live-dot"></span>LIVE · 94.6 FM</div>
+									<div class="track"><span class="artist">The Saw Doctors —</span> N17</div>
+								</div>
+
+								<div class="player__volume">
+									<span class="player-vol-icon">🔊</span>
+									<input type="range" id="volumeSlider" min="0" max="100" value="80" aria-label="Volume" />
+								</div>
+
+								<!-- Replace the src below with CCR's real stream URL -->
+								<audio id="radioStream" preload="none">
+									<source src="https://stream.example.com/ccr946.mp3" type="audio/mpeg" />
+								</audio>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="content">
+				<div class="breadcrumb">
+					<div class="container">
+						<a href="index.html">Home</a> / <a href="index.html#shows">Shows</a> / Serendipity
+					</div>
+				</div>
+
+				<section class="show-hero">
+					<div class="container">
+						<div class="show-hero__inner">
+							<img
+								class="show-hero__cover"
+								src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3C/svg%3E"
+								alt="Serendipity show cover artwork"
+								role="img"
+							/>
+
+							<div class="show-hero__title-block">
+								<span class="show-hero__eyebrow">Music &amp; Talk</span>
+								<h1>Serendipity</h1>
+
+								<div class="show-hero__meta">
+									<div class="meta-card">
+										<div class="label">On Air</div>
+										<div class="value">Thursdays, 17:00</div>
+										<div class="sub">5:00pm — 6:00pm</div>
+									</div>
+									<div class="meta-card">
+										<div class="label">Host</div>
+										<div class="value">Niamh O'Kelly</div>
+										<div class="sub">Presenter</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="show-body">
+					<div class="container">
+						<div class="show-body__inner">
+							<div class="show-body__main">
+								<div class="show-body__section">
+									<h2>About</h2>
+									<p>
+										Serendipity is a relaxed hour of music, chat and unexpected discoveries, hosted by Niamh O'Kelly
+										every Thursday evening. Expect a mix of old favourites and new finds, listener requests, and the odd
+										happy accident along the way — true to the show's name.
+									</p>
+								</div>
+
+								<div class="show-body__section">
+									<h2>Host</h2>
+									<div class="host-card">
+										<div class="host-card__avatar">NO</div>
+										<div>
+											<div class="host-card__name">Niamh O'Kelly</div>
+											<div class="host-card__role">Presenter, Serendipity</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<aside class="sidebar-card">
+								<h2>Contact the show</h2>
+								<p>You can contact the radio station's via text on 087 326 2007.</p>
+								<a class="sidebar-card__contact-number" href="sms:0873262007">
+									<span class="sidebar-card__sms-icon"></span>
+									087 326 2007
+								</a>
+							</aside>
+						</div>
+					</div>
+				</section>
+			</div>
+			<footer class="footer" id="about">
+				<div class="container">
+					<div class="footer__inner">
+						<div class="footer__text">
+							© 2026 Claremorris Community Radio · 94.6 FM · Claremorris, Co. Mayo, Ireland
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

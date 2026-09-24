@@ -156,6 +156,16 @@
 	}
 }
 
+.breadcrumb {
+	padding: variables.$sp-3 0 0;
+	font-size: 13px;
+	color: variables.$text-muted;
+	a {
+		color: variables.$accent;
+		font-weight: 600;
+	}
+}
+
 .hero {
 	background:
 		radial-gradient(circle at 18% 15%, rgba(47, 125, 187, 0.14), transparent 55%),
@@ -419,4 +429,177 @@
 	padding: variables.$sp-4 0;
 	font-size: 13px;
 	text-align: center;
+}
+
+.show-hero {
+	&__inner {
+		padding: variables.$sp-4 0 variables.$sp-6;
+		display: grid;
+		grid-template-columns: 280px 1fr;
+		gap: variables.$sp-5;
+		align-items: start;
+		border-bottom: 1px solid variables.$border;
+	}
+	&__cover {
+		width: 100%;
+		aspect-ratio: 1/1;
+		border-radius: variables.$r-md;
+		background: linear-gradient(135deg, variables.$accent, variables.$primary);
+		box-shadow: variables.$shadow-elevated;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: rgba(255, 255, 255, 0.85);
+		font-weight: 700;
+		font-size: 14px;
+		text-align: center;
+		padding: variables.$sp-3;
+	}
+	&__title-block {
+		padding-top: variables.$sp-2;
+		h1 {
+			font-size: 48px;
+			line-height: 1.05;
+			font-weight: 800;
+			letter-spacing: -0.02em;
+			color: variables.$primary;
+			margin: 0 0 variables.$sp-4;
+		}
+	}
+	&__eyebrow {
+		display: inline-block;
+		font-size: 13px;
+		font-weight: 600;
+		color: variables.$accent;
+		background: variables.$accent-soft;
+		padding: 6px 14px;
+		border-radius: variables.$r-pill;
+		margin-bottom: variables.$sp-3;
+	}
+	&__meta {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: variables.$sp-3;
+		margin-bottom: variables.$sp-4;
+	}
+}
+
+.meta-card {
+	background: #f8fafc;
+	border: 1px solid variables.$border;
+	border-radius: variables.$r-md;
+	padding: variables.$sp-3;
+	.label {
+		font-size: 12px;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		color: variables.$accent;
+		margin-bottom: 6px;
+	}
+	.value {
+		font-size: 17px;
+		font-weight: 700;
+		color: variables.$primary;
+	}
+	.sub {
+		font-size: 13px;
+		color: variables.$text-muted;
+		margin-top: 2px;
+	}
+}
+
+.show-body {
+	&__inner {
+		padding: variables.$sp-6 0;
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: variables.$sp-5;
+	}
+	&__section {
+		margin-bottom: variables.$sp-5;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		h2 {
+			font-size: 22px;
+			font-weight: 700;
+			color: variables.$primary;
+			margin: 0 0 variables.$sp-2;
+		}
+		p {
+			font-size: 15px;
+			line-height: 1.6;
+			color: variables.$text;
+			margin: 0 0 variables.$sp-2;
+		}
+	}
+}
+
+.host-card {
+	display: flex;
+	align-items: center;
+	gap: variables.$sp-3;
+	&__avatar {
+		width: 56px;
+		height: 56px;
+		border-radius: 50%;
+		background: variables.$accent-soft;
+		color: variables.$accent;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 700;
+		font-size: 18px;
+		flex: none;
+	}
+	&__name {
+		font-size: 16px;
+		font-weight: 700;
+		color: variables.$primary;
+	}
+	&__role {
+		font-size: 13px;
+		color: variables.$text-muted;
+	}
+}
+
+.sidebar-card {
+	background: #f8fafc;
+	border: 1px solid variables.$border;
+	border-radius: variables.$r-md;
+	padding: variables.$sp-4;
+	align-self: start;
+	position: sticky;
+	top: 150px;
+	h2 {
+		font-size: 16px;
+		font-weight: 700;
+		color: variables.$primary;
+		margin: 0 0 variables.$sp-2;
+	}
+	p {
+		font-size: 14px;
+		line-height: 1.55;
+		color: variables.$text-muted;
+		margin: 0 0 variables.$sp-3;
+	}
+	&__contact-number {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 17px;
+		font-weight: 700;
+		color: variables.$primary;
+		background: variables.$background;
+		border: 1px solid variables.$border;
+		border-radius: variables.$r-sm;
+		padding: 10px 14px;
+	}
+	&__sms-icon {
+		width: 18px;
+		height: 18px;
+		border-radius: 4px;
+		background: variables.$accent;
+		flex: none;
+	}
 }
