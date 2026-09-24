@@ -604,3 +604,92 @@
 		flex: none;
 	}
 }
+
+.news-article {
+	&__head {
+		padding: vars.$sp-4 0 vars.$sp-3;
+		text-align: center;
+		h1 {
+			font-size: 40px;
+			line-height: 1.12;
+			font-weight: 800;
+			letter-spacing: -0.01em;
+			color: vars.$primary;
+			margin: 0 0 vars.$sp-2;
+		}
+	}
+	&__tag {
+		display: inline-block;
+		font-size: 13px;
+		font-weight: 600;
+		color: vars.$accent;
+		background: vars.$accent-soft;
+		padding: 6px 14px;
+		border-radius: vars.$r-pill;
+		margin-bottom: vars.$sp-3;
+	}
+	&__date {
+		font-size: 14px;
+		color: vars.$text-muted;
+		time {
+			font-weight: 600;
+			color: vars.$text;
+		}
+	}
+	&__cover {
+		margin: vars.$sp-5 0;
+		border-radius: vars.$r-md;
+		overflow: hidden;
+		box-shadow: vars.$shadow-elevated;
+		.ph {
+			width: 100%;
+			aspect-ratio: 16/9;
+			background: linear-gradient(135deg, vars.$accent, vars.$primary);
+		}
+	}
+	&__body {
+		padding-bottom: vars.$sp-6;
+		font-size: 17px;
+		line-height: 1.7;
+		color: vars.$text;
+		p {
+			margin: 0 0 vars.$sp-3;
+			&:first-of-type {
+				font-size: 19px;
+				font-weight: 500;
+				color: vars.$primary;
+			}
+		}
+		h2 {
+			font-size: 22px;
+			font-weight: 700;
+			color: vars.$primary;
+			margin: vars.$sp-4 0 vars.$sp-2;
+		}
+		blockquote {
+			margin: vars.$sp-4 0;
+			padding: vars.$sp-3 vars.$sp-4;
+			border-left: 3px solid vars.$accent;
+			background: #f8fafc;
+			border-radius: 0 vars.$r-sm vars.$r-sm 0;
+			font-style: italic;
+			color: vars.$primary;
+		}
+	}
+	&__footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: vars.$sp-2;
+		padding: vars.$sp-3 0;
+		border-top: 1px solid vars.$border;
+		margin-top: vars.$sp-4;
+		font-size: 13px;
+		color: vars.$text-muted;
+	}
+	&__back-link {
+		font-weight: 600;
+		color: vars.$accent;
+	}
+}

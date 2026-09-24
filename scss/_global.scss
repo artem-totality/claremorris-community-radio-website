@@ -53,6 +53,9 @@ body {
 	max-width: 1160px;
 	margin: 0 auto;
 	padding: 0 vars.$sp-3;
+	&--narrow {
+		max-width: 760px;
+	}
 }
 
 .block {
