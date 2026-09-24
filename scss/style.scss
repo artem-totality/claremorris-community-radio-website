@@ -1,5 +1,6 @@
+@use 'normalize';
 @use 'global';
-@use 'variables';
+@use 'variables' as vars;
 
 .header {
 	position: sticky;
@@ -7,12 +8,12 @@
 	z-index: 20;
 	background: rgba(255, 255, 255, 0.92);
 	backdrop-filter: blur(8px);
-	border-bottom: 1px solid variables.$border;
+	border-bottom: 1px solid vars.$border;
 	&__top-inner {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: variables.$sp-2 0;
+		padding: vars.$sp-2 0;
 	}
 }
 
@@ -23,45 +24,45 @@
 	font-weight: 800;
 	letter-spacing: -0.01em;
 	&__mark {
-		background: variables.$primary;
-		color: variables.$on-primary;
+		background: vars.$primary;
+		color: vars.$on-primary;
 		font-size: 14px;
 		font-weight: 700;
 		padding: 4px 8px;
-		border-radius: variables.$r-sm;
+		border-radius: vars.$r-sm;
 	}
 	&__freq {
 		font-size: 18px;
-		color: variables.$primary;
+		color: vars.$primary;
 	}
 }
 
 .nav {
 	display: flex;
-	gap: variables.$sp-4;
+	gap: vars.$sp-4;
 	font-size: 14px;
 	font-weight: 500;
 	&__link {
-		color: variables.$text-muted;
-		transition: color variables.$transition-speed variables.$ease;
+		color: vars.$text-muted;
+		transition: color vars.$transition-speed vars.$ease;
 		padding: 6px 0;
 		border-bottom: 2px solid transparent;
 		&:hover,
 		&:focus-visible {
-			color: variables.$primary;
-			border-bottom-color: variables.$accent;
+			color: vars.$primary;
+			border-bottom-color: vars.$accent;
 		}
 	}
 }
 
 .player {
-	border-top: 1px solid variables.$border;
-	background: variables.$primary;
+	border-top: 1px solid vars.$border;
+	background: vars.$primary;
 
 	&__inner {
 		display: flex;
 		align-items: center;
-		gap: variables.$sp-3;
+		gap: vars.$sp-3;
 		padding: 10px 0;
 	}
 	&__btn {
@@ -70,15 +71,15 @@
 		height: 44px;
 		border-radius: 50%;
 		border: none;
-		background: variables.$on-primary;
-		color: variables.$primary;
+		background: vars.$on-primary;
+		color: vars.$primary;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
 		transition:
-			transform 0.2s variables.$ease,
-			background 0.2s variables.$ease;
+			transform 0.2s vars.$ease,
+			background 0.2s vars.$ease;
 		&:hover {
 			transform: scale(1.06);
 		}
@@ -110,7 +111,7 @@
 	&__meta {
 		flex: 1 1 auto;
 		min-width: 0;
-		color: variables.$on-primary;
+		color: vars.$on-primary;
 		.status {
 			display: flex;
 			align-items: center;
@@ -157,11 +158,11 @@
 }
 
 .breadcrumb {
-	padding: variables.$sp-3 0 0;
+	padding: vars.$sp-3 0 0;
 	font-size: 13px;
-	color: variables.$text-muted;
+	color: vars.$text-muted;
 	a {
-		color: variables.$accent;
+		color: vars.$accent;
 		font-weight: 600;
 	}
 }
@@ -169,35 +170,35 @@
 .hero {
 	background:
 		radial-gradient(circle at 18% 15%, rgba(47, 125, 187, 0.14), transparent 55%),
-		radial-gradient(circle at 82% 85%, rgba(28, 61, 90, 0.1), transparent 50%), variables.$background;
-	padding: variables.$sp-6 0 variables.$sp-5;
+		radial-gradient(circle at 82% 85%, rgba(28, 61, 90, 0.1), transparent 50%), vars.$background;
+	padding: vars.$sp-6 0 vars.$sp-5;
 	text-align: center;
-	border-bottom: 1px solid variables.$border;
+	border-bottom: 1px solid vars.$border;
 	&__eyebrow {
 		display: inline-block;
 		font-size: 13px;
 		font-weight: 600;
-		color: variables.$accent;
-		background: variables.$accent-soft;
+		color: vars.$accent;
+		background: vars.$accent-soft;
 		padding: 6px 14px;
-		border-radius: variables.$r-pill;
-		margin-bottom: variables.$sp-3;
+		border-radius: vars.$r-pill;
+		margin-bottom: vars.$sp-3;
 	}
 	&__header {
 		font-size: 60px;
 		line-height: 1;
 		font-weight: 800;
 		letter-spacing: -0.02em;
-		color: variables.$primary;
-		margin: 0 0 variables.$sp-4;
+		color: vars.$primary;
+		margin: 0 0 vars.$sp-4;
 
 		span {
 			display: block;
 			font-size: 22px;
 			font-weight: 600;
-			color: variables.$text-muted;
+			color: vars.$text-muted;
 			letter-spacing: 0;
-			margin-top: variables.$sp-2;
+			margin-top: vars.$sp-2;
 		}
 	}
 }
@@ -206,20 +207,20 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 10px;
-	background: variables.$primary;
-	color: variables.$on-primary;
+	background: vars.$primary;
+	color: vars.$on-primary;
 	font-size: 16px;
 	font-weight: 700;
 	padding: 16px 32px;
 	border: none;
-	border-radius: variables.$r-pill;
+	border-radius: vars.$r-pill;
 	cursor: pointer;
-	box-shadow: variables.$shadow-elevated;
+	box-shadow: vars.$shadow-elevated;
 	transition:
-		transform variables.$transition-speed variables.$ease,
-		background variables.$transition-speed variables.$ease;
+		transform vars.$transition-speed vars.$ease,
+		background vars.$transition-speed vars.$ease;
 	&:hover {
-		background: variables.$accent;
+		background: vars.$accent;
 		transform: translateY(-2px);
 	}
 	&__dot {
@@ -243,36 +244,36 @@
 		height: 0;
 		border-top: 7px solid transparent;
 		border-bottom: 7px solid transparent;
-		border-left: 11px solid variables.$on-primary;
+		border-left: 11px solid vars.$on-primary;
 	}
 }
 
 .now-playing {
-	margin: variables.$sp-5 auto 0;
+	margin: vars.$sp-5 auto 0;
 	max-width: 420px;
-	background: variables.$background;
-	border: 1px solid variables.$border;
-	border-radius: variables.$r-md;
-	box-shadow: variables.$shadow-card;
-	padding: variables.$sp-3 variables.$sp-4;
+	background: vars.$background;
+	border: 1px solid vars.$border;
+	border-radius: vars.$r-md;
+	box-shadow: vars.$shadow-card;
+	padding: vars.$sp-3 vars.$sp-4;
 	&__label {
 		font-size: 12px;
 		font-weight: 700;
-		color: variables.$accent;
-		margin-bottom: variables.$sp-1;
+		color: vars.$accent;
+		margin-bottom: vars.$sp-1;
 	}
 	hr {
 		border: none;
-		border-top: 1px solid variables.$border;
-		margin: variables.$sp-1 0 variables.$sp-2;
+		border-top: 1px solid vars.$border;
+		margin: vars.$sp-1 0 vars.$sp-2;
 	}
 	&__track {
 		font-size: 17px;
 		font-weight: 600;
-		color: variables.$primary;
+		color: vars.$primary;
 	}
 	&__artist {
-		color: variables.$text-muted;
+		color: vars.$text-muted;
 		font-weight: 500;
 	}
 }
@@ -281,48 +282,48 @@
 	&__grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: variables.$sp-3;
+		gap: vars.$sp-3;
 	}
 }
 
 .news-card {
-	background: variables.$background;
-	border: 1px solid variables.$border;
-	border-radius: variables.$r-md;
-	box-shadow: variables.$shadow-card;
+	background: vars.$background;
+	border: 1px solid vars.$border;
+	border-radius: vars.$r-md;
+	box-shadow: vars.$shadow-card;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	transition:
-		box-shadow variables.$transition-speed variables.$ease,
-		transform variables.$transition-speed variables.$ease;
+		box-shadow vars.$transition-speed vars.$ease,
+		transform vars.$transition-speed vars.$ease;
 	&:hover {
-		box-shadow: variables.$shadow-elevated;
+		box-shadow: vars.$shadow-elevated;
 		transform: translateY(-3px);
 	}
 	&__thumb {
 		height: 140px;
-		background: linear-gradient(135deg, variables.$accent, variables.$primary);
+		background: linear-gradient(135deg, vars.$accent, vars.$primary);
 	}
 	&__body {
-		padding: variables.$sp-3;
+		padding: vars.$sp-3;
 	}
 	&__date {
 		font-size: 12px;
-		color: variables.$text-muted;
+		color: vars.$text-muted;
 		margin-bottom: 6px;
 	}
 	h3 {
 		font-size: 17px;
 		font-weight: 700;
-		margin: 0 0 variables.$sp-1;
-		color: variables.$primary;
+		margin: 0 0 vars.$sp-1;
+		color: vars.$primary;
 		line-height: 1.3;
 	}
 	p {
 		font-size: 14px;
 		line-height: 1.43;
-		color: variables.$text-muted;
+		color: vars.$text-muted;
 		margin: 0;
 	}
 }
@@ -331,46 +332,46 @@
 	&__grid {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
-		gap: variables.$sp-3;
+		gap: vars.$sp-3;
 	}
 }
 
 .show-card {
-	background: variables.$background;
-	border: 1px solid variables.$border;
-	border-radius: variables.$r-md;
-	box-shadow: variables.$shadow-card;
-	padding: variables.$sp-3;
+	background: vars.$background;
+	border: 1px solid vars.$border;
+	border-radius: vars.$r-md;
+	box-shadow: vars.$shadow-card;
+	padding: vars.$sp-3;
 	transition:
-		box-shadow variables.$transition-speed variables.$ease,
-		transform variables.$transition-speed variables.$ease;
+		box-shadow vars.$transition-speed vars.$ease,
+		transform vars.$transition-speed vars.$ease;
 
 	&:hover {
-		box-shadow: variables.$shadow-elevated;
+		box-shadow: vars.$shadow-elevated;
 		transform: translateY(-3px);
 	}
 	&__swatch {
 		width: 100%;
 		height: 88px;
-		border-radius: variables.$r-sm;
-		background: variables.$accent-soft;
+		border-radius: vars.$r-sm;
+		background: vars.$accent-soft;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin-bottom: variables.$sp-2;
-		color: variables.$accent;
+		margin-bottom: vars.$sp-2;
+		color: vars.$accent;
 		font-weight: 700;
 		font-size: 13px;
 	}
 	h3 {
 		font-size: 16px;
 		font-weight: 700;
-		color: variables.$primary;
+		color: vars.$primary;
 		margin: 0 0 4px;
 	}
 	&__when {
 		font-size: 13px;
-		color: variables.$text-muted;
+		color: vars.$text-muted;
 	}
 }
 
@@ -379,17 +380,17 @@
 		h3 {
 			font-size: 14px;
 			font-weight: 700;
-			color: variables.$text-muted;
-			margin: 0 0 variables.$sp-3;
+			color: vars.$text-muted;
+			margin: 0 0 vars.$sp-3;
 		}
 	}
 	&__group + .supporters__group {
-		margin-top: variables.$sp-5;
+		margin-top: vars.$sp-5;
 	}
 	&__grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-		gap: variables.$sp-3;
+		gap: vars.$sp-3;
 	}
 }
 
@@ -398,24 +399,24 @@
 	align-items: center;
 	justify-content: center;
 	height: 96px;
-	padding: variables.$sp-1;
-	background: variables.$background;
-	border: 1px solid variables.$border;
-	border-radius: variables.$r-md;
+	padding: vars.$sp-1;
+	background: vars.$background;
+	border: 1px solid vars.$border;
+	border-radius: vars.$r-md;
 	transition:
-		box-shadow variables.$transition-speed variables.$ease,
-		border-color variables.$transition-speed variables.$ease;
+		box-shadow vars.$transition-speed vars.$ease,
+		border-color vars.$transition-speed vars.$ease;
 	&:hover,
 	&:focus-visible {
-		box-shadow: variables.$shadow-card;
-		border-color: variables.$accent;
+		box-shadow: vars.$shadow-card;
+		border-color: vars.$accent;
 	}
 	img {
 		max-width: 100%;
 		max-height: 100%;
 		width: auto;
 		filter: grayscale(0.7) opacity(0.85);
-		transition: filter variables.$transition-speed variables.$ease;
+		transition: filter vars.$transition-speed vars.$ease;
 	}
 	&:hover img,
 	&:focus-visible img {
@@ -424,28 +425,28 @@
 }
 
 .footer {
-	background: variables.$primary;
+	background: vars.$primary;
 	color: #cfe1ee;
-	padding: variables.$sp-4 0;
+	padding: vars.$sp-4 0;
 	font-size: 13px;
 	text-align: center;
 }
 
 .show-hero {
 	&__inner {
-		padding: variables.$sp-4 0 variables.$sp-6;
+		padding: vars.$sp-4 0 vars.$sp-6;
 		display: grid;
 		grid-template-columns: 280px 1fr;
-		gap: variables.$sp-5;
+		gap: vars.$sp-5;
 		align-items: start;
-		border-bottom: 1px solid variables.$border;
+		border-bottom: 1px solid vars.$border;
 	}
 	&__cover {
 		width: 100%;
 		aspect-ratio: 1/1;
-		border-radius: variables.$r-md;
-		background: linear-gradient(135deg, variables.$accent, variables.$primary);
-		box-shadow: variables.$shadow-elevated;
+		border-radius: vars.$r-md;
+		background: linear-gradient(135deg, vars.$accent, vars.$primary);
+		box-shadow: vars.$shadow-elevated;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -453,84 +454,84 @@
 		font-weight: 700;
 		font-size: 14px;
 		text-align: center;
-		padding: variables.$sp-3;
+		padding: vars.$sp-3;
 	}
 	&__title-block {
-		padding-top: variables.$sp-2;
+		padding-top: vars.$sp-2;
 		h1 {
 			font-size: 48px;
 			line-height: 1.05;
 			font-weight: 800;
 			letter-spacing: -0.02em;
-			color: variables.$primary;
-			margin: 0 0 variables.$sp-4;
+			color: vars.$primary;
+			margin: 0 0 vars.$sp-4;
 		}
 	}
 	&__eyebrow {
 		display: inline-block;
 		font-size: 13px;
 		font-weight: 600;
-		color: variables.$accent;
-		background: variables.$accent-soft;
+		color: vars.$accent;
+		background: vars.$accent-soft;
 		padding: 6px 14px;
-		border-radius: variables.$r-pill;
-		margin-bottom: variables.$sp-3;
+		border-radius: vars.$r-pill;
+		margin-bottom: vars.$sp-3;
 	}
 	&__meta {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: variables.$sp-3;
-		margin-bottom: variables.$sp-4;
+		gap: vars.$sp-3;
+		margin-bottom: vars.$sp-4;
 	}
 }
 
 .meta-card {
 	background: #f8fafc;
-	border: 1px solid variables.$border;
-	border-radius: variables.$r-md;
-	padding: variables.$sp-3;
+	border: 1px solid vars.$border;
+	border-radius: vars.$r-md;
+	padding: vars.$sp-3;
 	.label {
 		font-size: 12px;
 		font-weight: 700;
 		letter-spacing: 0.02em;
-		color: variables.$accent;
+		color: vars.$accent;
 		margin-bottom: 6px;
 	}
 	.value {
 		font-size: 17px;
 		font-weight: 700;
-		color: variables.$primary;
+		color: vars.$primary;
 	}
 	.sub {
 		font-size: 13px;
-		color: variables.$text-muted;
+		color: vars.$text-muted;
 		margin-top: 2px;
 	}
 }
 
 .show-body {
 	&__inner {
-		padding: variables.$sp-6 0;
+		padding: vars.$sp-6 0;
 		display: grid;
 		grid-template-columns: 2fr 1fr;
-		gap: variables.$sp-5;
+		gap: vars.$sp-5;
 	}
 	&__section {
-		margin-bottom: variables.$sp-5;
+		margin-bottom: vars.$sp-5;
 		&:last-child {
 			margin-bottom: 0;
 		}
 		h2 {
 			font-size: 22px;
 			font-weight: 700;
-			color: variables.$primary;
-			margin: 0 0 variables.$sp-2;
+			color: vars.$primary;
+			margin: 0 0 vars.$sp-2;
 		}
 		p {
 			font-size: 15px;
 			line-height: 1.6;
-			color: variables.$text;
-			margin: 0 0 variables.$sp-2;
+			color: vars.$text;
+			margin: 0 0 vars.$sp-2;
 		}
 	}
 }
@@ -538,13 +539,13 @@
 .host-card {
 	display: flex;
 	align-items: center;
-	gap: variables.$sp-3;
+	gap: vars.$sp-3;
 	&__avatar {
 		width: 56px;
 		height: 56px;
 		border-radius: 50%;
-		background: variables.$accent-soft;
-		color: variables.$accent;
+		background: vars.$accent-soft;
+		color: vars.$accent;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -555,33 +556,33 @@
 	&__name {
 		font-size: 16px;
 		font-weight: 700;
-		color: variables.$primary;
+		color: vars.$primary;
 	}
 	&__role {
 		font-size: 13px;
-		color: variables.$text-muted;
+		color: vars.$text-muted;
 	}
 }
 
 .sidebar-card {
 	background: #f8fafc;
-	border: 1px solid variables.$border;
-	border-radius: variables.$r-md;
-	padding: variables.$sp-4;
+	border: 1px solid vars.$border;
+	border-radius: vars.$r-md;
+	padding: vars.$sp-4;
 	align-self: start;
 	position: sticky;
 	top: 150px;
 	h2 {
 		font-size: 16px;
 		font-weight: 700;
-		color: variables.$primary;
-		margin: 0 0 variables.$sp-2;
+		color: vars.$primary;
+		margin: 0 0 vars.$sp-2;
 	}
 	p {
 		font-size: 14px;
 		line-height: 1.55;
-		color: variables.$text-muted;
-		margin: 0 0 variables.$sp-3;
+		color: vars.$text-muted;
+		margin: 0 0 vars.$sp-3;
 	}
 	&__contact-number {
 		display: inline-flex;
@@ -589,17 +590,17 @@
 		gap: 8px;
 		font-size: 17px;
 		font-weight: 700;
-		color: variables.$primary;
-		background: variables.$background;
-		border: 1px solid variables.$border;
-		border-radius: variables.$r-sm;
+		color: vars.$primary;
+		background: vars.$background;
+		border: 1px solid vars.$border;
+		border-radius: vars.$r-sm;
 		padding: 10px 14px;
 	}
 	&__sms-icon {
 		width: 18px;
 		height: 18px;
 		border-radius: 4px;
-		background: variables.$accent;
+		background: vars.$accent;
 		flex: none;
 	}
 }
