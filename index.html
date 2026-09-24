@@ -13,268 +13,273 @@
 		<link rel="stylesheet" href="./css/style.css" />
 	</head>
 	<body>
-		<header class="header">
-			<div class="header__inner">
-				<div class="header__top">
-					<div class="container">
-						<div class="header__top-inner">
-							<div class="logo">
-								<span class="logo__mark">CCR</span>
-								<span class="logo__freq">94.6 FM</span>
+		<div class="wrapper">
+			<header class="header">
+				<div class="header__inner">
+					<div class="header__top">
+						<div class="container">
+							<div class="header__top-inner">
+								<div class="logo">
+									<span class="logo__mark">CCR</span>
+									<span class="logo__freq">94.6 FM</span>
+								</div>
+								<nav class="nav">
+									<a class="nav__link" href="#news">News</a>
+									<a class="nav__link" href="#shows">Shows</a>
+									<a class="nav__link" href="#schedule">Schedule</a>
+									<a class="nav__link" href="#about">About</a>
+								</nav>
 							</div>
-							<nav class="nav">
-								<a class="nav__link" href="#news">News</a>
-								<a class="nav__link" href="#shows">Shows</a>
-								<a class="nav__link" href="#schedule">Schedule</a>
-								<a class="nav__link" href="#about">About</a>
-							</nav>
+						</div>
+					</div>
+					<div class="player">
+						<div class="container">
+							<div class="player__inner">
+								<button class="player__btn" id="playBtn" aria-label="Play live stream" aria-pressed="false">
+									<span class="icon-play"></span>
+									<span class="icon-pause"><span></span><span></span></span>
+								</button>
+
+								<div class="player__meta">
+									<div class="status"><span class="live-dot"></span>LIVE · 94.6 FM</div>
+									<div class="track"><span class="artist">The Saw Doctors —</span> N17</div>
+								</div>
+
+								<div class="player__volume">
+									<span class="player-vol-icon">🔊</span>
+									<input type="range" id="volumeSlider" min="0" max="100" value="80" aria-label="Volume" />
+								</div>
+
+								<!-- Replace the src below with CCR's real stream URL -->
+								<audio id="radioStream" preload="none">
+									<source src="https://stream.example.com/ccr946.mp3" type="audio/mpeg" />
+								</audio>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="player">
+			</header>
+			<div class="content">
+				<section class="hero">
 					<div class="container">
-						<div class="player__inner">
-							<button class="player__btn" id="playBtn" aria-label="Play live stream" aria-pressed="false">
-								<span class="icon-play"></span>
-								<span class="icon-pause"><span></span><span></span></span>
+						<div class="hero__inner">
+							<span class="hero__eyebrow">Broadcasting from Claremorris, Co. Mayo</span>
+							<h1 class="hero__header">
+								Claremorris Community Radio
+								<span>Local voices, local stories — on air every day.</span>
+							</h1>
+							<button class="listen-live">
+								<span class="listen-live__play"></span>
+								Listen Live
+								<span class="listen-live__dot"></span>
 							</button>
 
-							<div class="player__meta">
-								<div class="status"><span class="live-dot"></span>LIVE · 94.6 FM</div>
-								<div class="track"><span class="artist">The Saw Doctors —</span> N17</div>
+							<div class="now-playing">
+								<div class="now-playing__label">Now Playing</div>
+								<hr />
+								<div class="now-playing__track"><span class="now-playing__artist">The Saw Doctors —</span> N17</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="block news" id="news">
+					<div class="container">
+						<div class="block__inner">
+							<div class="block-head">
+								<h2>Latest News</h2>
+								<a href="#">View all news</a>
+							</div>
+							<div class="news__grid">
+								<article class="news-card">
+									<div class="news-card__thumb"></div>
+									<div class="news-card__body">
+										<div class="news-card__date">December</div>
+										<h3>Annual General Meeting — December 16th</h3>
+										<p>
+											Claremorris Community Radio's AGM takes place at 8pm in Digispace Claremorris. All members
+											welcome.
+										</p>
+									</div>
+								</article>
+								<article class="news-card">
+									<div class="news-card__thumb"></div>
+									<div class="news-card__body">
+										<div class="news-card__date">May</div>
+										<h3>EU Election Debate comes to Claremorris</h3>
+										<p>
+											Thirteen Midlands-North-West candidates faced questions at the McWilliam Hotel. Anthony McNicholas
+											brings a special report on air tonight at 9pm.
+										</p>
+									</div>
+								</article>
+								<article class="news-card">
+									<div class="news-card__thumb"></div>
+									<div class="news-card__body">
+										<div class="news-card__date">This week</div>
+										<h3>Niamh O'Kelly launches two new shows</h3>
+										<p>
+											Broadcaster Niamh O'Kelly joins the schedule with Serendipity on Thursdays and Sentimental Journey
+											on Sundays.
+										</p>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="block block--alt shows" id="shows">
+					<div class="container">
+						<div class="shows__inner">
+							<div class="block-head">
+								<h2>Our Shows</h2>
+								<a href="#">Full schedule</a>
+							</div>
+							<div class="shows__grid">
+								<div class="show-card">
+									<div class="show-card__swatch">MON–FRI · 09:00</div>
+									<h3>Good Morning Show</h3>
+									<div class="show-card__when">Weekdays, 09:00 — 11:00</div>
+								</div>
+								<div class="show-card">
+									<div class="show-card__swatch">THU · 17:00</div>
+									<h3>Serendipity</h3>
+									<div class="show-card__when">Thursdays at 5pm with Niamh O'Kelly</div>
+								</div>
+								<div class="show-card">
+									<div class="show-card__swatch">SUN · 17:00</div>
+									<h3>Sentimental Journey</h3>
+									<div class="show-card__when">Sundays at 5pm with Niamh O'Kelly</div>
+								</div>
+								<div class="show-card">
+									<div class="show-card__swatch">SPECIAL</div>
+									<h3>EU Debate Report</h3>
+									<div class="show-card__when">Anthony McNicholas, on air 9pm</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="block supporters" id="support">
+					<div class="container">
+						<div class="support__inner">
+							<div class="block-head">
+								<h2>Sponsors, Funders &amp; Partners</h2>
 							</div>
 
-							<div class="player__volume">
-								<span class="player-vol-icon">🔊</span>
-								<input type="range" id="volumeSlider" min="0" max="100" value="80" aria-label="Volume" />
+							<div class="supporters__group">
+								<h3>Funders</h3>
+								<div class="supporters__grid">
+									<a
+										class="supporter-logo"
+										href="https://www.cnam.ie"
+										target="_blank"
+										rel="noopener"
+										aria-label="Coimisiún na Meán website"
+									>
+										<img src="./images/CBE_web-thumb.jpg" alt="Coimisiún na Meán logo" />
+									</a>
+									<a
+										class="supporter-logo"
+										href="https://www.pobal.ie"
+										target="_blank"
+										rel="noopener"
+										aria-label="Pobal website"
+									>
+										<img src="./images/Pobal-web-thumb.jpg" alt="Pobal logo" />
+									</a>
+									<a
+										class="supporter-logo"
+										href="https://www.gov.ie/en/organisation/department-of-rural-and-community-development/"
+										target="_blank"
+										rel="noopener"
+										aria-label="Department of Rural and Community Development website"
+									>
+										<img src="./images/DRCD-logo-colour.jpg" alt="Department of Rural and Community Development logo" />
+									</a>
+									<a
+										class="supporter-logo"
+										href="https://www.mayo.ie"
+										target="_blank"
+										rel="noopener"
+										aria-label="Mayo County Council website"
+									>
+										<img
+											src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='13' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EMayo County Council%3C/text%3E%3C/svg%3E"
+											alt="Mayo County Council logo"
+										/>
+									</a>
+								</div>
 							</div>
 
-							<!-- Replace the src below with CCR's real stream URL -->
-							<audio id="radioStream" preload="none">
-								<source src="https://stream.example.com/ccr946.mp3" type="audio/mpeg" />
-							</audio>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-
-		<section class="hero">
-			<div class="container">
-				<div class="hero__inner">
-					<span class="hero__eyebrow">Broadcasting from Claremorris, Co. Mayo</span>
-					<h1 class="hero__header">
-						Claremorris Community Radio
-						<span>Local voices, local stories — on air every day.</span>
-					</h1>
-					<button class="listen-live">
-						<span class="listen-live__play"></span>
-						Listen Live
-						<span class="listen-live__dot"></span>
-					</button>
-
-					<div class="now-playing">
-						<div class="now-playing__label">Now Playing</div>
-						<hr />
-						<div class="now-playing__track"><span class="now-playing__artist">The Saw Doctors —</span> N17</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="block news" id="news">
-			<div class="container">
-				<div class="block__inner">
-					<div class="block-head">
-						<h2>Latest News</h2>
-						<a href="#">View all news</a>
-					</div>
-					<div class="news__grid">
-						<article class="news-card">
-							<div class="news-card__thumb"></div>
-							<div class="news-card__body">
-								<div class="news-card__date">December</div>
-								<h3>Annual General Meeting — December 16th</h3>
-								<p>
-									Claremorris Community Radio's AGM takes place at 8pm in Digispace Claremorris. All members welcome.
-								</p>
+							<div class="supporters__group">
+								<h3>Partners</h3>
+								<div class="supporters__grid">
+									<a
+										class="supporter-logo"
+										href="https://craol.ie"
+										target="_blank"
+										rel="noopener"
+										aria-label="Craol — Community Radio Forum of Ireland website"
+									>
+										<img src="./images/credit-union-thumb.jpg" alt="Craol — Community Radio Forum of Ireland logo" />
+									</a>
+									<a
+										class="supporter-logo"
+										href="https://ccr946.ie"
+										target="_blank"
+										rel="noopener"
+										aria-label="Digispace Claremorris"
+									>
+										<img src="./images/MSLETB_Logo-white-1536x575.jpg" alt="Digispace Claremorris logo" />
+									</a>
+								</div>
 							</div>
-						</article>
-						<article class="news-card">
-							<div class="news-card__thumb"></div>
-							<div class="news-card__body">
-								<div class="news-card__date">May</div>
-								<h3>EU Election Debate comes to Claremorris</h3>
-								<p>
-									Thirteen Midlands-North-West candidates faced questions at the McWilliam Hotel. Anthony McNicholas
-									brings a special report on air tonight at 9pm.
-								</p>
+
+							<div class="supporters__group">
+								<h3>Local Sponsors</h3>
+								<div class="supporters__grid">
+									<a class="supporter-logo" href="#" aria-label="Sponsor logo placeholder 1">
+										<img
+											src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='16' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EGilligan%E2%80%99s Bar%3C/text%3E%3C/svg%3E"
+											alt="Sponsor logo placeholder"
+										/>
+									</a>
+									<a class="supporter-logo" href="#" aria-label="Sponsor logo placeholder 2">
+										<img
+											src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='16' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EWarde%E2%80%99s Pub%3C/text%3E%3C/svg%3E"
+											alt="Sponsor logo placeholder"
+										/>
+									</a>
+									<a class="supporter-logo" href="#" aria-label="Sponsor logo placeholder 3">
+										<img
+											src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='14' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EMacken%E2%80%99s Plumbing%3C/text%3E%3C/svg%3E"
+											alt="Sponsor logo placeholder"
+										/>
+									</a>
+									<a class="supporter-logo" href="#" aria-label="Sponsor logo placeholder 4">
+										<img
+											src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='16' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EPJ Byrne%E2%80%99s%3C/text%3E%3C/svg%3E"
+											alt="Sponsor logo placeholder"
+										/>
+									</a>
+								</div>
 							</div>
-						</article>
-						<article class="news-card">
-							<div class="news-card__thumb"></div>
-							<div class="news-card__body">
-								<div class="news-card__date">This week</div>
-								<h3>Niamh O'Kelly launches two new shows</h3>
-								<p>
-									Broadcaster Niamh O'Kelly joins the schedule with Serendipity on Thursdays and Sentimental Journey on
-									Sundays.
-								</p>
-							</div>
-						</article>
+						</div>
 					</div>
-				</div>
+				</section>
 			</div>
-		</section>
-
-		<section class="block block--alt shows" id="shows">
-			<div class="container">
-				<div class="shows__inner">
-					<div class="block-head">
-						<h2>Our Shows</h2>
-						<a href="#">Full schedule</a>
-					</div>
-					<div class="shows__grid">
-						<div class="show-card">
-							<div class="show-card__swatch">MON–FRI · 09:00</div>
-							<h3>Good Morning Show</h3>
-							<div class="show-card__when">Weekdays, 09:00 — 11:00</div>
-						</div>
-						<div class="show-card">
-							<div class="show-card__swatch">THU · 17:00</div>
-							<h3>Serendipity</h3>
-							<div class="show-card__when">Thursdays at 5pm with Niamh O'Kelly</div>
-						</div>
-						<div class="show-card">
-							<div class="show-card__swatch">SUN · 17:00</div>
-							<h3>Sentimental Journey</h3>
-							<div class="show-card__when">Sundays at 5pm with Niamh O'Kelly</div>
-						</div>
-						<div class="show-card">
-							<div class="show-card__swatch">SPECIAL</div>
-							<h3>EU Debate Report</h3>
-							<div class="show-card__when">Anthony McNicholas, on air 9pm</div>
+			<footer class="footer" id="about">
+				<div class="container">
+					<div class="footer__inner">
+						<div class="footer__text">
+							© 2026 Claremorris Community Radio · 94.6 FM · Claremorris, Co. Mayo, Ireland
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-
-		<section class="block supporters" id="support">
-			<div class="container">
-				<div class="support__inner">
-					<div class="block-head">
-						<h2>Sponsors, Funders &amp; Partners</h2>
-					</div>
-
-					<div class="supporters__group">
-						<h3>Funders</h3>
-						<div class="supporters__grid">
-							<a
-								class="supporter-logo"
-								href="https://www.cnam.ie"
-								target="_blank"
-								rel="noopener"
-								aria-label="Coimisiún na Meán website"
-							>
-								<img src="./images/CBE_web-thumb.jpg" alt="Coimisiún na Meán logo" />
-							</a>
-							<a
-								class="supporter-logo"
-								href="https://www.pobal.ie"
-								target="_blank"
-								rel="noopener"
-								aria-label="Pobal website"
-							>
-								<img src="./images/Pobal-web-thumb.jpg" alt="Pobal logo" />
-							</a>
-							<a
-								class="supporter-logo"
-								href="https://www.gov.ie/en/organisation/department-of-rural-and-community-development/"
-								target="_blank"
-								rel="noopener"
-								aria-label="Department of Rural and Community Development website"
-							>
-								<img src="./images/DRCD-logo-colour.jpg" alt="Department of Rural and Community Development logo" />
-							</a>
-							<a
-								class="supporter-logo"
-								href="https://www.mayo.ie"
-								target="_blank"
-								rel="noopener"
-								aria-label="Mayo County Council website"
-							>
-								<img
-									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='13' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EMayo County Council%3C/text%3E%3C/svg%3E"
-									alt="Mayo County Council logo"
-								/>
-							</a>
-						</div>
-					</div>
-
-					<div class="supporters__group">
-						<h3>Partners</h3>
-						<div class="supporters__grid">
-							<a
-								class="supporter-logo"
-								href="https://craol.ie"
-								target="_blank"
-								rel="noopener"
-								aria-label="Craol — Community Radio Forum of Ireland website"
-							>
-								<img src="./images/credit-union-thumb.jpg" alt="Craol — Community Radio Forum of Ireland logo" />
-							</a>
-							<a
-								class="supporter-logo"
-								href="https://ccr946.ie"
-								target="_blank"
-								rel="noopener"
-								aria-label="Digispace Claremorris"
-							>
-								<img src="./images/MSLETB_Logo-white-1536x575.jpg" alt="Digispace Claremorris logo" />
-							</a>
-						</div>
-					</div>
-
-					<div class="supporters__group">
-						<h3>Local Sponsors</h3>
-						<div class="supporters__grid">
-							<a class="supporter-logo" href="#" aria-label="Sponsor logo placeholder 1">
-								<img
-									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='16' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EGilligan%E2%80%99s Bar%3C/text%3E%3C/svg%3E"
-									alt="Sponsor logo placeholder"
-								/>
-							</a>
-							<a class="supporter-logo" href="#" aria-label="Sponsor logo placeholder 2">
-								<img
-									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='16' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EWarde%E2%80%99s Pub%3C/text%3E%3C/svg%3E"
-									alt="Sponsor logo placeholder"
-								/>
-							</a>
-							<a class="supporter-logo" href="#" aria-label="Sponsor logo placeholder 3">
-								<img
-									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='14' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EMacken%E2%80%99s Plumbing%3C/text%3E%3C/svg%3E"
-									alt="Sponsor logo placeholder"
-								/>
-							</a>
-							<a class="supporter-logo" href="#" aria-label="Sponsor logo placeholder 4">
-								<img
-									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='16' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EPJ Byrne%E2%80%99s%3C/text%3E%3C/svg%3E"
-									alt="Sponsor logo placeholder"
-								/>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<footer class="footer" id="about">
-			<div class="container">
-				<div class="footer__inner">
-					<div class="footer__text">© 2026 Claremorris Community Radio · 94.6 FM · Claremorris, Co. Mayo, Ireland</div>
-				</div>
-			</div>
-		</footer>
+			</footer>
+		</div>
 	</body>
 </html>
