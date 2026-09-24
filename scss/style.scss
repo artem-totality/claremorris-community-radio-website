@@ -43,7 +43,7 @@
 	font-weight: 500;
 	&__link {
 		color: variables.$text-muted;
-		transition: color 0.3s variables.$ease;
+		transition: color variables.$transition-speed variables.$ease;
 		padding: 6px 0;
 		border-bottom: 2px solid transparent;
 		&:hover,
@@ -206,8 +206,8 @@
 	cursor: pointer;
 	box-shadow: variables.$shadow-elevated;
 	transition:
-		transform 0.3s variables.$ease,
-		background 0.3s variables.$ease;
+		transform variables.$transition-speed variables.$ease,
+		background variables.$transition-speed variables.$ease;
 	&:hover {
 		background: variables.$accent;
 		transform: translateY(-2px);
@@ -284,8 +284,8 @@
 	display: flex;
 	flex-direction: column;
 	transition:
-		box-shadow 0.3s variables.$ease,
-		transform 0.3s variables.$ease;
+		box-shadow variables.$transition-speed variables.$ease,
+		transform variables.$transition-speed variables.$ease;
 	&:hover {
 		box-shadow: variables.$shadow-elevated;
 		transform: translateY(-3px);
@@ -332,8 +332,8 @@
 	box-shadow: variables.$shadow-card;
 	padding: variables.$sp-3;
 	transition:
-		box-shadow 0.3s variables.$ease,
-		transform 0.3s variables.$ease;
+		box-shadow variables.$transition-speed variables.$ease,
+		transform variables.$transition-speed variables.$ease;
 
 	&:hover {
 		box-shadow: variables.$shadow-elevated;
@@ -378,7 +378,7 @@
 	}
 	&__grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 		gap: variables.$sp-3;
 	}
 }
@@ -388,13 +388,13 @@
 	align-items: center;
 	justify-content: center;
 	height: 96px;
-	padding: variables.$sp-2;
+	padding: variables.$sp-1;
 	background: variables.$background;
 	border: 1px solid variables.$border;
 	border-radius: variables.$r-md;
 	transition:
-		box-shadow 0.3s variables.$ease,
-		border-color 0.3s variables.$ease;
+		box-shadow variables.$transition-speed variables.$ease,
+		border-color variables.$transition-speed variables.$ease;
 	&:hover,
 	&:focus-visible {
 		box-shadow: variables.$shadow-card;
@@ -402,10 +402,10 @@
 	}
 	img {
 		max-width: 100%;
-		max-height: 44px;
+		max-height: 100%;
 		width: auto;
-		filter: grayscale(1) opacity(0.55);
-		transition: filter 0.3s variables.$ease;
+		filter: grayscale(0.7) opacity(0.85);
+		transition: filter variables.$transition-speed variables.$ease;
 	}
 	&:hover img,
 	&:focus-visible img {
