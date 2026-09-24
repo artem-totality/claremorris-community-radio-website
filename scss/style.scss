@@ -364,6 +364,55 @@
 	}
 }
 
+.supporters {
+	&__group {
+		h3 {
+			font-size: 14px;
+			font-weight: 700;
+			color: variables.$text-muted;
+			margin: 0 0 variables.$sp-3;
+		}
+	}
+	&__group + .supporters__group {
+		margin-top: variables.$sp-5;
+	}
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: variables.$sp-3;
+	}
+}
+
+.supporter-logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 96px;
+	padding: variables.$sp-2;
+	background: variables.$background;
+	border: 1px solid variables.$border;
+	border-radius: variables.$r-md;
+	transition:
+		box-shadow 0.3s variables.$ease,
+		border-color 0.3s variables.$ease;
+	&:hover,
+	&:focus-visible {
+		box-shadow: variables.$shadow-card;
+		border-color: variables.$accent;
+	}
+	img {
+		max-width: 100%;
+		max-height: 44px;
+		width: auto;
+		filter: grayscale(1) opacity(0.55);
+		transition: filter 0.3s variables.$ease;
+	}
+	&:hover img,
+	&:focus-visible img {
+		filter: grayscale(0) opacity(1);
+	}
+}
+
 .footer {
 	background: variables.$primary;
 	color: #cfe1ee;
