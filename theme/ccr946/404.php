@@ -1,20 +1,23 @@
 <?php get_header(); ?>
 
-<main class="site-main">
+<main class="site-main content">
 
     <div class="site-container">
+        <div class="container">
 
-        <h1>Page not found</h1>
+            <h1>Page not found</h1>
 
-        <p>
-            Sorry, the page you are looking for does not exist.
-        </p>
+            <p>
+                Sorry, the page you are looking for does not exist.
+            </p>
 
-        <p>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                Return to the homepage
-            </a>
-        </p>
+            <p>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    Return to the homepage
+                </a>
+            </p>
+
+        </div>
 
     </div>
 
