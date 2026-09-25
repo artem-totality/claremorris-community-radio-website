@@ -1,17 +1,24 @@
-<footer class="site-footer">
+<footer class="footer" id="about">
 
-    <div class="site-footer__inner">
-        
-        <p>
-            &copy; <?php echo esc_html( date( 'Y' ) ); ?>
-            <?php bloginfo( 'name' ); ?>
-        </p>
+    <div class="container">
+
+        <div class="footer__inner">
+
+            <div class="footer__text">
+                &copy; <?php echo esc_html( wp_date( 'Y' ) ); ?>
+                <?php bloginfo( 'name' ); ?>
+                · 94.6 FM · Claremorris, Co. Mayo, Ireland
+            </div>
+
+        </div>
 
     </div>
 
 </footer>
 
 <?php wp_footer(); ?>
+
+</div><!-- .wrapper -->
 
 </body>
 
