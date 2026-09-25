@@ -43,8 +43,8 @@
 			color: vars.$on-primary;
 			background: vars.$primary;
 			transition:
-				background 0.3s vars.$ease,
-				transform 0.3s vars.$ease;
+				background vars.$transition-speed vars.$ease,
+				transform vars.$transition-speed vars.$ease;
 			&:hover,
 			&:focus-visible {
 				background: vars.$accent;
@@ -751,5 +751,121 @@
 	&__back-link {
 		font-weight: 600;
 		color: vars.$accent;
+	}
+}
+
+.page-head {
+	padding: vars.$sp-5 0 vars.$sp-4;
+	text-align: center;
+	border-bottom: 1px solid vars.$border;
+	background: radial-gradient(circle at 18% 15%, rgba(47, 125, 187, 0.12), transparent 55%), vars.$background;
+	.eyebrow {
+		display: inline-block;
+		font-size: 13px;
+		font-weight: 600;
+		color: vars.$accent;
+		background: vars.$accent-soft;
+		padding: 6px 14px;
+		border-radius: vars.$r-pill;
+		margin-bottom: vars.$sp-3;
+	}
+	h1 {
+		font-size: 44px;
+		line-height: 1.05;
+		font-weight: 800;
+		letter-spacing: -0.02em;
+		color: vars.$primary;
+		margin: 0 0 vars.$sp-2;
+	}
+	p {
+		font-size: 16px;
+		color: vars.$text-muted;
+		margin: 0;
+		max-width: 520px;
+		margin: 0 auto;
+	}
+}
+
+.shows-section {
+	padding: vars.$sp-6 0;
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: vars.$sp-2;
+	}
+	&__row {
+		display: flex;
+		align-items: center;
+		gap: vars.$sp-3;
+		background: vars.$background;
+		border: 1px solid vars.$border;
+		border-radius: vars.$r-md;
+		padding: vars.$sp-2 vars.$sp-3;
+		box-shadow: vars.$shadow-card;
+		transition:
+			box-shadow vars.$transition-speed vars.$ease,
+			transform vars.$transition-speed vars.$ease,
+			border-color vars.$transition-speed vars.$ease;
+		&:hover,
+		&:focus-visible {
+			box-shadow: vars.$shadow-elevated;
+			transform: translateY(-2px);
+			border-color: vars.$accent;
+		}
+		.swatch {
+			flex: none;
+			width: 56px;
+			height: 56px;
+			border-radius: vars.$r-sm;
+			background: linear-gradient(135deg, vars.$accent, vars.$primary);
+		}
+		.info {
+			flex: 1 1 auto;
+			min-width: 0;
+			h3 {
+				font-size: 16px;
+				font-weight: 700;
+				color: vars.$primary;
+				margin: 0 0 2px;
+			}
+			.host {
+				font-size: 13px;
+				color: vars.$text-muted;
+			}
+		}
+		.time {
+			flex: none;
+			text-align: right;
+			font-size: 13px;
+			color: vars.$text-muted;
+			strong {
+				display: block;
+				font-size: 14px;
+				color: vars.$primary;
+				font-weight: 700;
+			}
+		}
+		.chevron {
+			flex: none;
+			color: vars.$accent;
+			font-size: 18px;
+		}
+	}
+}
+
+.day-group {
+	margin-bottom: vars.$sp-5;
+	&:last-child {
+		margin-bottom: 0;
+	}
+	h2 {
+		font-size: 14px;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: vars.$text-muted;
+		margin: 0 0 vars.$sp-3;
+		padding-bottom: vars.$sp-1;
+		border-bottom: 1px solid vars.$border;
 	}
 }
