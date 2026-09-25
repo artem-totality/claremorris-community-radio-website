@@ -329,6 +329,13 @@ a {
   text-decoration: none;
 }
 
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -429,19 +436,19 @@ body {
   color: #1c3d5a;
 }
 
-.nav {
+.nav__list ul {
   display: flex;
   gap: 32px;
   font-size: 14px;
   font-weight: 500;
 }
-.nav__link {
+.nav__list a {
   color: #5b7690;
   transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 6px 0;
   border-bottom: 2px solid transparent;
 }
-.nav__link:hover, .nav__link:focus-visible {
+.nav__list a:hover, .nav__list a:focus-visible {
   color: #1c3d5a;
   border-bottom-color: #2f7dbb;
 }

@@ -38,19 +38,23 @@
 }
 
 .nav {
-	display: flex;
-	gap: vars.$sp-4;
-	font-size: 14px;
-	font-weight: 500;
-	&__link {
-		color: vars.$text-muted;
-		transition: color vars.$transition-speed vars.$ease;
-		padding: 6px 0;
-		border-bottom: 2px solid transparent;
-		&:hover,
-		&:focus-visible {
-			color: vars.$primary;
-			border-bottom-color: vars.$accent;
+	&__list {
+		ul {
+			display: flex;
+			gap: vars.$sp-4;
+			font-size: 14px;
+			font-weight: 500;
+		}
+		a {
+			color: vars.$text-muted;
+			transition: color vars.$transition-speed vars.$ease;
+			padding: 6px 0;
+			border-bottom: 2px solid transparent;
+			&:hover,
+			&:focus-visible {
+				color: vars.$primary;
+				border-bottom-color: vars.$accent;
+			}
 		}
 	}
 }
