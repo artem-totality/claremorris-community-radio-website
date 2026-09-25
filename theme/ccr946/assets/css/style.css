@@ -401,6 +401,59 @@ body {
   color: #2f7dbb;
 }
 
+.topbar {
+  background: #eaf2f9;
+  color: #cfe1ee;
+}
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 13px;
+}
+.topbar__phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1c3d5a;
+  font-weight: 600;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.topbar__phone:hover {
+  color: #2f7dbb;
+  transform: translateY(-1px);
+}
+.topbar__phone svg {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+.topbar__social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.topbar__social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #1c3d5a;
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.topbar__social a:hover, .topbar__social a:focus-visible {
+  background: #2f7dbb;
+  transform: translateY(-1px);
+}
+.topbar__social a svg {
+  width: 14px;
+  height: 14px;
+}
+
 .header {
   position: sticky;
   top: 0;

@@ -2,6 +2,62 @@
 @use 'global';
 @use 'variables' as vars;
 
+.topbar {
+	background: vars.$accent-soft;
+	color: #cfe1ee;
+	&__inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 6px 0;
+		font-size: 13px;
+	}
+	&__phone {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		color: vars.$primary;
+		font-weight: 600;
+		transition: all vars.$transition-speed vars.$ease;
+		&:hover {
+			color: vars.$accent;
+			transform: translateY(-1px);
+		}
+		svg {
+			width: 14px;
+			height: 14px;
+			flex: none;
+		}
+	}
+	&__social {
+		display: flex;
+		align-items: center;
+		gap: vars.$sp-2;
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 26px;
+			height: 26px;
+			border-radius: 50%;
+			color: vars.$on-primary;
+			background: vars.$primary;
+			transition:
+				background 0.3s vars.$ease,
+				transform 0.3s vars.$ease;
+			&:hover,
+			&:focus-visible {
+				background: vars.$accent;
+				transform: translateY(-1px);
+			}
+			svg {
+				width: 14px;
+				height: 14px;
+			}
+		}
+	}
+}
+
 .header {
 	position: sticky;
 	top: 0;
