@@ -869,3 +869,121 @@
 		border-bottom: 1px solid vars.$border;
 	}
 }
+
+/* ---------- News list ---------- */
+.news-section {
+	padding: vars.$sp-6 0;
+}
+.news-list {
+	display: flex;
+	flex-direction: column;
+	gap: vars.$sp-3;
+	margin-bottom: vars.$sp-5;
+	&__row {
+		display: grid;
+		grid-template-columns: 200px 1fr;
+		gap: vars.$sp-4;
+		background: vars.$background;
+		border: 1px solid vars.$border;
+		border-radius: vars.$r-md;
+		box-shadow: vars.$shadow-card;
+		overflow: hidden;
+		transition:
+			box-shadow vars.$transition-speed vars.$ease,
+			transform vars.$transition-speed vars.$ease,
+			border-color vars.$transition-speed vars.$ease;
+		&:hover,
+		&:focus-visible {
+			box-shadow: vars.$shadow-elevated;
+			transform: translateY(-2px);
+			border-color: vars.$accent;
+		}
+		.thumb {
+			background: linear-gradient(135deg, vars.$accent, vars.$primary);
+			min-height: 140px;
+		}
+		.body {
+			padding: vars.$sp-3 vars.$sp-3 vars.$sp-3 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		.tag {
+			display: inline-block;
+			align-self: flex-start;
+			font-size: 11px;
+			font-weight: 700;
+			color: vars.$accent;
+			background: vars.$accent-soft;
+			padding: 3px 10px;
+			border-radius: vars.$r-pill;
+			margin-bottom: vars.$sp-1;
+		}
+		h2 {
+			font-size: 19px;
+			font-weight: 700;
+			color: vars.$primary;
+			margin: 0 0 6px;
+			line-height: 1.3;
+		}
+		.date {
+			font-size: 13px;
+			color: vars.$text-muted;
+			margin-bottom: 8px;
+		}
+		.excerpt {
+			font-size: 14px;
+			line-height: 1.5;
+			color: vars.$text-muted;
+			margin: 0;
+		}
+	}
+}
+
+/* ---------- Pagination ---------- */
+.pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	flex-wrap: wrap;
+	.page-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 40px;
+		height: 40px;
+		padding: 0 12px;
+		border-radius: vars.$r-sm;
+		border: 1px solid vars.$border;
+		background: vars.$background;
+		color: vars.$text-muted;
+		font-size: 14px;
+		font-weight: 600;
+		transition:
+			background vars.$transition-speed vars.$ease,
+			color vars.$transition-speed vars.$ease,
+			border-color vars.$transition-speed vars.$ease;
+	}
+	.page-btn:hover,
+	.page-btn:focus-visible {
+		border-color: vars.$accent;
+		color: vars.$primary;
+	}
+	.page-btn.current {
+		background: vars.$primary;
+		border-color: vars.$primary;
+		color: vars.$on-primary;
+		cursor: default;
+	}
+	.page-btn.ellipsis {
+		border: none;
+		background: none;
+		cursor: default;
+		color: vars.$text-muted;
+	}
+	.page-btn[aria-disabled='true'] {
+		opacity: 0.4;
+		pointer-events: none;
+	}
+}
