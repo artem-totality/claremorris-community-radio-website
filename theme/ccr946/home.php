@@ -30,14 +30,26 @@
                     <?php while ( have_posts() ) : the_post(); ?>
 
                         <a class="news-list__row" href="<?php the_permalink(); ?>">
-                            <div class="thumb"></div>
+                            <div class="thumb">
+                                <?php if ( has_post_thumbnail() ) : ?>
+                                    <?php the_post_thumbnail('medium'); ?>
+                                <?php endif; ?>
+                            </div>
                             <div class="body">
-                                <span class="tag">Local News</span>
-                                <h2>EU Election Debate comes to Claremorris</h2>
-                                <div class="date">20 May 2024</div>
+                                <span class="tag"><?php
+                                    $categories = get_the_category();
+
+                                    if ( ! empty( $categories ) ) {
+                                        echo esc_html( $categories[0]->name );
+                                    }
+                                    ?>
+                                </span>
+                                <h2><?php the_title(); ?></h2>
+                                <div class="date">
+                                    <?php echo esc_html( get_the_date() ); ?>
+                                </div>
                                 <p class="excerpt">
-                                    Thirteen Midlands-North-West candidates faced questions at the McWilliam Park Hotel. Anthony
-                                    McNicholas brings a special report on air tonight at 9pm.
+                                    <?php echo esc_html( get_the_excerpt() ); ?>
                                 </p>
                             </div>
                         </a>

@@ -218,7 +218,7 @@
 }
 
 .breadcrumb {
-	padding: vars.$sp-3 0 0;
+	padding: vars.$sp-2 0;
 	font-size: 13px;
 	color: vars.$text-muted;
 	a {
@@ -713,7 +713,7 @@
 		line-height: 1.7;
 		color: vars.$text;
 		p {
-			margin: 0 0 vars.$sp-3;
+			margin: 0 0 vars.$sp-4;
 			&:first-of-type {
 				font-size: 19px;
 				font-weight: 500;
@@ -734,6 +734,17 @@
 			border-radius: 0 vars.$r-sm vars.$r-sm 0;
 			font-style: italic;
 			color: vars.$primary;
+		}
+		a {
+			color: vars.$accent;
+			text-decoration: underline;
+		}
+		img {
+			max-width: 576px;
+		}
+		figure {
+			text-align: center;
+			margin: vars.$sp-4 0;
 		}
 	}
 	&__footer {
@@ -883,6 +894,7 @@
 		display: grid;
 		grid-template-columns: 200px 1fr;
 		gap: vars.$sp-4;
+		max-height: 200px;
 		background: vars.$background;
 		border: 1px solid vars.$border;
 		border-radius: vars.$r-md;
@@ -901,6 +913,9 @@
 		.thumb {
 			background: linear-gradient(135deg, vars.$accent, vars.$primary);
 			min-height: 140px;
+			img {
+				max-height: 100%;
+			}
 		}
 		.body {
 			padding: vars.$sp-3 vars.$sp-3 vars.$sp-3 0;
