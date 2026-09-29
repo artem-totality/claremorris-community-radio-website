@@ -364,6 +364,11 @@
 	&__thumb {
 		height: 140px;
 		background: linear-gradient(135deg, vars.$accent, vars.$primary);
+		img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
 	}
 	&__body {
 		padding: vars.$sp-3;

@@ -28,45 +28,72 @@
 	<section class="block news" id="news">
 		<div class="container">
 			<div class="block__inner">
+
 				<div class="block-head">
 					<h2>Latest News</h2>
-					<a href="#">View all news</a>
+					<a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>">
+						View all news
+					</a>
 				</div>
-				<div class="news__grid">
-					<article class="news-card">
-						<div class="news-card__thumb"></div>
-						<div class="news-card__body">
-							<div class="news-card__date">December</div>
-							<h3>Annual General Meeting — December 16th</h3>
-							<p>
-								Claremorris Community Radio's AGM takes place at 8pm in Digispace Claremorris. All members
-								welcome.
-							</p>
-						</div>
-					</article>
-					<article class="news-card">
-						<div class="news-card__thumb"></div>
-						<div class="news-card__body">
-							<div class="news-card__date">May</div>
-							<h3>EU Election Debate comes to Claremorris</h3>
-							<p>
-								Thirteen Midlands-North-West candidates faced questions at the McWilliam Hotel. Anthony McNicholas
-								brings a special report on air tonight at 9pm.
-							</p>
-						</div>
-					</article>
-					<article class="news-card">
-						<div class="news-card__thumb"></div>
-						<div class="news-card__body">
-							<div class="news-card__date">This week</div>
-							<h3>Niamh O'Kelly launches two new shows</h3>
-							<p>
-								Broadcaster Niamh O'Kelly joins the schedule with Serendipity on Thursdays and Sentimental Journey
-								on Sundays.
-							</p>
-						</div>
-					</article>
-				</div>
+
+				<?php
+				$latest_news = new WP_Query(
+					array(
+						'post_type'      => 'post',
+						'post_status'    => 'publish',
+						'posts_per_page' => 3,
+						'orderby'        => 'date',
+						'order'          => 'DESC',
+					)
+				);
+				?>
+
+				<?php if ( $latest_news->have_posts() ) : ?>
+
+					<div class="news__grid">
+
+						<?php while ( $latest_news->have_posts() ) : $latest_news->the_post(); ?>
+
+							<article class="news-card">
+
+								<a href="<?php the_permalink(); ?>" class="news-card__link">
+
+									<div class="news-card__thumb">
+
+										<?php if ( has_post_thumbnail() ) : ?>
+
+											<?php the_post_thumbnail( 'medium' ); ?>
+
+										<?php endif; ?>
+
+									</div>
+
+									<div class="news-card__body">
+
+										<div class="news-card__date">
+											<?php echo esc_html( get_the_date( 'j F Y' ) ); ?>
+										</div>
+
+										<h3><?php the_title(); ?></h3>
+
+										<p>
+											<?php echo esc_html( get_the_excerpt() ); ?>
+										</p>
+
+									</div>
+
+								</a>
+
+							</article>
+
+						<?php endwhile; ?>
+
+					</div>
+
+				<?php endif; ?>
+
+				<?php wp_reset_postdata(); ?>
+
 			</div>
 		</div>
 	</section>
