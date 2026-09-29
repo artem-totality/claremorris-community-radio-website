@@ -70,10 +70,10 @@
 
                     <div class="header__top-inner">
 
-                        <div class="logo">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
                             <span class="logo__mark">CCR</span>
                             <span class="logo__freq">94.6 FM</span>
-                        </div>
+                        </a>
 
                         <nav class="nav">
 
