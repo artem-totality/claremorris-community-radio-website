@@ -23,9 +23,16 @@ add_action( 'after_setup_theme', 'ccr946_setup' );
 function ccr946_assets() {
 
     wp_enqueue_style(
+        'ccr946-inter',
+        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap',
+        array(),
+        null
+    );
+
+    wp_enqueue_style(
         'ccr946-style',
         get_template_directory_uri() . '/assets/css/style.min.css',
-        array(),
+        array( 'ccr946-inter' ),
         '1.0'
     );
 }
