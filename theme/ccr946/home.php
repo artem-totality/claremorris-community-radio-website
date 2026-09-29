@@ -58,7 +58,7 @@
 
                 </div>
 
-                <nav class="pagination" aria-label="News pagination">
+                <!-- <nav class="pagination" aria-label="News pagination">
                     <a class="page-btn" href="#" aria-disabled="true" aria-label="Previous page">‹</a>
                     <a class="page-btn current" href="#" aria-current="page">1</a>
                     <a class="page-btn" href="#">2</a>
@@ -67,7 +67,90 @@
                     <span class="page-btn ellipsis">…</span>
                     <a class="page-btn" href="#">8</a>
                     <a class="page-btn" href="#" aria-label="Next page">›</a>
-                </nav>
+                </nav> -->
+
+                <?php
+                global $wp_query;
+
+                $paged = max( 1, get_query_var( 'paged' ) );
+                $total_pages = $wp_query->max_num_pages;
+                ?>
+
+                <?php if ( $total_pages > 1 ) : ?>
+
+                    <nav class="pagination" aria-label="News pagination">
+
+                        <?php if ( $paged > 1 ) : ?>
+
+                            <a
+                                class="page-btn"
+                                href="<?php echo esc_url( get_pagenum_link( $paged - 1 ) ); ?>"
+                                aria-label="Previous page"
+                            >‹</a>
+
+                        <?php else : ?>
+
+                            <span
+                                class="page-btn"
+                                aria-disabled="true"
+                                aria-label="Previous page"
+                            >‹</span>
+
+                        <?php endif; ?>
+
+
+                        <?php
+                        $pagination = paginate_links(
+                            array(
+                                'current'   => $paged,
+                                'total'     => $total_pages,
+                                'mid_size'  => 2,
+                                'end_size'  => 1,
+                                'prev_next' => false,
+                                'type'      => 'array',
+                            )
+                        );
+
+                        foreach ( $pagination as $link ) {
+
+                            $link = str_replace(
+                                'page-numbers',
+                                'page-btn',
+                                $link
+                            );
+
+                            $link = str_replace(
+                                'page-btn dots',
+                                'page-btn ellipsis',
+                                $link
+                            );
+
+                            echo $link;
+                        }
+                        ?>
+
+
+                        <?php if ( $paged < $total_pages ) : ?>
+
+                            <a
+                                class="page-btn"
+                                href="<?php echo esc_url( get_pagenum_link( $paged + 1 ) ); ?>"
+                                aria-label="Next page"
+                            >›</a>
+
+                        <?php else : ?>
+
+                            <span
+                                class="page-btn"
+                                aria-disabled="true"
+                                aria-label="Next page"
+                            >›</span>
+
+                        <?php endif; ?>
+
+                    </nav>
+
+                <?php endif; ?>
             </div>
         </div>
     </section>
