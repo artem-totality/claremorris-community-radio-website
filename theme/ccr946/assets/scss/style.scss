@@ -507,6 +507,9 @@
 	}
 	&__cover {
 		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
 		aspect-ratio: 1/1;
 		border-radius: vars.$r-md;
 		background: linear-gradient(135deg, vars.$accent, vars.$primary);
@@ -833,6 +836,12 @@
 			height: 56px;
 			border-radius: vars.$r-sm;
 			background: linear-gradient(135deg, vars.$accent, vars.$primary);
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+			}
 		}
 		.info {
 			flex: 1 1 auto;

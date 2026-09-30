@@ -877,6 +877,10 @@ h1 {
 }
 .show-hero__cover {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
   aspect-ratio: 1/1;
   border-radius: 16px;
   background: linear-gradient(135deg, #2f7dbb, #1c3d5a);
@@ -1196,6 +1200,13 @@ h1 {
   height: 56px;
   border-radius: 8px;
   background: linear-gradient(135deg, #2f7dbb, #1c3d5a);
+}
+.shows-section__row .swatch img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
 }
 .shows-section__row .info {
   flex: 1 1 auto;

@@ -29,6 +29,10 @@
                                     'alt'   => get_the_title() . ' show cover artwork',
                                 ]
                             ); ?>
+                        <?php else : ?>
+
+                            <div class="show-hero__cover"></div>
+
                         <?php endif; ?>
 
                         <div class="show-hero__title-block">
