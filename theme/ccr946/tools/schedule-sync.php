@@ -252,9 +252,7 @@ do {
             'event_date'      => $start->format('Y-m-d'),
             'start_time'      => $start->format('H:i:s'),
             'end_time'        => $end->format('H:i:s'),
-            'title'           => isset($event['summary'])
-                ? (string) $event['summary']
-                : '',
+            'title' => trim(str_replace(' (r)', '', (string) ($event['summary'] ?? ''))),
         ];
     }
 
