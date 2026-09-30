@@ -1028,3 +1028,165 @@
 		pointer-events: none;
 	}
 }
+
+/* ---------- Schedule ---------- */
+.schedule-section {
+	padding: vars.$sp-6 0;
+}
+
+.day-tabs {
+	display: flex;
+	gap: 8px;
+	overflow-x: auto;
+	padding-bottom: 2px;
+	margin-bottom: vars.$sp-4;
+	&__tab {
+		flex: 1 1 0;
+		min-width: 64px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2px;
+		padding: 10px 8px;
+		border: 1px solid vars.$border;
+		border-radius: vars.$r-sm;
+		background: vars.$background;
+		color: vars.$text-muted;
+		font-size: 13px;
+		font-weight: 700;
+		cursor: pointer;
+		transition:
+			background vars.$transition-speed vars.$ease,
+			border-color vars.$transition-speed vars.$ease,
+			color vars.$transition-speed vars.$ease;
+		&:hover {
+			border-color: vars.$accent;
+			color: vars.$primary;
+		}
+		.full {
+			font-size: 11px;
+			font-weight: 500;
+			opacity: 0.75;
+		}
+		.today-dot {
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background: vars.$accent;
+			margin-top: 2px;
+		}
+		&--active {
+			background: vars.$primary;
+			border-color: vars.$primary;
+			color: vars.$on-primary;
+			.full {
+				opacity: 0.85;
+			}
+			.today-dot {
+				background: vars.$on-primary;
+			}
+			&:hover {
+				color: vars.$on-primary;
+			}
+		}
+	}
+}
+
+.day-panel {
+	display: none;
+	&--active {
+		display: block;
+		animation: fadein 0.25s vars.$ease;
+	}
+	h2 {
+		font-size: 20px;
+		font-weight: 700;
+		color: vars.$primary;
+		margin: 0 0 vars.$sp-3;
+	}
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+		transform: translateY(4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.schedule-list {
+	display: flex;
+	flex-direction: column;
+	gap: vars.$sp-2;
+}
+.schedule-item {
+	display: flex;
+	align-items: center;
+	gap: vars.$sp-3;
+	background: vars.$background;
+	border: 1px solid vars.$border;
+	border-radius: vars.$r-md;
+	padding: vars.$sp-2 vars.$sp-3;
+	box-shadow: vars.$shadow-card;
+	cursor: default;
+	transition:
+		box-shadow vars.$transition-speed vars.$ease,
+		transform vars.$transition-speed vars.$ease,
+		border-color vars.$transition-speed vars.$ease;
+	&:hover,
+	&:focus-visible {
+		box-shadow: vars.$shadow-elevated;
+		transform: translateY(-2px);
+		border-color: vars.$accent;
+	}
+	.time {
+		flex: none;
+		width: 76px;
+		font-size: 14px;
+		font-weight: 700;
+		color: vars.$accent;
+	}
+	.swatch {
+		flex: none;
+		width: 44px;
+		height: 44px;
+		border-radius: vars.$r-sm;
+		background: linear-gradient(135deg, vars.$accent, vars.$primary);
+	}
+	.info {
+		flex: 1 1 auto;
+		min-width: 0;
+		h3 {
+			font-size: 15px;
+			font-weight: 700;
+			color: vars.$primary;
+			margin: 0 0 2px;
+		}
+		.host {
+			font-size: 13px;
+			color: vars.$text-muted;
+		}
+	}
+}
+
+.empty-state {
+	text-align: center;
+	padding: vars.$sp-5 vars.$sp-3;
+	border: 1px dashed vars.$border;
+	border-radius: vars.$r-md;
+	color: vars.$text-muted;
+	font-size: 14px;
+}
+
+.schedule-note {
+	margin-top: vars.$sp-4;
+	font-size: 13px;
+	color: vars.$text-muted;
+	a {
+		color: vars.$accent;
+		font-weight: 600;
+	}
+}

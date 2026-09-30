@@ -1387,3 +1387,158 @@ h1 {
   opacity: 0.4;
   pointer-events: none;
 }
+
+/* ---------- Schedule ---------- */
+.schedule-section {
+  padding: 64px 0;
+}
+
+.day-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  margin-bottom: 32px;
+}
+.day-tabs__tab {
+  flex: 1 1 0;
+  min-width: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 8px;
+  border: 1px solid #e6e9ee;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #5b7690;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.day-tabs__tab:hover {
+  border-color: #2f7dbb;
+  color: #1c3d5a;
+}
+.day-tabs__tab .full {
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.75;
+}
+.day-tabs__tab .today-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #2f7dbb;
+  margin-top: 2px;
+}
+.day-tabs__tab--active {
+  background: #1c3d5a;
+  border-color: #1c3d5a;
+  color: #ffffff;
+}
+.day-tabs__tab--active .full {
+  opacity: 0.85;
+}
+.day-tabs__tab--active .today-dot {
+  background: #ffffff;
+}
+.day-tabs__tab--active:hover {
+  color: #ffffff;
+}
+
+.day-panel {
+  display: none;
+}
+.day-panel--active {
+  display: block;
+  animation: fadein 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.day-panel h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1c3d5a;
+  margin: 0 0 24px;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #ffffff;
+  border: 1px solid #e6e9ee;
+  border-radius: 16px;
+  padding: 16px 24px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  cursor: default;
+  transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.schedule-item:hover, .schedule-item:focus-visible {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border-color: #2f7dbb;
+}
+.schedule-item .time {
+  flex: none;
+  width: 76px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2f7dbb;
+}
+.schedule-item .swatch {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2f7dbb, #1c3d5a);
+}
+.schedule-item .info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.schedule-item .info h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1c3d5a;
+  margin: 0 0 2px;
+}
+.schedule-item .info .host {
+  font-size: 13px;
+  color: #5b7690;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  border: 1px dashed #e6e9ee;
+  border-radius: 16px;
+  color: #5b7690;
+  font-size: 14px;
+}
+
+.schedule-note {
+  margin-top: 32px;
+  font-size: 13px;
+  color: #5b7690;
+}
+.schedule-note a {
+  color: #2f7dbb;
+  font-weight: 600;
+}

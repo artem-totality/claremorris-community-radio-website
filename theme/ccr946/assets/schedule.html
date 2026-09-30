@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Claremorris Community Radio — 94.6FM</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./css/style.min.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="topbar">
+				<div class="container">
+					<div class="topbar__inner">
+						<a class="topbar__phone" href="tel:0873262007">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path
+									d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+								/>
+							</svg>
+							<span class="txt">087 326 2007</span>
+						</a>
+						<div class="topbar__social">
+							<a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+								<svg viewBox="0 0 24 24" fill="currentColor">
+									<path
+										d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12z"
+									/>
+								</svg>
+							</a>
+							<a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<rect x="2" y="2" width="20" height="20" rx="5" />
+									<circle cx="12" cy="12" r="4" />
+									<circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+								</svg>
+							</a>
+							<a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter / X">
+								<svg viewBox="0 0 24 24" fill="currentColor">
+									<path
+										d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.6L4.4 22H1.3l8.1-9.3L1 2h7.1l4.9 6.1L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"
+									/>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<header class="header">
+				<div class="header__inner">
+					<div class="header__top">
+						<div class="container">
+							<div class="header__top-inner">
+								<div class="logo">
+									<span class="logo__mark">CCR</span>
+									<span class="logo__freq">94.6 FM</span>
+								</div>
+								<nav class="nav">
+									<ul class="nav__list">
+										<li class="page_item"><a class="nav__link" href="#news">News</a></li>
+										<li class="page_item"><a class="nav__link" href="#shows">Shows</a></li>
+										<li class="page_item"><a class="nav__link" href="#schedule">Schedule</a></li>
+										<li class="page_item"><a class="nav__link" href="#about">About</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+					<div class="player">
+						<div class="container">
+							<div class="player__inner">
+								<button class="player__btn" id="playBtn" aria-label="Play live stream" aria-pressed="false">
+									<span class="icon-play"></span>
+									<span class="icon-pause"><span></span><span></span></span>
+								</button>
+
+								<div class="player__meta">
+									<div class="status"><span class="live-dot"></span>LIVE · 94.6 FM</div>
+									<div class="track"><span class="artist">The Saw Doctors —</span> N17</div>
+								</div>
+
+								<div class="player__volume">
+									<span class="player-vol-icon">🔊</span>
+									<input type="range" id="volumeSlider" min="0" max="100" value="80" aria-label="Volume" />
+								</div>
+
+								<!-- Replace the src below with CCR's real stream URL -->
+								<audio id="radioStream" preload="none">
+									<source src="https://stream.example.com/ccr946.mp3" type="audio/mpeg" />
+								</audio>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="content">
+				<section class="page-head">
+					<div class="wrap">
+						<span class="eyebrow">This Week</span>
+						<h1>Weekly Schedule</h1>
+						<p>What's on 94.6FM, day by day.</p>
+					</div>
+				</section>
+
+				<section class="schedule-section">
+					<div class="schedule-section__inner">
+						<div class="container">
+							<div class="day-tabs" role="tablist" aria-label="Day of the week">
+								<button class="day-tabs__tab day-tabs__tab--active" data-day="mon" role="tab">
+									<span class="full">1 April</span>Mon<span class="today-dot"></span>
+								</button>
+								<button class="day-tabs__tab" data-day="tue" role="tab">
+									<span class="full">2 April</span>Tue<span class="today-dot" hidden></span>
+								</button>
+								<button class="day-tabs__tab" data-day="wed" role="tab">
+									<span class="full">3 April</span>Wed<span class="today-dot" hidden></span>
+								</button>
+								<button class="day-tabs__tab" data-day="thu" role="tab">
+									<span class="full">4 April</span>Thu<span class="today-dot" hidden></span>
+								</button>
+								<button class="day-tabs__tab" data-day="fri" role="tab">
+									<span class="full">5 April</span>Fri<span class="today-dot" hidden></span>
+								</button>
+								<button class="day-tabs__tab" data-day="sat" role="tab">
+									<span class="full">6 April</span>Sat<span class="today-dot" hidden></span>
+								</button>
+								<button class="day-tabs__tab" data-day="sun" role="tab">
+									<span class="full">7 April</span>Sun<span class="today-dot" hidden></span>
+								</button>
+							</div>
+						</div>
+
+						<div class="container container--narrow">
+							<div class="day-panel day-panel--active" data-panel="mon">
+								<h2>Monday</h2>
+								<div class="schedule-list">
+									<div class="schedule-item" href="ccr946-show.html">
+										<div class="time">09:00</div>
+										<div class="swatch"></div>
+										<div class="info">
+											<h3>Good Morning Show</h3>
+											<div class="host">-- until 11:00</div>
+										</div>
+									</div>
+									<div class="schedule-item" href="ccr946-show.html">
+										<div class="time">11:00</div>
+										<div class="swatch"></div>
+										<div class="info">
+											<h3>Midday Mix</h3>
+											<div class="host">-- until 13:00</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="day-panel" data-panel="tue">
+								<h2>Tuesday</h2>
+								<div class="schedule-list">
+									<div class="schedule-item" href="ccr946-show.html">
+										<div class="time">09:00</div>
+										<div class="swatch"></div>
+										<div class="info">
+											<h3>Good Morning Show</h3>
+											<div class="host">-- until 11:00</div>
+										</div>
+									</div>
+									<div class="schedule-item" href="ccr946-show.html">
+										<div class="time">11:00</div>
+										<div class="swatch"></div>
+										<div class="info">
+											<h3>Midday Mix</h3>
+											<div class="host">-- until 13:00</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="day-panel" data-panel="wed">
+								<h2>Wednesday</h2>
+								<div class="schedule-list">
+									<div class="schedule-item" href="ccr946-show.html">
+										<div class="time">09:00</div>
+										<div class="swatch"></div>
+										<div class="info">
+											<h3>Good Morning Show</h3>
+											<div class="host">-- until 11:00</div>
+										</div>
+									</div>
+									<div class="schedule-item" href="ccr946-show.html">
+										<div class="time">11:00</div>
+										<div class="swatch"></div>
+										<div class="info">
+											<h3>Midday Mix</h3>
+											<div class="host">-- until 13:00</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="day-panel" data-panel="thu">
+								<h2>Thursday</h2>
+								<div class="schedule-list">
+									<div class="schedule-item" href="ccr946-show.html">
+										<div class="time">09:00</div>
+										<div class="swatch"></div>
+										<div class="info">
+											<h3>Good Morning Show</h3>
+											<div class="host">-- until 11:00</div>
+										</div>
+									</div>
+									<div class="schedule-item" href="ccr946-show.html">
+										<div class="time">11:00</div>
+										<div class="swatch"></div>
+										<div class="info">
+											<h3>Midday Mix</h3>
+											<div class="host">-- until 13:00</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="day-panel" data-panel="fri">
+								<h2>Friday</h2>
+								<div class="schedule-list">
+									<div class="schedule-item" href="ccr946-show.html">
+										<div class="time">09:00</div>
+										<div class="swatch"></div>
+										<div class="info">
+											<h3>Good Morning Show</h3>
+											<div class="host">-- until 11:00</div>
+										</div>
+									</div>
+									<div class="schedule-item" href="ccr946-show.html">
+										<div class="time">11:00</div>
+										<div class="swatch"></div>
+										<div class="info">
+											<h3>Midday Mix</h3>
+											<div class="host">-- until 13:00</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="day-panel" data-panel="sat">
+								<h2>Saturday</h2>
+								<div class="schedule-list">
+									<div class="schedule-item" href="ccr946-show.html">
+										<div class="time">09:00</div>
+										<div class="swatch"></div>
+										<div class="info">
+											<h3>Good Morning Show</h3>
+											<div class="host">-- until 11:00</div>
+										</div>
+									</div>
+									<div class="schedule-item" href="ccr946-show.html">
+										<div class="time">11:00</div>
+										<div class="swatch"></div>
+										<div class="info">
+											<h3>Midday Mix</h3>
+											<div class="host">-- until 13:00</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="day-panel" data-panel="sun">
+								<h2>Sunday</h2>
+								<div class="schedule-list">
+									<div class="schedule-item" href="ccr946-show.html">
+										<div class="time">09:00</div>
+										<div class="swatch"></div>
+										<div class="info">
+											<h3>Good Morning Show</h3>
+											<div class="host">-- until 11:00</div>
+										</div>
+									</div>
+									<div class="schedule-item" href="ccr946-show.html">
+										<div class="time">11:00</div>
+										<div class="swatch"></div>
+										<div class="info">
+											<h3>Midday Mix</h3>
+											<div class="host">-- until 13:00</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<p class="schedule-note">
+								Confirmed slots shown above; the rest of each day is kept open for specials, community programming and
+								new shows. Get in touch on
+								<a href="tel:0873262007">087 326 2007</a> if you'd like to present.
+							</p>
+							<p class="schedule-note">
+								See the full program schedule
+								<a
+									href="https://www.google.com/calendar/embed?title=Schedule%20Claremorris%20Community%20Radio&mode=AGENDA&wkst=1&bgcolor=%23FFFFFF&src=marketing%40claremorriscommunityradio.ie&color=%23182C57&ctz=Europe%2FDublin"
+									target="_blank"
+									>here</a
+								>.
+							</p>
+						</div>
+					</div>
+				</section>
+			</div>
+			<footer class="footer" id="about">
+				<div class="container">
+					<div class="footer__inner">
+						<div class="footer__text">
+							© 2026 Claremorris Community Radio · 94.6 FM · Claremorris, Co. Mayo, Ireland
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
