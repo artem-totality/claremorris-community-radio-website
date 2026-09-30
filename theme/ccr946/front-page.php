@@ -208,39 +208,6 @@
 
 	</section>
 
-	<!-- <section class="block block--alt shows" id="shows">
-		<div class="container">
-			<div class="shows__inner">
-				<div class="block-head">
-					<h2>Our Shows</h2>
-					<a href="#">Full schedule</a>
-				</div>
-				<div class="shows__grid">
-					<div class="show-card">
-						<div class="show-card__swatch">MON–FRI · 09:00</div>
-						<h3>Good Morning Show</h3>
-						<div class="show-card__when">Weekdays, 09:00 — 11:00</div>
-					</div>
-					<div class="show-card">
-						<div class="show-card__swatch">THU · 17:00</div>
-						<h3>Serendipity</h3>
-						<div class="show-card__when">Thursdays at 5pm with Niamh O'Kelly</div>
-					</div>
-					<div class="show-card">
-						<div class="show-card__swatch">SUN · 17:00</div>
-						<h3>Sentimental Journey</h3>
-						<div class="show-card__when">Sundays at 5pm with Niamh O'Kelly</div>
-					</div>
-					<div class="show-card">
-						<div class="show-card__swatch">SPECIAL</div>
-						<h3>EU Debate Report</h3>
-						<div class="show-card__when">Anthony McNicholas, on air 9pm</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> -->
-
 	<section class="block supporters" id="support">
 		<div class="container">
 			<div class="support__inner">

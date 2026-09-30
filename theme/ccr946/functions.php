@@ -19,7 +19,6 @@ function ccr946_setup() {
 
 add_action( 'after_setup_theme', 'ccr946_setup' );
 
-
 function ccr946_assets() {
 
     wp_enqueue_style(
@@ -38,3 +37,70 @@ function ccr946_assets() {
 }
 
 add_action( 'wp_enqueue_scripts', 'ccr946_assets' );
+
+/**
+ * Customizer – Social Links
+ */
+function ccr946_customize_register( $wp_customize ) {
+
+    $wp_customize->add_section(
+        'ccr946_social',
+        array(
+            'title'    => __( 'Social Links', 'ccr946' ),
+            'priority' => 30,
+        )
+    );
+
+    $wp_customize->add_setting(
+        'ccr946_facebook_url',
+        array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+        )
+    );
+
+    $wp_customize->add_control(
+        'ccr946_facebook_url',
+        array(
+            'label'   => __( 'Facebook URL', 'ccr946' ),
+            'section' => 'ccr946_social',
+            'type'    => 'url',
+        )
+    );
+
+    $wp_customize->add_setting(
+        'ccr946_instagram_url',
+        array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+        )
+    );
+
+    $wp_customize->add_control(
+        'ccr946_instagram_url',
+        array(
+            'label'   => __( 'Instagram URL', 'ccr946' ),
+            'section' => 'ccr946_social',
+            'type'    => 'url',
+        )
+    );
+
+    $wp_customize->add_setting(
+        'ccr946_x_url',
+        array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+        )
+    );
+
+    $wp_customize->add_control(
+        'ccr946_x_url',
+        array(
+            'label'   => __( 'X / Twitter URL', 'ccr946' ),
+            'section' => 'ccr946_social',
+            'type'    => 'url',
+        )
+    );
+}
+
+add_action( 'customize_register', 'ccr946_customize_register' );
