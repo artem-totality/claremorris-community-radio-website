@@ -794,6 +794,19 @@ h1 {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   transform: translateY(-3px);
 }
+.show-card__thumb {
+  background: linear-gradient(135deg, #2f7dbb, #1c3d5a);
+  height: 210px;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.show-card__thumb img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 .show-card__swatch {
   width: 100%;
   height: 88px;
@@ -811,7 +824,7 @@ h1 {
   font-size: 16px;
   font-weight: 700;
   color: #1c3d5a;
-  margin: 0 0 4px;
+  margin: 0 0 8px;
 }
 .show-card__when {
   font-size: 13px;
@@ -892,7 +905,6 @@ h1 {
   font-weight: 700;
   font-size: 14px;
   text-align: center;
-  padding: 24px;
 }
 .show-hero__title-block {
   padding-top: 16px;
@@ -1196,8 +1208,8 @@ h1 {
 }
 .shows-section__row .swatch {
   flex: none;
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   border-radius: 8px;
   background: linear-gradient(135deg, #2f7dbb, #1c3d5a);
 }

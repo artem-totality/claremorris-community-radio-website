@@ -98,7 +98,117 @@
 		</div>
 	</section>
 
+	<?php
+	$shows_query = new WP_Query(
+		[
+			'post_type'      => 'show',
+			'posts_per_page' => 4,
+			'post_status'    => 'publish',
+			'orderby'        => 'rand',
+		]
+	);
+	?>
+
 	<section class="block block--alt shows" id="shows">
+
+		<div class="container">
+
+			<div class="shows__inner">
+
+				<div class="block-head">
+					<h2>Our Shows</h2>
+					<a href="<?php echo esc_url( get_post_type_archive_link( 'show' ) ); ?>">
+						Full schedule
+					</a>
+				</div>
+
+				<div class="shows__grid">
+
+					<?php if ( $shows_query->have_posts() ) : ?>
+
+						<?php while ( $shows_query->have_posts() ) : $shows_query->the_post(); ?>
+
+							<?php
+							$show_id   = get_the_ID();
+							$host_name = get_field( 'host_name', $show_id );
+							$days      = get_field( 'on_air_day', $show_id );
+							$start     = get_field( 'on_air_start', $show_id );
+							$end       = get_field( 'on_air_end', $show_id );
+
+							if ( ! is_array( $days ) ) {
+								$days = $days ? [ $days ] : [];
+							}
+
+							$day_labels = [];
+
+							foreach ( $days as $day ) {
+								$day_labels[] = strtoupper( substr( $day, 0, 3 ) );
+							}
+
+							$day_text = implode( '–', $day_labels );
+
+							$start_time = $start
+								? date( 'H:i', strtotime( $start ) )
+								: '';
+
+							$end_time = $end
+								? date( 'H:i', strtotime( $end ) )
+								: '';
+							?>
+
+							<a class="show-card" href="<?php the_permalink(); ?>">
+								<div class="show-card__thumb">
+									<?php if ( has_post_thumbnail() ) : ?>
+										<?php the_post_thumbnail('medium'); ?>
+									<?php endif; ?>
+								</div>
+								<div class="show-card__swatch">
+										<?php
+										echo esc_html(
+											$day_text . ( $start_time ? ' · ' . $start_time : '' )
+										);
+										?>
+								</div>
+
+								<h3><?php the_title(); ?></h3>
+
+								<div class="show-card__when">
+
+									<?php if ( $days ) : ?>
+										<?php echo esc_html( implode( ', ', $days ) ); ?>
+									<?php endif; ?>
+
+									<?php if ( $start_time ) : ?>
+										<?php echo esc_html( $start_time ); ?>
+									<?php endif; ?>
+
+									<?php if ( $end_time ) : ?>
+										— <?php echo esc_html( $end_time ); ?>
+									<?php endif; ?>
+
+									<?php if ( $host_name ) : ?>
+										with <?php echo esc_html( $host_name ); ?>
+									<?php endif; ?>
+
+								</div>
+
+							</a>
+
+						<?php endwhile; ?>
+
+						<?php wp_reset_postdata(); ?>
+
+					<?php endif; ?>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+	<!-- <section class="block block--alt shows" id="shows">
 		<div class="container">
 			<div class="shows__inner">
 				<div class="block-head">
@@ -129,7 +239,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 	<section class="block supporters" id="support">
 		<div class="container">

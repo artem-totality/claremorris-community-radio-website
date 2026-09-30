@@ -25,7 +25,7 @@
 
     <section class="shows-section">
 
-        <div class="container">
+        <div class="container container--narrow">
 
             <div class="shows-section__inner">
 

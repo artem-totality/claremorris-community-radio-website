@@ -414,6 +414,18 @@
 		box-shadow: vars.$shadow-elevated;
 		transform: translateY(-3px);
 	}
+	&__thumb {
+		background: linear-gradient(135deg, vars.$accent, vars.$primary);
+		height: 210px;
+		margin-bottom: vars.$sp-3;
+		border-radius: vars.$r-sm;
+		overflow: hidden;
+		img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+	}
 	&__swatch {
 		width: 100%;
 		height: 88px;
@@ -431,7 +443,7 @@
 		font-size: 16px;
 		font-weight: 700;
 		color: vars.$primary;
-		margin: 0 0 4px;
+		margin: 0 0 vars.$sp-1;
 	}
 	&__when {
 		font-size: 13px;
@@ -521,7 +533,7 @@
 		font-weight: 700;
 		font-size: 14px;
 		text-align: center;
-		padding: vars.$sp-3;
+		// padding: vars.$sp-1;
 	}
 	&__title-block {
 		padding-top: vars.$sp-2;
@@ -832,8 +844,8 @@
 		}
 		.swatch {
 			flex: none;
-			width: 56px;
-			height: 56px;
+			width: 64px;
+			height: 64px;
 			border-radius: vars.$r-sm;
 			background: linear-gradient(135deg, vars.$accent, vars.$primary);
 			img {

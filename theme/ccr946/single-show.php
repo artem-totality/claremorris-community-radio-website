@@ -151,7 +151,7 @@
 
                             <a
                                 class="sidebar-card__contact-number"
-                                href="sms:0873262007"
+                                href="tel:0873262007"
                             >
                                 <span class="sidebar-card__sms-icon"></span>
                                 087 326 2007
