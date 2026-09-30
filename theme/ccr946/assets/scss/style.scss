@@ -95,12 +95,11 @@
 
 .nav {
 	&__list {
-		ul {
-			display: flex;
-			gap: vars.$sp-4;
-			font-size: 14px;
-			font-weight: 500;
-		}
+		display: flex;
+		gap: vars.$sp-4;
+		font-size: 14px;
+		font-weight: 500;
+
 		a {
 			color: vars.$text-muted;
 			transition: color vars.$transition-speed vars.$ease;
@@ -499,7 +498,7 @@
 
 .show-hero {
 	&__inner {
-		padding: vars.$sp-4 0 vars.$sp-6;
+		padding: vars.$sp-4 0 vars.$sp-5;
 		display: grid;
 		grid-template-columns: 280px 1fr;
 		gap: vars.$sp-5;
@@ -576,7 +575,7 @@
 
 .show-body {
 	&__inner {
-		padding: vars.$sp-6 0;
+		padding: vars.$sp-5 0;
 		display: grid;
 		grid-template-columns: 2fr 1fr;
 		gap: vars.$sp-5;

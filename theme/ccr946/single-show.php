@@ -1,98 +1,79 @@
 <?php get_header(); ?>
 
-<main class="site-main content">
+<?php if ( have_posts() ) : ?>
+    <?php while ( have_posts() ) : the_post(); ?>
 
-    <div class="breadcrumb">
-        <div class="container">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
-            /
-            <a href="<?php echo esc_url( home_url( '/#shows' ) ); ?>">Shows</a>
-            /
-            Serendipity
-        </div>
-    </div>
+        <main class="site-main content">
 
-    <section class="show-hero">
-
-        <div class="container">
-
-            <div class="show-hero__inner">
-
-                <img
-                    class="show-hero__cover"
-                    src="..."
-                    alt="Serendipity show cover artwork"
-                    role="img"
-                />
-
-                <div class="show-hero__title-block">
-
-                    <span class="show-hero__eyebrow">
-                        Music &amp; Talk
-                    </span>
-
-                    <h1>Serendipity</h1>
-
-                    <div class="show-hero__meta">
-
-                        <div class="meta-card">
-                            <div class="label">On Air</div>
-                            <div class="value">Thursdays, 17:00</div>
-                            <div class="sub">5:00pm — 6:00pm</div>
-                        </div>
-
-                        <div class="meta-card">
-                            <div class="label">Host</div>
-                            <div class="value">Niamh O'Kelly</div>
-                            <div class="sub">Presenter</div>
-                        </div>
-
-                    </div>
-
+            <div class="breadcrumb">
+                <div class="container">
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+                    /
+                    <a href="<?php echo esc_url( home_url( '/#shows' ) ); ?>">Shows</a>
+                    /
+                    Serendipity
                 </div>
-
             </div>
 
-        </div>
+            <section class="show-hero">
 
-    </section>
+                <div class="container">
 
-    <section class="show-body">
+                    <div class="show-hero__inner">
 
-        <div class="container">
+                        <?php if ( has_post_thumbnail() ) : ?>
+                            <?php the_post_thumbnail(
+                                'large',
+                                [
+                                    'class' => 'show-hero__cover',
+                                    'alt'   => get_the_title() . ' show cover artwork',
+                                ]
+                            ); ?>
+                        <?php endif; ?>
 
-            <div class="show-body__inner">
+                        <div class="show-hero__title-block">
 
-                <div class="show-body__main">
+                            <span class="show-hero__eyebrow">
+                                <?php the_field( 'genre' ); ?>
+                            </span>
 
-                    <div class="show-body__section">
+                            <h1><?php the_title(); ?></h1>
 
-                        <h2>About</h2>
+                            <div class="show-hero__meta">
 
-                        <p>
-                            Serendipity is a relaxed hour of music, chat and
-                            unexpected discoveries, hosted by Niamh O'Kelly
-                            every Thursday evening.
-                        </p>
+                                <div class="meta-card">
+                                    <div class="label">On Air</div>
+                                    <div class="value">
+                                        <?php
+                                        $days = get_field( 'on_air_day' );
 
-                    </div>
+                                        if ( $days ) {
+                                            $day_names = array_map(
+                                                function ( $day ) {
+                                                    return $day . 's';
+                                                },
+                                                $days
+                                            );
 
-                    <div class="show-body__section">
-
-                        <h2>Host</h2>
-
-                        <div class="host-card">
-
-                            <div class="host-card__avatar">NO</div>
-
-                            <div>
-                                <div class="host-card__name">
-                                    Niamh O'Kelly
+                                            echo esc_html( implode( ', ', $day_names ) );
+                                        }
+                                        ?>, <?php the_field( 'on_air_start' ); ?>
+                                    </div>
+                                    <div class="sub"><?php
+                                            $start = get_field( 'on_air_start' );
+                                            echo date( 'g:ia', strtotime( $start ) );
+                                            ?> — <?php
+                                            $start = get_field( 'on_air_end' );
+                                            echo date( 'g:ia', strtotime( $start ) );
+                                            ?></div>
                                 </div>
 
-                                <div class="host-card__role">
-                                    Presenter, Serendipity
+                                <div class="meta-card">
+                                    <div class="label">Host</div>
+                                    <div class="value"><?php the_field( 'host_name' ); ?></div>
+                                    <div class="sub"><?php the_field( 'host_role' ); ?></div>
                                 </div>
+
                             </div>
 
                         </div>
@@ -101,31 +82,88 @@
 
                 </div>
 
-                <aside class="sidebar-card">
+            </section>
 
-                    <h2>Contact the show</h2>
+            <section class="show-body">
 
-                    <p>
-                        You can contact the radio station's via text on
-                        087 326 2007.
-                    </p>
+                <div class="container">
 
-                    <a
-                        class="sidebar-card__contact-number"
-                        href="sms:0873262007"
-                    >
-                        <span class="sidebar-card__sms-icon"></span>
-                        087 326 2007
-                    </a>
+                    <div class="show-body__inner">
 
-                </aside>
+                        <div class="show-body__main">
 
-            </div>
+                            <div class="show-body__section">
 
-        </div>
+                                <h2>About</h2>
 
-    </section>
+                                <?php the_content(); ?>
 
-</main>
+                            </div>
+
+                            <div class="show-body__section">
+
+                                <h2>Host</h2>
+
+                                <div class="host-card">
+
+                                    <div class="host-card__avatar">
+                                        <?php
+                                        $host_avatar = get_field( 'host_avatar' );
+
+                                        if ( $host_avatar ) :
+                                        ?>
+                                            <img
+                                                class="host-card__avatar"
+                                                src="<?php echo esc_url( $host_avatar ); ?>"
+                                                alt="<?php echo esc_attr( get_field( 'host_name' ) ); ?>"
+                                            >
+                                        <?php endif; ?>
+                                    </div>
+
+                                    <div>
+                                        <div class="host-card__name">
+                                            <?php the_field( 'host_name' ); ?>
+                                        </div>
+
+                                        <div class="host-card__role">
+                                            <?php the_field( 'host_role' ); ?>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="sidebar-card">
+
+                            <h2>Contact the show</h2>
+
+                            <p>
+                                You can contact the radio station's via text on
+                                087 326 2007.
+                            </p>
+
+                            <a
+                                class="sidebar-card__contact-number"
+                                href="sms:0873262007"
+                            >
+                                <span class="sidebar-card__sms-icon"></span>
+                                087 326 2007
+                            </a>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    <?php endwhile; ?>
+<?php endif; ?>
 
 <?php get_footer(); ?>
