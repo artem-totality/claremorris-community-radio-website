@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-	const SILENCE = '‾\\_no_signal___';
+	const SILENCE = '‾‾\\_no_signal___';
 	const player = document.getElementById('player');
 
 	if (!player) {

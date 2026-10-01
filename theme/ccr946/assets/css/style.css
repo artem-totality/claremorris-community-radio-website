@@ -495,7 +495,7 @@ h1 {
 
 .nav__list {
   display: flex;
-  gap: 32px;
+  gap: 24px;
   font-size: 14px;
   font-weight: 500;
 }
@@ -1567,4 +1567,266 @@ h1 {
 .schedule-note a {
   color: #2f7dbb;
   font-weight: 600;
+}
+
+/* ---------- Contact ---------- */
+.contact {
+  padding: 64px 0;
+}
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Studio / address card */
+.studio__card {
+  background: #1c3d5a;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+.studio__map {
+  height: 160px;
+  position: relative;
+  background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.14), transparent 60%), repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0 2px, transparent 2px 18px), linear-gradient(135deg, #2f7dbb, #1c3d5a);
+}
+.studio__map .pin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50% 50% 50% 0;
+  background: #ffffff;
+  transform-origin: center;
+  display: flex;
+}
+.studio__map .pin::after {
+  content: "";
+  width: 34px;
+  height: 34px;
+  transform: rotate(45deg);
+  display: block;
+}
+.studio__map svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -78%) rotate(45deg);
+  width: 16px;
+  height: 16px;
+  color: #1c3d5a;
+}
+.studio__body {
+  padding: 32px;
+}
+.studio__body .label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #9fc4e3;
+  margin-bottom: 8px;
+}
+.studio__body address {
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.55;
+  font-weight: 600;
+  margin: 0 0 24px;
+}
+.studio__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.studio__actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 10px 14px;
+  border-radius: 9999px;
+  transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.studio__actions a:hover {
+  background: #ffffff;
+  color: #1c3d5a;
+  transform: translateY(-1px);
+}
+.studio__actions a svg {
+  width: 14px;
+  height: 14px;
+}
+
+.direct-lines {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.direct-line {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #ffffff;
+  border: 1px solid #e6e9ee;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.direct-line:hover, .direct-line:focus-visible {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border-color: #2f7dbb;
+}
+.direct-line .icon {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #eaf2f9;
+  color: #2f7dbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.direct-line .icon svg {
+  width: 18px;
+  height: 18px;
+}
+.direct-line .info .label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #5b7690;
+  margin-bottom: 2px;
+}
+.direct-line .info .value {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1c3d5a;
+}
+
+/* Who to contact */
+.who__heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #5b7690;
+  margin: 0 0 24px;
+}
+
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  background: #ffffff;
+  border: 1px solid #e6e9ee;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.contact-card:hover, .contact-card:focus-visible {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border-color: #2f7dbb;
+}
+.contact-card .icon {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: #eaf2f9;
+  color: #2f7dbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-card .icon svg {
+  width: 20px;
+  height: 20px;
+}
+.contact-card .body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.contact-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1c3d5a;
+  margin: 0 0 2px;
+}
+.contact-card p {
+  font-size: 13px;
+  color: #5b7690;
+  margin: 0 0 8px;
+}
+.contact-card .email {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2f7dbb;
+}
+.contact-card .chevron {
+  flex: none;
+  color: #2f7dbb;
+  font-size: 18px;
+  align-self: center;
+}
+
+.textline-banner {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #eaf2f9;
+  border: 1px solid #e6e9ee;
+  border-radius: 16px;
+  padding: 24px 32px;
+}
+.textline-banner .icon {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #2f7dbb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.textline-banner .icon svg {
+  width: 20px;
+  height: 20px;
+}
+.textline-banner .body h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1c3d5a;
+  margin: 0 0 2px;
+}
+.textline-banner .body p {
+  font-size: 13px;
+  color: #5b7690;
+  margin: 0;
+}
+.textline-banner .body a {
+  color: #2f7dbb;
+  font-weight: 700;
 }

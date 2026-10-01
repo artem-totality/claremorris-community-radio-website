@@ -96,7 +96,7 @@
 .nav {
 	&__list {
 		display: flex;
-		gap: vars.$sp-4;
+		gap: vars.$sp-3;
 		font-size: 14px;
 		font-weight: 500;
 
@@ -1216,5 +1216,287 @@
 	a {
 		color: vars.$accent;
 		font-weight: 600;
+	}
+}
+
+/* ---------- Contact ---------- */
+.contact {
+	padding: vars.$sp-6 0;
+	&__inner {
+		display: grid;
+		grid-template-columns: 1fr 1.2fr;
+		gap: vars.$sp-5;
+		align-items: start;
+	}
+}
+
+/* Studio / address card */
+.studio {
+	&__card {
+		background: vars.$primary;
+		border-radius: vars.$r-md;
+		overflow: hidden;
+		box-shadow: vars.$shadow-elevated;
+		color: vars.$on-primary;
+	}
+	&__map {
+		height: 160px;
+		position: relative;
+		background:
+			radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.14), transparent 60%),
+			repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0 2px, transparent 2px 18px),
+			linear-gradient(135deg, vars.$accent, vars.$primary);
+		.pin {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -60%);
+			width: 34px;
+			height: 34px;
+			border-radius: 50% 50% 50% 0;
+			background: vars.$on-primary;
+			transform-origin: center;
+			display: flex;
+			&::after {
+				content: '';
+				width: 34px;
+				height: 34px;
+				transform: rotate(45deg);
+				display: block;
+			}
+		}
+		svg {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -78%) rotate(45deg);
+			width: 16px;
+			height: 16px;
+			color: vars.$primary;
+		}
+	}
+	&__body {
+		padding: vars.$sp-4;
+		.label {
+			font-size: 12px;
+			font-weight: 700;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+			color: #9fc4e3;
+			margin-bottom: 8px;
+		}
+		address {
+			font-style: normal;
+			font-size: 16px;
+			line-height: 1.55;
+			font-weight: 600;
+			margin: 0 0 vars.$sp-3;
+		}
+	}
+	&__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		a {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			font-size: 13px;
+			font-weight: 700;
+			background: rgba(255, 255, 255, 0.12);
+			padding: 10px 14px;
+			border-radius: vars.$r-pill;
+			transition:
+				background vars.$transition-speed vars.$ease,
+				transform vars.$transition-speed vars.$ease;
+			&:hover {
+				background: vars.$on-primary;
+				color: vars.$primary;
+				transform: translateY(-1px);
+			}
+			svg {
+				width: 14px;
+				height: 14px;
+			}
+		}
+	}
+}
+
+.direct-lines {
+	margin-top: vars.$sp-4;
+	display: flex;
+	flex-direction: column;
+	gap: vars.$sp-2;
+}
+.direct-line {
+	display: flex;
+	align-items: center;
+	gap: vars.$sp-3;
+	background: vars.$background;
+	border: 1px solid vars.$border;
+	border-radius: vars.$r-md;
+	padding: vars.$sp-3;
+	box-shadow: vars.$shadow-card;
+	transition:
+		box-shadow vars.$transition-speed vars.$ease,
+		transform vars.$transition-speed vars.$ease,
+		border-color vars.$transition-speed vars.$ease;
+	&:hover,
+	&:focus-visible {
+		box-shadow: vars.$shadow-elevated;
+		transform: translateY(-2px);
+		border-color: vars.$accent;
+	}
+	.icon {
+		flex: none;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background: vars.$accent-soft;
+		color: vars.$accent;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		svg {
+			width: 18px;
+			height: 18px;
+		}
+	}
+	.info {
+		.label {
+			font-size: 12px;
+			font-weight: 700;
+			color: vars.$text-muted;
+			margin-bottom: 2px;
+		}
+		.value {
+			font-size: 15px;
+			font-weight: 700;
+			color: vars.$primary;
+		}
+	}
+}
+
+/* Who to contact */
+.who {
+	&__heading {
+		font-size: 14px;
+		font-weight: 700;
+		color: vars.$text-muted;
+		margin: 0 0 vars.$sp-3;
+	}
+}
+
+.contact-cards {
+	display: flex;
+	flex-direction: column;
+	gap: vars.$sp-2;
+}
+
+.contact-card {
+	display: flex;
+	align-items: flex-start;
+	gap: vars.$sp-3;
+	background: vars.$background;
+	border: 1px solid vars.$border;
+	border-radius: vars.$r-md;
+	padding: vars.$sp-3;
+	box-shadow: vars.$shadow-card;
+	transition:
+		box-shadow vars.$transition-speed vars.$ease,
+		transform vars.$transition-speed vars.$ease,
+		border-color vars.$transition-speed vars.$ease;
+	&:hover,
+	&:focus-visible {
+		box-shadow: vars.$shadow-elevated;
+		transform: translateY(-2px);
+		border-color: vars.$accent;
+	}
+	.icon {
+		flex: none;
+		width: 44px;
+		height: 44px;
+		border-radius: vars.$r-sm;
+		background: vars.$accent-soft;
+		color: vars.$accent;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+	.body {
+		flex: 1 1 auto;
+		min-width: 0;
+	}
+	h3 {
+		font-size: 16px;
+		font-weight: 700;
+		color: vars.$primary;
+		margin: 0 0 2px;
+	}
+	p {
+		font-size: 13px;
+		color: vars.$text-muted;
+		margin: 0 0 8px;
+	}
+	.email {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		font-size: 14px;
+		font-weight: 700;
+		color: vars.$accent;
+	}
+	.chevron {
+		flex: none;
+		color: vars.$accent;
+		font-size: 18px;
+		align-self: center;
+	}
+}
+
+.textline-banner {
+	margin-top: vars.$sp-4;
+	display: flex;
+	align-items: center;
+	gap: vars.$sp-3;
+	background: vars.$accent-soft;
+	border: 1px solid vars.$border;
+	border-radius: vars.$r-md;
+	padding: vars.$sp-3 vars.$sp-4;
+	.icon {
+		flex: none;
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		background: vars.$accent;
+		color: vars.$on-primary;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+	.body {
+		h3 {
+			font-size: 15px;
+			font-weight: 700;
+			color: vars.$primary;
+			margin: 0 0 2px;
+		}
+		p {
+			font-size: 13px;
+			color: vars.$text-muted;
+			margin: 0;
+		}
+		a {
+			color: vars.$accent;
+			font-weight: 700;
+		}
 	}
 }
