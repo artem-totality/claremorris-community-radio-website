@@ -42,6 +42,14 @@ function ccr946_assets() {
         '1.0',
         true
     );
+
+    wp_enqueue_script(
+        'ccr946-onair',
+        get_template_directory_uri() . '/assets/js/onair.js',
+        array(),
+        '1.0',
+        true
+    );
 }
 
 add_action( 'wp_enqueue_scripts', 'ccr946_assets' );

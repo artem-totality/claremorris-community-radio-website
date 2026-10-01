@@ -19,7 +19,25 @@
 				<div class="now-playing">
 					<div class="now-playing__label">Now Playing</div>
 					<hr />
-					<div class="now-playing__track"><span class="now-playing__artist">The Saw Doctors —</span> N17</div>
+					<div class="now-playing__track"><span class="now-playing__artist" id="hero-track"></span> </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="onair">
+		<div class="container">
+			<div class="onair__inner">
+				<div class="onair__col">
+					<div class="tag">On Air Now</div>
+					<div class="time" id="onair-time">09:00 — 11:00</div>
+					<div class="show" id="onair-track">Good Morning Show</div>
+				</div>
+				<div class="onair__divider"></div>
+				<div class="onair__col">
+					<div class="tag">Next</div>
+					<div class="time" id="next-time">11:00</div>
+					<div class="show" id="next-track">Midday Mix</div>
 				</div>
 			</div>
 		</div>

@@ -590,10 +590,6 @@ h1 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.player__meta .track .artist {
-  color: #cfe1ee;
-  font-weight: 500;
-}
 .player__volume {
   display: flex;
   align-items: center;

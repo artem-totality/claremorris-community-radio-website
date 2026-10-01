@@ -143,7 +143,51 @@
 
             </div>
 
-            <div class="player">
+            <?php
+
+            global $wpdb;
+
+            $table_name = $wpdb->prefix . 'schedule';
+
+            $today = current_time( 'Y-m-d' );
+            $now   = current_time( 'H:i:s' );
+
+            $events = $wpdb->get_results(
+                $wpdb->prepare(
+                    "
+                    SELECT
+                        start_time,
+                        end_time,
+                        title
+                    FROM {$table_name}
+                    WHERE event_date = %s
+                    ORDER BY start_time ASC
+                    ",
+                    $today
+                )
+            );
+
+            $current_event = null;
+
+            foreach ( $events as $event ) {
+
+                if (
+                    $event->start_time <= $now &&
+                    $now < $event->end_time
+                ) {
+                    $current_event = $event;
+                    break;
+                }
+            }
+
+            ?>
+
+            <div
+                class="player"
+                id="player"
+                data-events='<?php echo esc_attr( wp_json_encode( $events ) ); ?>'
+                data-current='<?php echo esc_attr( wp_json_encode( $current_event ) ); ?>'
+            >
 
                 <div class="container">
 
@@ -170,9 +214,14 @@
                                 LIVE · 94.6 FM
                             </div>
 
-                            <div class="track">
-                                <span class="artist">The Saw Doctors —</span>
-                                N17
+                            <div class="track" id="player-track">
+
+                                <?php if ( $current_event ) : ?>
+
+                                    <?php echo esc_html( $current_event->title ); ?>
+
+                                <?php endif; ?>
+
                             </div>
 
                         </div>
