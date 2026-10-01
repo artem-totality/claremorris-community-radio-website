@@ -34,6 +34,14 @@ function ccr946_assets() {
         array( 'ccr946-inter' ),
         '1.0'
     );
+
+    wp_enqueue_script(
+        'ccr946-schedule',
+        get_template_directory_uri() . '/assets/js/schedule.js',
+        array(),
+        '1.0',
+        true
+    );
 }
 
 add_action( 'wp_enqueue_scripts', 'ccr946_assets' );

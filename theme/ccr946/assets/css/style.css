@@ -1411,8 +1411,8 @@ h1 {
   border: 1px solid #e6e9ee;
   border-radius: 8px;
   background: #ffffff;
-  color: #5b7690;
-  font-size: 13px;
+  color: #2f7dbb;
+  font-size: 15px;
   font-weight: 700;
   cursor: pointer;
   transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1422,9 +1422,9 @@ h1 {
   color: #1c3d5a;
 }
 .day-tabs__tab .full {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
-  opacity: 0.75;
+  color: #5b7690;
 }
 .day-tabs__tab .today-dot {
   width: 5px;
@@ -1500,7 +1500,7 @@ h1 {
   width: 76px;
   font-size: 14px;
   font-weight: 700;
-  color: #2f7dbb;
+  color: #1c3d5a;
 }
 .schedule-item .swatch {
   flex: none;
@@ -1516,7 +1516,7 @@ h1 {
 .schedule-item .info h3 {
   font-size: 15px;
   font-weight: 700;
-  color: #1c3d5a;
+  color: #2f7dbb;
   margin: 0 0 2px;
 }
 .schedule-item .info .host {

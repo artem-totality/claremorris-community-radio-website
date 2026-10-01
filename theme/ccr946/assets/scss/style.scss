@@ -1051,8 +1051,8 @@
 		border: 1px solid vars.$border;
 		border-radius: vars.$r-sm;
 		background: vars.$background;
-		color: vars.$text-muted;
-		font-size: 13px;
+		color: vars.$accent;
+		font-size: 15px;
 		font-weight: 700;
 		cursor: pointer;
 		transition:
@@ -1064,9 +1064,10 @@
 			color: vars.$primary;
 		}
 		.full {
-			font-size: 11px;
+			font-size: 12px;
 			font-weight: 500;
-			opacity: 0.75;
+
+			color: vars.$text-muted;
 		}
 		.today-dot {
 			width: 5px;
@@ -1147,7 +1148,7 @@
 		width: 76px;
 		font-size: 14px;
 		font-weight: 700;
-		color: vars.$accent;
+		color: vars.$primary;
 	}
 	.swatch {
 		flex: none;
@@ -1162,7 +1163,7 @@
 		h3 {
 			font-size: 15px;
 			font-weight: 700;
-			color: vars.$primary;
+			color: vars.$accent;
 			margin: 0 0 2px;
 		}
 		.host {
