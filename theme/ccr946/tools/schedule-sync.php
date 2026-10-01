@@ -41,13 +41,6 @@ $timezone = new DateTimeZone('Europe/Dublin');
  * Current week:
  * Today 00:00 → next Today  00:00 + 7 days
  */
-// $now = new DateTimeImmutable('now', $timezone);
-
-// $week_start = $now->modify('monday this week')->setTime(0, 0, 0);
-// $week_end   = $week_start->modify('+7 days');
-
-// $time_min = $week_start->format(DateTimeInterface::ATOM);
-// $time_max = $week_end->format(DateTimeInterface::ATOM);
 $now = new DateTimeImmutable('now', $timezone);
 
 $week_start = $now->setTime(0, 0, 0);

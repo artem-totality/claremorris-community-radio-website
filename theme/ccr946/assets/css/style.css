@@ -1439,7 +1439,7 @@ h1 {
   color: #ffffff;
 }
 .day-tabs__tab--active .full {
-  opacity: 0.85;
+  color: #e6e9ee;
 }
 .day-tabs__tab--active .today-dot {
   background: #ffffff;

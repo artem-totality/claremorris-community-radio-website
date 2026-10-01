@@ -1066,7 +1066,6 @@
 		.full {
 			font-size: 12px;
 			font-weight: 500;
-
 			color: vars.$text-muted;
 		}
 		.today-dot {
@@ -1081,7 +1080,7 @@
 			border-color: vars.$primary;
 			color: vars.$on-primary;
 			.full {
-				opacity: 0.85;
+				color: vars.$border;
 			}
 			.today-dot {
 				background: vars.$on-primary;
