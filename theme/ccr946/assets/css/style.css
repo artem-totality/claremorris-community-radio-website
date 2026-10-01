@@ -724,6 +724,36 @@ h1 {
   font-weight: 500;
 }
 
+.onair {
+  background: #1c3d5a;
+  color: #ffffff;
+}
+.onair__inner {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 32px;
+  padding: 32px 0;
+}
+.onair__divider {
+  background: rgba(255, 255, 255, 0.18);
+}
+.onair__col .tag {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #9fc4e3;
+  margin-bottom: 8px;
+}
+.onair__col .time {
+  font-size: 14px;
+  color: #cfe1ee;
+  margin-bottom: 2px;
+}
+.onair__col .show {
+  font-size: 20px;
+  font-weight: 700;
+}
+
 .news__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

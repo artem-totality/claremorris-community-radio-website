@@ -337,6 +337,38 @@
 	}
 }
 
+.onair {
+	background: vars.$primary;
+	color: vars.$on-primary;
+	&__inner {
+		display: grid;
+		grid-template-columns: 1fr 1px 1fr;
+		gap: vars.$sp-4;
+		padding: vars.$sp-4 0;
+	}
+	&__divider {
+		background: rgba(255, 255, 255, 0.18);
+	}
+	&__col {
+		.tag {
+			font-size: 12px;
+			font-weight: 700;
+			letter-spacing: 0.02em;
+			color: #9fc4e3;
+			margin-bottom: vars.$sp-1;
+		}
+		.time {
+			font-size: 14px;
+			color: #cfe1ee;
+			margin-bottom: 2px;
+		}
+		.show {
+			font-size: 20px;
+			font-weight: 700;
+		}
+	}
+}
+
 .news {
 	&__grid {
 		display: grid;
