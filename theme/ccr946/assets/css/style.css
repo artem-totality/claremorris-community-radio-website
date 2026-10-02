@@ -598,7 +598,6 @@ h1 {
 }
 .player__volume input[type=range] {
   width: 90px;
-  accent-color: var(--on-primary);
 }
 .player .player-vol-icon {
   color: #cfe1ee;
@@ -751,6 +750,58 @@ h1 {
 .onair__col .show {
   font-size: 20px;
   font-weight: 700;
+}
+
+/* ---------- CTA row ---------- */
+.cta {
+  padding: 64px 0;
+  text-align: center;
+}
+.cta h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1c3d5a;
+  margin: 0 0 16px;
+}
+.cta p {
+  font-size: 15px;
+  color: #5b7690;
+  margin: 0 0 32px;
+}
+.cta__row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 26px;
+  border-radius: 9999px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cta__btn.primary {
+  background: #1c3d5a;
+  color: #ffffff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+.cta__btn.primary:hover {
+  background: #2f7dbb;
+  transform: translateY(-2px);
+}
+.cta__btn.secondary {
+  background: #ffffff;
+  color: #1c3d5a;
+  border: 1px solid #e6e9ee;
+}
+.cta__btn.secondary:hover {
+  border-color: #2f7dbb;
+  color: #2f7dbb;
+  transform: translateY(-2px);
 }
 
 .news__grid {
