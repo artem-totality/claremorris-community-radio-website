@@ -58,6 +58,14 @@ function ccr946_assets() {
         filemtime( get_template_directory() . '/assets/js/player.js' ),
         true
     );
+
+    wp_enqueue_script(
+        'ccr946-navigation',
+        get_template_directory_uri() . '/assets/js/navigation.js',
+        array(),
+        filemtime( get_template_directory() . '/assets/js/navigation.js' ),
+        true
+    );
 }
 
 add_action( 'wp_enqueue_scripts', 'ccr946_assets' );

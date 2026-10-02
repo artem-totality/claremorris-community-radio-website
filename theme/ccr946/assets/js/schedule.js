@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initSchedule() {
 	const tabs = document.querySelectorAll('.day-tabs__tab');
 	const panels = document.querySelectorAll('.day-panel');
 
@@ -29,4 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	});
-});
+}
+
+document.addEventListener('DOMContentLoaded', initSchedule);
+document.addEventListener('ccr:page-loaded', initSchedule);

@@ -1,4 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
+let scheduleInterval = null;
+
+function initOnair() {
 	const SILENCE = '‾‾\\_no_signal___';
 	const player = document.getElementById('player');
 
@@ -156,6 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		 */
 	}
 
+	if (scheduleInterval !== null) {
+		clearInterval(scheduleInterval);
+	}
+
 	/*
 	 * Initial update
 	 */
@@ -167,4 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	 */
 
 	setInterval(updateSchedule, 30000);
-});
+}
+
+document.addEventListener('DOMContentLoaded', initOnair);
+document.addEventListener('ccr:page-loaded', initOnair);
