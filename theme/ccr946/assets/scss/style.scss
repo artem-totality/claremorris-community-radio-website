@@ -301,6 +301,11 @@
 		border-bottom: 7px solid transparent;
 		border-left: 11px solid vars.$on-primary;
 	}
+	&.playing {
+		.listen-live__play {
+			display: none;
+		}
+	}
 }
 
 .now-playing {

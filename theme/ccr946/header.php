@@ -235,16 +235,15 @@
                                 id="volumeSlider"
                                 min="0"
                                 max="100"
-                                value="80"
+                                value="100"
                                 aria-label="Volume"
                             >
 
                         </div>
 
-                        <!-- Replace the src below with CCR's real stream URL -->
                         <audio id="radioStream" preload="none">
                             <source
-                                src="https://stream.example.com/ccr946.mp3"
+                                src="https://s2.radio.co/sddd96b52a/listen"
                                 type="audio/mpeg"
                             >
                         </audio>

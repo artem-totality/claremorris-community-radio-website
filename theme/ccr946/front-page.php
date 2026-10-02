@@ -12,7 +12,7 @@
 				</h1>
 				<button class="listen-live">
 					<span class="listen-live__play"></span>
-					Listen Live
+					<span class="label">Listen Live</span>
 					<span class="listen-live__dot"></span>
 				</button>
 

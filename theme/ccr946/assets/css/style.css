@@ -689,6 +689,9 @@ h1 {
   border-bottom: 7px solid transparent;
   border-left: 11px solid #ffffff;
 }
+.listen-live.playing .listen-live__play {
+  display: none;
+}
 
 .now-playing {
   margin: 48px auto 0;
