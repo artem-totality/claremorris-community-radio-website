@@ -43,6 +43,19 @@
 		</div>
 	</section>
 
+	<section class="block block--alt cta">
+		<div class="container">
+			<div class="cta__inner">
+				<h2>Want to know what's coming up?</h2>
+				<p>See the full line-up for the week, or browse every show on the station.</p>
+				<div class="cta__row">
+					<a class="cta__btn primary" href="<?php echo esc_url( home_url( '/schedule/' ) ); ?>">View Schedule</a>
+					<a class="cta__btn secondary" href="<?php echo esc_url( get_post_type_archive_link( 'show' ) ); ?>">Browse Shows</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<section class="block news" id="news">
 		<div class="container">
 			<div class="block__inner">
