@@ -1505,3 +1505,245 @@
 		}
 	}
 }
+
+/* ---------- 404 hero ---------- */
+.notfound {
+	position: relative;
+	padding: vars.$sp-6 0 vars.$sp-6;
+	text-align: center;
+	overflow: hidden;
+	background: vars.$background;
+	/* subtle static/noise texture */
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image: radial-gradient(rgba(28, 61, 90, 0.05) 1px, transparent 1px);
+		background-size: 3px 3px;
+		opacity: 0.5;
+		pointer-events: none;
+	}
+	&__inner {
+		position: relative;
+	}
+	h1 {
+		font-size: 60px;
+		line-height: 1;
+		font-weight: 800;
+		letter-spacing: -0.02em;
+		color: vars.$primary;
+		margin: 0 0 vars.$sp-3;
+	}
+	&__lead {
+		font-size: 17px;
+		color: vars.$text-muted;
+		max-width: 480px;
+		margin: 0 auto vars.$sp-5;
+		line-height: 1.6;
+		strong {
+			color: vars.$primary;
+		}
+	}
+	&__actions {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 12px;
+		margin-bottom: vars.$sp-6;
+	}
+	&__btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 15px;
+		font-weight: 700;
+		padding: 14px 26px;
+		border-radius: vars.$r-pill;
+		transition:
+			transform vars.$transition-speed vars.$ease,
+			background vars.$transition-speed vars.$ease,
+			color vars.$transition-speed vars.$ease;
+		&.primary {
+			background: vars.$primary;
+			color: vars.$on-primary;
+			box-shadow: vars.$shadow-elevated;
+			&:hover {
+				background: vars.$accent;
+				transform: translateY(-2px);
+			}
+		}
+		&.secondary {
+			background: vars.$background;
+			color: vars.$primary;
+			border: 1px solid vars.$border;
+			&:hover {
+				border-color: vars.$accent;
+				color: vars.$accent;
+				transform: translateY(-2px);
+			}
+		}
+	}
+}
+
+.onair-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	color: vars.$on-primary;
+	background: #c23b3b;
+	padding: 6px 14px;
+	border-radius: vars.$r-pill;
+	margin-bottom: vars.$sp-4;
+	.off-dot {
+		width: 7px;
+		height: 7px;
+		border-radius: 50%;
+		background: vars.$on-primary;
+		opacity: 0.9;
+	}
+}
+
+/* Tuning dial */
+.dial {
+	max-width: 560px;
+	margin: 0 auto vars.$sp-5;
+	background: vars.$primary;
+	border-radius: vars.$r-md;
+	box-shadow: vars.$shadow-elevated;
+	padding: vars.$sp-4 vars.$sp-4 vars.$sp-3;
+	&__screen {
+		background: rgba(0, 0, 0, 0.18);
+		border-radius: vars.$r-sm;
+		padding: vars.$sp-3;
+		margin-bottom: vars.$sp-3;
+	}
+	&__freq {
+		font-size: 56px;
+		font-weight: 800;
+		letter-spacing: -0.02em;
+		color: vars.$on-primary;
+		line-height: 1;
+		span {
+			font-size: 20px;
+			font-weight: 600;
+			color: #9fc4e3;
+			margin-left: 6px;
+		}
+	}
+	&__status {
+		font-size: 12px;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		color: #ff9b9b;
+		margin-top: 6px;
+	}
+	&__scale {
+		position: relative;
+		height: 48px;
+		svg {
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+		.ticks line {
+			stroke: rgba(255, 255, 255, 0.35);
+			stroke-width: 1.5;
+		}
+		.ticks line.major {
+			stroke: rgba(255, 255, 255, 0.6);
+			stroke-width: 2;
+		}
+		.labels text {
+			fill: #9fc4e3;
+			font-size: 10px;
+			font-family: 'Inter', sans-serif;
+			font-weight: 600;
+		}
+	}
+	&__needle {
+		stroke: #ff5a5a;
+		stroke-width: 2.5;
+		stroke-linecap: round;
+		animation: drift 3.2s ease-in-out infinite;
+		transform-origin: 50% 100%;
+	}
+}
+
+@keyframes drift {
+	0%,
+	100% {
+		transform: translateX(0px);
+	}
+	50% {
+		transform: translateX(6px);
+	}
+}
+
+/* Equalizer flourish */
+.equalizer {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	gap: 5px;
+	height: 36px;
+	margin: 0 auto;
+	span {
+		display: block;
+		width: 5px;
+		border-radius: 3px;
+		background: vars.$accent;
+		animation: eq 1s ease-in-out infinite;
+	}
+	span:nth-child(1) {
+		height: 30%;
+		animation-delay: -0.9s;
+	}
+	span:nth-child(2) {
+		height: 60%;
+		animation-delay: -0.6s;
+	}
+	span:nth-child(3) {
+		height: 100%;
+		animation-delay: -0.3s;
+	}
+
+	span:nth-child(4) {
+		height: 45%;
+		animation-delay: -1.1s;
+	}
+	span:nth-child(5) {
+		height: 75%;
+		animation-delay: -0.2s;
+	}
+	span:nth-child(6) {
+		height: 35%;
+		animation-delay: -0.7s;
+	}
+	span:nth-child(7) {
+		height: 55%;
+		animation-delay: -0.4s;
+	}
+}
+
+@keyframes eq {
+	0%,
+	100% {
+		transform: scaleY(0.4);
+	}
+	50% {
+		transform: scaleY(1);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation: none !important;
+		transition: none !important;
+	}
+	.dial-needle {
+		transform: none;
+	}
+}

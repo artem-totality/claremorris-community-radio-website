@@ -1833,3 +1833,237 @@ h1 {
   color: #2f7dbb;
   font-weight: 700;
 }
+
+/* ---------- 404 hero ---------- */
+.notfound {
+  position: relative;
+  padding: 64px 0 64px;
+  text-align: center;
+  overflow: hidden;
+  background: #ffffff;
+  /* subtle static/noise texture */
+}
+.notfound::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(28, 61, 90, 0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.notfound__inner {
+  position: relative;
+}
+.notfound h1 {
+  font-size: 60px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #1c3d5a;
+  margin: 0 0 24px;
+}
+.notfound__lead {
+  font-size: 17px;
+  color: #5b7690;
+  max-width: 480px;
+  margin: 0 auto 48px;
+  line-height: 1.6;
+}
+.notfound__lead strong {
+  color: #1c3d5a;
+}
+.notfound__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 64px;
+}
+.notfound__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 26px;
+  border-radius: 9999px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.notfound__btn.primary {
+  background: #1c3d5a;
+  color: #ffffff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+.notfound__btn.primary:hover {
+  background: #2f7dbb;
+  transform: translateY(-2px);
+}
+.notfound__btn.secondary {
+  background: #ffffff;
+  color: #1c3d5a;
+  border: 1px solid #e6e9ee;
+}
+.notfound__btn.secondary:hover {
+  border-color: #2f7dbb;
+  color: #2f7dbb;
+  transform: translateY(-2px);
+}
+
+.onair-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  background: #c23b3b;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  margin-bottom: 32px;
+}
+.onair-badge .off-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ffffff;
+  opacity: 0.9;
+}
+
+/* Tuning dial */
+.dial {
+  max-width: 560px;
+  margin: 0 auto 48px;
+  background: #1c3d5a;
+  border-radius: 16px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  padding: 32px 32px 24px;
+}
+.dial__screen {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.dial__freq {
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  line-height: 1;
+}
+.dial__freq span {
+  font-size: 20px;
+  font-weight: 600;
+  color: #9fc4e3;
+  margin-left: 6px;
+}
+.dial__status {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #ff9b9b;
+  margin-top: 6px;
+}
+.dial__scale {
+  position: relative;
+  height: 48px;
+}
+.dial__scale svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.dial__scale .ticks line {
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 1.5;
+}
+.dial__scale .ticks line.major {
+  stroke: rgba(255, 255, 255, 0.6);
+  stroke-width: 2;
+}
+.dial__scale .labels text {
+  fill: #9fc4e3;
+  font-size: 10px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+.dial__needle {
+  stroke: #ff5a5a;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  animation: drift 3.2s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+
+@keyframes drift {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+/* Equalizer flourish */
+.equalizer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 5px;
+  height: 36px;
+  margin: 0 auto;
+}
+.equalizer span {
+  display: block;
+  width: 5px;
+  border-radius: 3px;
+  background: #2f7dbb;
+  animation: eq 1s ease-in-out infinite;
+}
+.equalizer span:nth-child(1) {
+  height: 30%;
+  animation-delay: -0.9s;
+}
+.equalizer span:nth-child(2) {
+  height: 60%;
+  animation-delay: -0.6s;
+}
+.equalizer span:nth-child(3) {
+  height: 100%;
+  animation-delay: -0.3s;
+}
+.equalizer span:nth-child(4) {
+  height: 45%;
+  animation-delay: -1.1s;
+}
+.equalizer span:nth-child(5) {
+  height: 75%;
+  animation-delay: -0.2s;
+}
+.equalizer span:nth-child(6) {
+  height: 35%;
+  animation-delay: -0.7s;
+}
+.equalizer span:nth-child(7) {
+  height: 55%;
+  animation-delay: -0.4s;
+}
+
+@keyframes eq {
+  0%, 100% {
+    transform: scaleY(0.4);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .dial-needle {
+    transform: none;
+  }
+}
