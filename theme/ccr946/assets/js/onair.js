@@ -1,7 +1,8 @@
 let scheduleInterval = null;
 
 function initOnair() {
-	const SILENCE = '‾‾\\_no_signal___';
+	const SILENCE = 'Off air - back soon!';
+	const TIME_PLACEHOLDER = '-- : --';
 	const player = document.getElementById('player');
 
 	if (!player) {
@@ -123,7 +124,7 @@ function initOnair() {
 
 		const currentTime = state.current
 			? `${state.current.start_time.substring(0, 5)} - ${state.current.end_time.substring(0, 5)}`
-			: '....... ...... ..... .... ... .. . . . .';
+			: TIME_PLACEHOLDER;
 		if (onairTime.textContent !== currentTime) {
 			onairTime.textContent = currentTime;
 		}
