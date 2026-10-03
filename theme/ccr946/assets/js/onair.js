@@ -31,9 +31,9 @@ function initOnair() {
 		return;
 	}
 
+	const onairBadge = document.getElementById('onair-badge');
 	const heroTrack = document.getElementById('hero-track');
 
-	const onairBadge = document.getElementById('onair-badge');
 	const onairTime = document.getElementById('onair-time');
 	const onairTrack = document.getElementById('onair-track');
 	const nextTime = document.getElementById('next-time');
@@ -152,7 +152,7 @@ function initOnair() {
 
 		updatePlayer(state);
 
-		if (heroTrack) {
+		if (heroTrack && onairBadge) {
 			updateHeroSection(state);
 		}
 
