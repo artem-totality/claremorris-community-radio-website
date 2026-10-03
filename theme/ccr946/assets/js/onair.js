@@ -123,7 +123,7 @@ function initOnair() {
 
 		const currentTime = state.current
 			? `${state.current.start_time.substring(0, 5)} - ${state.current.end_time.substring(0, 5)}`
-			: '';
+			: '....... ...... ..... .... ... .. . . . .';
 		if (onairTime.textContent !== currentTime) {
 			onairTime.textContent = currentTime;
 		}
