@@ -2328,6 +2328,16 @@ h1 {
     transform: scaleY(1);
   }
 }
+@media (max-width: 768px) {
+  .player__volume {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .nav__list {
+    display: none;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
