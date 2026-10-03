@@ -28,7 +28,7 @@
 	<section class="listen-hero">
 		<div class="container">
 			<div class="listen-hero__inner">
-				<span class="onair-badge"><span class="on-dot"></span>ON AIR</span>
+				<span id="onair-badge" class="onair-badge"><span class="on-dot"></span>ON AIR</span>
 
 				<div class="dial">
 					<div class="dial__screen dial__screen--top">

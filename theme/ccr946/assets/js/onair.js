@@ -3,6 +3,9 @@ let scheduleInterval = null;
 function initOnair() {
 	const SILENCE = 'Off air - back soon!';
 	const TIME_PLACEHOLDER = '-- : --';
+	const ON_AIR = '<span class="on-dot"></span>ON AIR';
+	const OFF_AIR = '<span class="off-dot"></span>OFF AIR';
+
 	const player = document.getElementById('player');
 
 	if (!player) {
@@ -30,6 +33,7 @@ function initOnair() {
 
 	const heroTrack = document.getElementById('hero-track');
 
+	const onairBadge = document.getElementById('onair-badge');
 	const onairTime = document.getElementById('onair-time');
 	const onairTrack = document.getElementById('onair-track');
 	const nextTime = document.getElementById('next-time');
@@ -105,9 +109,13 @@ function initOnair() {
 
 	function updateHeroSection(state) {
 		const newTitle = state.current ? state.current.title : SILENCE;
-
 		if (heroTrack.textContent !== newTitle) {
 			heroTrack.textContent = newTitle;
+		}
+
+		const badgeTitle = state.current ? ON_AIR : OFF_AIR;
+		if (onairBadge.innerHTML !== badgeTitle) {
+			onairBadge.innerHTML = badgeTitle;
 		}
 	}
 
