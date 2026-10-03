@@ -1875,9 +1875,9 @@
 		gap: vars.$sp-3;
 	}
 	&__play {
-		width: 52px;
-		height: 52px;
-		border-radius: 50%;
+		margin-top: vars.$sp-1;
+		border-radius: 26px;
+		padding: vars.$sp-2 vars.$sp-3;
 		background: vars.$on-primary;
 		color: vars.$primary;
 		display: flex;
@@ -1913,6 +1913,11 @@
 		}
 		&.playing .icon-pause {
 			display: inline-flex;
+		}
+		.caption {
+			margin-left: vars.$sp-2;
+			font-size: 16px;
+			font-weight: 700;
 		}
 	}
 	&__volume {
