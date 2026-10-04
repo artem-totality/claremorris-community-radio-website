@@ -424,6 +424,7 @@
 		background: rgba(255, 255, 255, 0.18);
 	}
 	&__col {
+		min-height: 62px;
 		.tag {
 			font-size: 12px;
 			font-weight: 700;

@@ -820,6 +820,9 @@ h1 {
 .onair__divider {
   background: rgba(255, 255, 255, 0.18);
 }
+.onair__col {
+  min-height: 62px;
+}
 .onair__col .tag {
   font-size: 12px;
   font-weight: 700;
