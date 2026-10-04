@@ -75,7 +75,7 @@
 
                                     <div class="meta-card">
                                         <div class="label">Host</div>
-                                        <div class="value"><?php the_field( 'host_name' ); ?></div>
+                                        <div class="value  value--host"><?php the_field( 'host_name' ); ?></div>
                                         <div class="sub"><?php the_field( 'host_role' ); ?></div>
                                     </div>
 
