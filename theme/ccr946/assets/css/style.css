@@ -1292,7 +1292,7 @@ h1 {
   text-decoration: underline;
 }
 .news-article__body img {
-  max-width: 576px;
+  max-width: 525px;
 }
 .news-article__body figure {
   text-align: center;
@@ -2473,6 +2473,12 @@ h1 {
   }
   .pagination .page-btn {
     min-width: 36px;
+  }
+  .news-article__body {
+    padding-bottom: 32px;
+  }
+  .news-article__body img {
+    max-width: 100%;
   }
 }
 @media (prefers-reduced-motion: reduce) {
