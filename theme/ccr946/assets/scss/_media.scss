@@ -68,6 +68,11 @@
 			max-height: none;
 		}
 	}
+	.shows-section {
+		&__row {
+			gap: vars.$sp-2;
+		}
+	}
 }
 
 @media (max-width: 576px) {
@@ -173,6 +178,17 @@
 			img {
 				max-width: 100%;
 			}
+		}
+	}
+	.shows-section {
+		padding: vars.$sp-5 0;
+		&__row {
+			flex-direction: column;
+			align-items: stretch;
+		}
+		.time {
+			text-align: left;
+			flex: 1 1 auto;
 		}
 	}
 }

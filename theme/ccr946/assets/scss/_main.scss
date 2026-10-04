@@ -1002,6 +1002,18 @@
 			transform: translateY(-2px);
 			border-color: vars.$accent;
 		}
+		.left {
+			display: flex;
+			align-items: center;
+			flex: 1 1 auto;
+			gap: vars.$sp-3;
+		}
+		.right {
+			display: flex;
+			align-items: center;
+			flex: none;
+			gap: vars.$sp-3;
+		}
 		.swatch {
 			flex: none;
 			width: 64px;
@@ -1023,10 +1035,16 @@
 				font-weight: 700;
 				color: vars.$primary;
 				margin: 0 0 2px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
 			}
 			.host {
 				font-size: 13px;
 				color: vars.$text-muted;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
 			}
 		}
 		.time {

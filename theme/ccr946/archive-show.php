@@ -160,55 +160,56 @@
                                     class="shows-section__row"
                                     href="<?php echo esc_url( $url ); ?>"
                                 >
+                                    <div class="left">
+                                        <?php if ( has_post_thumbnail( $post_id ) ) : ?>
 
-                                    <?php if ( has_post_thumbnail( $post_id ) ) : ?>
+                                            <div class="swatch">
+                                                <?php
+                                                echo get_the_post_thumbnail(
+                                                    $post_id,
+                                                    'thumbnail',
+                                                    [
+                                                        'alt' => $title,
+                                                    ]
+                                                );
+                                                ?>
+                                            </div>
 
-                                        <div class="swatch">
-                                            <?php
-                                            echo get_the_post_thumbnail(
-                                                $post_id,
-                                                'thumbnail',
-                                                [
-                                                    'alt' => $title,
-                                                ]
-                                            );
-                                            ?>
+                                        <?php else : ?>
+
+                                            <div class="swatch"></div>
+
+                                        <?php endif; ?>
+                                    
+                                        <div class="info">
+
+                                            <h3>
+                                                <?php echo esc_html( $title ); ?>
+                                            </h3>
+
+                                            <?php if ( $host_name ) : ?>
+                                                <div class="host">
+                                                    With <?php echo esc_html( $host_name ); ?>
+                                                </div>
+                                            <?php endif; ?>
+
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="time">
+
+                                            <?php if ( $start_time ) : ?>
+                                                <strong>
+                                                    <?php echo esc_html( $start_time ); ?>
+                                                </strong>
+                                            <?php endif; ?>
+
+                                            <?php echo esc_html( $day_text ); ?>
+
                                         </div>
 
-                                    <?php else : ?>
-
-                                        <div class="swatch"></div>
-
-                                    <?php endif; ?>
-
-                                    <div class="info">
-
-                                        <h3>
-                                            <?php echo esc_html( $title ); ?>
-                                        </h3>
-
-                                        <?php if ( $host_name ) : ?>
-                                            <div class="host">
-                                                With <?php echo esc_html( $host_name ); ?>
-                                            </div>
-                                        <?php endif; ?>
-
+                                        <div class="chevron">→</div>
                                     </div>
-
-                                    <div class="time">
-
-                                        <?php if ( $start_time ) : ?>
-                                            <strong>
-                                                <?php echo esc_html( $start_time ); ?>
-                                            </strong>
-                                        <?php endif; ?>
-
-                                        <?php echo esc_html( $day_text ); ?>
-
-                                    </div>
-
-                                    <div class="chevron">→</div>
-
                                 </a>
 
                             <?php endforeach; ?>
