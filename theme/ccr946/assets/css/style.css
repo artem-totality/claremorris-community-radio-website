@@ -743,7 +743,7 @@ h1 {
   position: relative;
 }
 .listen-hero h1 {
-  font-size: 40px;
+  font-size: 56px;
   line-height: 1.08;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -2167,7 +2167,7 @@ h1 {
 }
 .dial__scale .labels text {
   fill: #9fc4e3;
-  font-size: 10px;
+  font-size: 16px;
   font-family: "Inter", sans-serif;
   font-weight: 600;
 }
@@ -2332,10 +2332,34 @@ h1 {
   .player__volume {
     display: none;
   }
+  .hero__header {
+    font-size: 56px;
+  }
+  .hero__header span {
+    font-size: 20px;
+  }
 }
 @media (max-width: 576px) {
   .nav__list {
     display: none;
+  }
+  .hero__header {
+    font-size: 48px;
+  }
+  .hero__header span {
+    font-size: 18px;
+  }
+  .listen-hero h1 {
+    font-size: 48px;
+  }
+  .dial__top .freq {
+    font-size: 42px;
+  }
+  .dial__top .freq span {
+    font-size: 16px;
+  }
+  .dial__scale .labels text {
+    font-size: 20px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

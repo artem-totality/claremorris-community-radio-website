@@ -42,7 +42,7 @@
 						</div>
 					</div>
 					<div class="dial__scale">
-						<svg viewBox="0 0 500 60" preserveAspectRatio="none">
+						<svg viewBox="0 0 500 60" preserveAspectRatio="meet">
 							<circle class="dial__glow" cx="160" cy="18" r="22" />
 							<g class="ticks">
 								<line x1="10" y1="10" x2="10" y2="24" class="major" />
@@ -58,10 +58,10 @@
 								<line x1="490" y1="10" x2="490" y2="20" />
 							</g>
 							<g class="labels">
-								<text x="10" y="38" text-anchor="middle">88</text>
-								<text x="160" y="38" text-anchor="middle" class="tuned">94.6</text>
-								<text x="310" y="38" text-anchor="middle">101</text>
-								<text x="460" y="38" text-anchor="middle">108</text>
+								<text x="10" y="46" text-anchor="middle">88</text>
+								<text x="160" y="46" text-anchor="middle" class="tuned">94.6</text>
+								<text x="310" y="46" text-anchor="middle">101</text>
+								<text x="460" y="46" text-anchor="middle">108</text>
 							</g>
 							<line class="dial__needle--top" x1="160" y1="4" x2="160" y2="30" />
 						</svg>
