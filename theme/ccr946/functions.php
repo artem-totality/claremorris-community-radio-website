@@ -19,6 +19,41 @@ function ccr946_setup() {
 
 add_action( 'after_setup_theme', 'ccr946_setup' );
 
+function ccr946_register_supporter_post_type() {
+
+    register_post_type( 'supporter', [
+        'labels' => [
+            'name'          => 'Supporters',
+            'singular_name' => 'Supporter',
+            'add_new'       => 'Add New',
+            'add_new_item'  => 'Add New Supporter',
+            'edit_item'     => 'Edit Supporter',
+            'new_item'      => 'New Supporter',
+            'view_item'     => 'View Supporter',
+            'search_items'  => 'Search Supporters',
+            'not_found'     => 'No supporters found',
+            'menu_name'     => 'Supporters',
+        ],
+
+        'public'       => false,
+        'show_ui'      => true,
+        'show_in_menu' => true,
+
+        'supports' => [
+            'title',
+            'thumbnail',
+        ],
+
+        'menu_icon' => 'dashicons-heart',
+
+        'has_archive' => false,
+        'rewrite'     => false,
+    ] );
+
+}
+
+add_action( 'init', 'ccr946_register_supporter_post_type' );
+
 function ccr946_assets() {
 
     wp_enqueue_style(

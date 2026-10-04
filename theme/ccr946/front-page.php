@@ -313,6 +313,90 @@
 					<h2>Sponsors, Funders &amp; Partners</h2>
 				</div>
 
+				<div class="supporters__gratitude">
+					<h3>
+						We are proud to be supported by organisations that help our community thrive.
+					</h3>
+				</div>
+
+				<?php
+				$supporter_groups = [
+					'funder'        => 'Funders',
+					'partner'       => 'Partners',
+					'local_sponsor' => 'Local Sponsors',
+				];
+
+				foreach ( $supporter_groups as $category => $label ) :
+
+					$supporters = new WP_Query( [
+						'post_type'      => 'supporter',
+						'posts_per_page' => -1,
+						'post_status'    => 'publish',
+						'orderby'        => 'menu_order',
+						'order'          => 'ASC',
+						'meta_query'     => [
+							[
+								'key'     => 'category',
+								'value'   => $category,
+								'compare' => '=',
+							],
+						],
+					] );
+
+					if ( ! $supporters->have_posts() ) {
+						wp_reset_postdata();
+						continue;
+					}
+				?>
+
+					<div class="supporters__group">
+
+						<h3><?php echo esc_html( $label ); ?></h3>
+
+						<div class="supporters__grid">
+
+							<?php while ( $supporters->have_posts() ) : $supporters->the_post(); ?>
+
+								<?php
+								$website = get_field( 'website' );
+								$title   = get_the_title();
+								?>
+
+								<a
+									class="supporter-logo"
+									href="<?php echo esc_url( $website ); ?>"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="<?php echo esc_attr( $title . ' website' ); ?>"
+								>
+									<?php
+									if ( has_post_thumbnail() ) {
+										the_post_thumbnail(
+											'medium',
+											[
+												'alt' => $title . ' logo',
+											]
+										);
+									}
+									?>
+								</a>
+
+							<?php endwhile; ?>
+
+						</div>
+
+					</div>
+
+				<?php
+					wp_reset_postdata();
+
+				endforeach;
+				?>
+
+				<!-- <div class="supporters__gratitude">
+					<h3>We are proud to be supported by organisations that help our community thrive.</h3>
+				</div>
+
 				<div class="supporters__group">
 					<h3>Funders</h3>
 					<div class="supporters__grid">
@@ -416,7 +500,7 @@
 							/>
 						</a>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
