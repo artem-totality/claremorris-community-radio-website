@@ -1010,15 +1010,23 @@ h1 {
 }
 .supporters__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
   gap: 24px;
+}
+.supporters__gratitude {
+  margin-bottom: 24px;
+  max-width: 520px;
+  color: #2f7dbb;
+}
+.supporters__gratitude h3 {
+  font-size: 20px;
 }
 
 .supporter-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 96px;
+  height: 130px;
   padding: 8px;
   background: #ffffff;
   border: 1px solid #e6e9ee;
@@ -1033,7 +1041,7 @@ h1 {
   max-width: 100%;
   max-height: 100%;
   width: auto;
-  filter: grayscale(0.7) opacity(0.85);
+  filter: grayscale(0.5) opacity(0.9);
   transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .supporter-logo:hover img, .supporter-logo:focus-visible img {
@@ -1352,7 +1360,6 @@ h1 {
 .page-head p {
   font-size: 16px;
   color: #5b7690;
-  margin: 0;
   max-width: 520px;
   margin: 0 auto;
 }
@@ -2404,6 +2411,10 @@ h1 {
   .contact-card {
     gap: 16px;
   }
+  .supporters__grid {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 16px;
+  }
 }
 @media (max-width: 768px) {
   .player__volume {
@@ -2462,6 +2473,15 @@ h1 {
   }
   .contact__inner {
     grid-template-columns: 1fr;
+  }
+  .supporters__grid {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+  .supporter-logo {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  .supporter-logo img {
+    filter: none;
   }
 }
 @media (max-width: 576px) {
@@ -2569,6 +2589,16 @@ h1 {
   .direct-line,
   .textline-banner {
     padding: 24px 16px;
+  }
+  .supporters__grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 8px;
+  }
+  .supporter-logo {
+    flex: 0 0 66%;
+    scroll-snap-align: start;
   }
 }
 @media (prefers-reduced-motion: reduce) {

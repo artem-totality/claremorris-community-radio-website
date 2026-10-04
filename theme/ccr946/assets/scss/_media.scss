@@ -43,6 +43,12 @@
 	.contact-card {
 		gap: vars.$sp-2;
 	}
+	.supporters {
+		&__grid {
+			grid-template-columns: repeat(3, minmax(200px, 1fr));
+			gap: vars.$sp-2;
+		}
+	}
 }
 
 @media (max-width: 768px) {
@@ -123,6 +129,18 @@
 	.contact {
 		&__inner {
 			grid-template-columns: 1fr;
+		}
+	}
+	.supporters {
+		&__grid {
+			grid-template-columns: repeat(2, minmax(200px, 1fr));
+		}
+	}
+	.supporter-logo {
+		box-shadow: vars.$shadow-card;
+
+		img {
+			filter: none;
 		}
 	}
 }
@@ -254,6 +272,18 @@
 	.direct-line,
 	.textline-banner {
 		padding: vars.$sp-3 vars.$sp-2;
+	}
+	.supporters {
+		&__grid {
+			display: flex;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			gap: vars.$sp-1;
+		}
+	}
+	.supporter-logo {
+		flex: 0 0 66%;
+		scroll-snap-align: start;
 	}
 }
 

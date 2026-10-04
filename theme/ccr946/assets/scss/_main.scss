@@ -627,8 +627,16 @@
 	}
 	&__grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+		grid-template-columns: repeat(4, minmax(200px, 1fr));
 		gap: vars.$sp-3;
+	}
+	&__gratitude {
+		margin-bottom: vars.$sp-3;
+		max-width: 520px;
+		color: vars.$accent;
+		h3 {
+			font-size: 20px;
+		}
 	}
 }
 
@@ -636,7 +644,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 96px;
+	height: 130px;
 	padding: vars.$sp-1;
 	background: vars.$background;
 	border: 1px solid vars.$border;
@@ -653,7 +661,7 @@
 		max-width: 100%;
 		max-height: 100%;
 		width: auto;
-		filter: grayscale(0.7) opacity(0.85);
+		filter: grayscale(0.5) opacity(0.9);
 		transition: filter vars.$transition-speed vars.$ease;
 	}
 	&:hover img,
@@ -978,7 +986,6 @@
 	p {
 		font-size: 16px;
 		color: vars.$text-muted;
-		margin: 0;
 		max-width: 520px;
 		margin: 0 auto;
 	}
