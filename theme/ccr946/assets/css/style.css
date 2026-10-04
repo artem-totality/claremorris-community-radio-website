@@ -2395,6 +2395,12 @@ h1 {
   .show-body__inner {
     gap: 24px;
   }
+  .contact__inner {
+    gap: 24px;
+  }
+  .contact-card {
+    gap: 16px;
+  }
 }
 @media (max-width: 768px) {
   .player__volume {
@@ -2449,6 +2455,9 @@ h1 {
     width: 280px;
   }
   .show-body__inner {
+    grid-template-columns: 1fr;
+  }
+  .contact__inner {
     grid-template-columns: 1fr;
   }
 }
@@ -2545,6 +2554,18 @@ h1 {
   .shows-section .time {
     text-align: left;
     flex: 1 1 auto;
+  }
+  .contact {
+    padding: 48px 0;
+  }
+  .contact-card {
+    gap: 8px;
+    padding: 24px 16px;
+  }
+  .studio__body,
+  .direct-line,
+  .textline-banner {
+    padding: 24px 16px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

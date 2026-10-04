@@ -35,6 +35,14 @@
 			gap: vars.$sp-3;
 		}
 	}
+	.contact {
+		&__inner {
+			gap: vars.$sp-3;
+		}
+	}
+	.contact-card {
+		gap: vars.$sp-2;
+	}
 }
 
 @media (max-width: 768px) {
@@ -108,6 +116,11 @@
 		}
 	}
 	.show-body {
+		&__inner {
+			grid-template-columns: 1fr;
+		}
+	}
+	.contact {
 		&__inner {
 			grid-template-columns: 1fr;
 		}
@@ -229,6 +242,18 @@
 			text-align: left;
 			flex: 1 1 auto;
 		}
+	}
+	.contact {
+		padding: vars.$sp-5 0;
+	}
+	.contact-card {
+		gap: vars.$sp-1;
+		padding: vars.$sp-3 vars.$sp-2;
+	}
+	.studio__body,
+	.direct-line,
+	.textline-banner {
+		padding: vars.$sp-3 vars.$sp-2;
 	}
 }
 
