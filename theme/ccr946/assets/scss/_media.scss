@@ -39,6 +39,7 @@
 		}
 	}
 	.dial {
+		padding: vars.$sp-3;
 		&__top {
 			.freq {
 				font-size: 42px;
@@ -49,6 +50,15 @@
 		}
 		&__scale .labels text {
 			font-size: 20px;
+		}
+	}
+	.onair {
+		&__inner {
+			display: block;
+		}
+		&__divider {
+			height: 1px;
+			margin: vars.$sp-3 0;
 		}
 	}
 }

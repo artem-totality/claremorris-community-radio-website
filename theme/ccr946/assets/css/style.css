@@ -2352,6 +2352,9 @@ h1 {
   .listen-hero h1 {
     font-size: 48px;
   }
+  .dial {
+    padding: 24px;
+  }
   .dial__top .freq {
     font-size: 42px;
   }
@@ -2360,6 +2363,13 @@ h1 {
   }
   .dial__scale .labels text {
     font-size: 20px;
+  }
+  .onair__inner {
+    display: block;
+  }
+  .onair__divider {
+    height: 1px;
+    margin: 24px 0;
   }
 }
 @media (prefers-reduced-motion: reduce) {
