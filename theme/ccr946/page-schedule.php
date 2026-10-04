@@ -63,7 +63,7 @@
     ?>
 
     <section class="page-head">
-        <div class="wrap">
+        <div class="container">
             <span class="eyebrow">This Week</span>
             <h1>Weekly Schedule</h1>
             <p>What's on 94.6FM, day by day.</p>
@@ -97,16 +97,19 @@
                             aria-selected="<?php echo $is_today ? 'true' : 'false'; ?>"
                         >
 
-                            <span class="full">
-                                <?php echo esc_html(
-                                    wp_date( 'j F', $day['timestamp'] )
-                                ); ?>
-                            </span>
-
-                            <?php echo esc_html(
-                                wp_date( 'D', $day['timestamp'] )
-                            ); ?>
-
+                            <div class="day-top">
+                                <span class="full">
+                                    <?php echo esc_html(
+                                        wp_date( 'j F', $day['timestamp'] )
+                                    ); ?>
+                                </span>
+                            
+                                <span class="day">
+                                    <?php echo esc_html(
+                                        wp_date( 'D', $day['timestamp'] )
+                                    ); ?>
+                                </span>
+                            </div>
                             <span
                                 class="today-dot"
                                 <?php echo $is_today ? '' : 'hidden'; ?>

@@ -1197,8 +1197,7 @@
 
 .day-tabs {
 	display: flex;
-	gap: 8px;
-	overflow-x: auto;
+	gap: vars.$sp-1;
 	padding-bottom: 2px;
 	margin-bottom: vars.$sp-4;
 	&__tab {
@@ -1223,6 +1222,11 @@
 		&:hover {
 			border-color: vars.$accent;
 			color: vars.$primary;
+		}
+		.day-top {
+			display: flex;
+			flex-direction: column;
+			gap: 2px;
 		}
 		.full {
 			font-size: 12px;
@@ -1325,6 +1329,9 @@
 			font-weight: 700;
 			color: vars.$accent;
 			margin: 0 0 2px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 		.host {
 			font-size: 13px;

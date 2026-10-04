@@ -43,6 +43,26 @@
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}
+	.day-tabs {
+		flex-direction: column;
+		gap: vars.$sp-1;
+		&__tab {
+			flex-direction: row-reverse;
+			justify-content: center;
+			gap: vars.$sp-1;
+			&:first-child {
+				.day-top {
+					padding-right: 14px;
+				}
+			}
+		}
+	}
+	.schedule-item {
+		gap: vars.$sp-2;
+		.time {
+			width: 48px;
+		}
+	}
 }
 
 @media (max-width: 576px) {
@@ -109,6 +129,16 @@
 	.show-card {
 		&:last-child {
 			display: none;
+		}
+	}
+	.schedule-section {
+		padding: vars.$sp-5 0;
+	}
+	.schedule-item {
+		padding: vars.$sp-2;
+		gap: vars.$sp-1;
+		.time {
+			width: 42px;
 		}
 	}
 }

@@ -1561,7 +1561,6 @@ h1 {
 .day-tabs {
   display: flex;
   gap: 8px;
-  overflow-x: auto;
   padding-bottom: 2px;
   margin-bottom: 32px;
 }
@@ -1585,6 +1584,11 @@ h1 {
 .day-tabs__tab:hover {
   border-color: #2f7dbb;
   color: #1c3d5a;
+}
+.day-tabs__tab .day-top {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 .day-tabs__tab .full {
   font-size: 12px;
@@ -1683,6 +1687,9 @@ h1 {
   font-weight: 700;
   color: #2f7dbb;
   margin: 0 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .schedule-item .info .host {
   font-size: 13px;
@@ -2368,6 +2375,24 @@ h1 {
   .shows__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .day-tabs {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .day-tabs__tab {
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 8px;
+  }
+  .day-tabs__tab:first-child .day-top {
+    padding-right: 14px;
+  }
+  .schedule-item {
+    gap: 16px;
+  }
+  .schedule-item .time {
+    width: 48px;
+  }
 }
 @media (max-width: 576px) {
   .nav__list {
@@ -2416,6 +2441,16 @@ h1 {
   }
   .show-card:last-child {
     display: none;
+  }
+  .schedule-section {
+    padding: 48px 0;
+  }
+  .schedule-item {
+    padding: 16px;
+    gap: 8px;
+  }
+  .schedule-item .time {
+    width: 42px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
