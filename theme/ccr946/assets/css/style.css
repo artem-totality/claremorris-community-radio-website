@@ -2371,6 +2371,9 @@ h1 {
     height: 1px;
     margin: 24px 0;
   }
+  .cta {
+    padding: 48px 0;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   * {
