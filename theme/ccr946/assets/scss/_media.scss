@@ -6,6 +6,12 @@
 			gap: vars.$sp-2;
 		}
 	}
+	.shows {
+		&__grid {
+			grid-template-columns: repeat(3, 1fr);
+			gap: vars.$sp-2;
+		}
+	}
 }
 
 @media (max-width: 768px) {
@@ -25,7 +31,16 @@
 	.news {
 		&__grid {
 			grid-template-columns: repeat(2, 1fr);
-			gap: vars.$sp-2;
+		}
+	}
+	.news-card {
+		&:last-child {
+			display: none;
+		}
+	}
+	.shows {
+		&__grid {
+			grid-template-columns: repeat(2, 1fr);
 		}
 	}
 }
@@ -79,6 +94,21 @@
 		&__grid {
 			grid-template-columns: repeat(1, 1fr);
 			gap: vars.$sp-3;
+		}
+	}
+	.news-card {
+		&:last-child {
+			display: block;
+		}
+	}
+	.shows {
+		&__grid {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+	.show-card {
+		&:last-child {
+			display: none;
 		}
 	}
 }

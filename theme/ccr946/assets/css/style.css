@@ -2344,6 +2344,10 @@ h1 {
   .news__grid {
     gap: 16px;
   }
+  .shows__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
 }
 @media (max-width: 768px) {
   .player__volume {
@@ -2357,7 +2361,12 @@ h1 {
   }
   .news__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+  }
+  .news-card:last-child {
+    display: none;
+  }
+  .shows__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 576px) {
@@ -2398,6 +2407,15 @@ h1 {
   .news__grid {
     grid-template-columns: repeat(1, 1fr);
     gap: 24px;
+  }
+  .news-card:last-child {
+    display: block;
+  }
+  .shows__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .show-card:last-child {
+    display: none;
   }
 }
 @media (prefers-reduced-motion: reduce) {
