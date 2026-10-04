@@ -405,6 +405,18 @@ h1 {
   color: #2f7dbb;
 }
 
+@media (max-width: 576px) {
+  .block {
+    padding: 48px 0;
+  }
+  .block-head {
+    display: block;
+    margin-bottom: 24px;
+  }
+  .block-head h2 {
+    margin-bottom: 24px;
+  }
+}
 .topbar {
   background: #eaf2f9;
   color: #cfe1ee;
@@ -2328,6 +2340,11 @@ h1 {
     transform: scaleY(1);
   }
 }
+@media (max-width: 992px) {
+  .news__grid {
+    gap: 16px;
+  }
+}
 @media (max-width: 768px) {
   .player__volume {
     display: none;
@@ -2337,6 +2354,10 @@ h1 {
   }
   .hero__header span {
     font-size: 20px;
+  }
+  .news__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 }
 @media (max-width: 576px) {
@@ -2373,6 +2394,10 @@ h1 {
   }
   .cta {
     padding: 48px 0;
+  }
+  .news__grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

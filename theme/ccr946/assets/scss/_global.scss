@@ -96,3 +96,16 @@ h1 {
 		color: vars.$accent;
 	}
 }
+
+@media (max-width: 576px) {
+	.block {
+		padding: vars.$sp-5 0;
+	}
+	.block-head {
+		display: block;
+		margin-bottom: vars.$sp-3;
+		h2 {
+			margin-bottom: vars.$sp-3;
+		}
+	}
+}

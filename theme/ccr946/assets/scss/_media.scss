@@ -1,6 +1,11 @@
 @use 'variables' as vars;
 
 @media (max-width: 992px) {
+	.news {
+		&__grid {
+			gap: vars.$sp-2;
+		}
+	}
 }
 
 @media (max-width: 768px) {
@@ -15,6 +20,12 @@
 			span {
 				font-size: 20px;
 			}
+		}
+	}
+	.news {
+		&__grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: vars.$sp-2;
 		}
 	}
 }
@@ -63,6 +74,12 @@
 	}
 	.cta {
 		padding: vars.$sp-5 0;
+	}
+	.news {
+		&__grid {
+			grid-template-columns: repeat(1, 1fr);
+			gap: vars.$sp-3;
+		}
 	}
 }
 
