@@ -2393,6 +2393,9 @@ h1 {
   .schedule-item .time {
     width: 48px;
   }
+  .news-list__row {
+    max-height: none;
+  }
 }
 @media (max-width: 576px) {
   .nav__list {
@@ -2451,6 +2454,25 @@ h1 {
   }
   .schedule-item .time {
     width: 42px;
+  }
+  .news-section {
+    padding: 48px 0;
+  }
+  .news-list__row {
+    display: block;
+  }
+  .news-list__row .thumb {
+    height: 200px;
+    max-height: 200px;
+  }
+  .news-list__row .body {
+    padding: 16px;
+  }
+  .pagination {
+    gap: 6px;
+  }
+  .pagination .page-btn {
+    min-width: 36px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

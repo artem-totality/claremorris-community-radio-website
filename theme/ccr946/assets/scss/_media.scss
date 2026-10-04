@@ -63,6 +63,11 @@
 			width: 48px;
 		}
 	}
+	.news-list {
+		&__row {
+			max-height: none;
+		}
+	}
 }
 
 @media (max-width: 576px) {
@@ -139,6 +144,27 @@
 		gap: vars.$sp-1;
 		.time {
 			width: 42px;
+		}
+	}
+	.news-section {
+		padding: vars.$sp-5 0;
+	}
+	.news-list {
+		&__row {
+			display: block;
+			.thumb {
+				height: 200px;
+				max-height: 200px;
+			}
+			.body {
+				padding: vars.$sp-2;
+			}
+		}
+	}
+	.pagination {
+		gap: 6px;
+		.page-btn {
+			min-width: 36px;
 		}
 	}
 }
