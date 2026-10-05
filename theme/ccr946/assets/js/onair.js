@@ -5,6 +5,8 @@ function initOnair() {
 	const TIME_PLACEHOLDER = '-- : --';
 	const ON_AIR = '<span class="on-dot"></span>ON AIR';
 	const OFF_AIR = '<span class="off-dot"></span>OFF AIR';
+	const ON_LIVE = '<span class="live-dot"></span>LIVE · 94.6 FM';
+	const OFF_LIVE = '<span class="live-dot live-dot--off"></span>LIVE · 94.6 FM';
 
 	const player = document.getElementById('player');
 
@@ -32,6 +34,7 @@ function initOnair() {
 	}
 
 	const onairBadge = document.getElementById('onair-badge');
+	const playerStatusElement = player.querySelector('.status');
 	const heroTrack = document.getElementById('hero-track');
 
 	const onairTime = document.getElementById('onair-time');
@@ -104,6 +107,11 @@ function initOnair() {
 
 		if (track.textContent !== newTitle) {
 			track.textContent = newTitle;
+		}
+
+		const newPlayerStatus = state.current ? ON_LIVE : OFF_LIVE;
+		if (playerStatusElement.innerHTML !== newPlayerStatus) {
+			playerStatusElement.innerHTML = newPlayerStatus;
 		}
 	}
 
@@ -181,7 +189,7 @@ function initOnair() {
 	 * Check every 30 seconds
 	 */
 
-	setInterval(updateSchedule, 30000);
+	scheduleInterval = setInterval(updateSchedule, 30000);
 }
 
 document.addEventListener('DOMContentLoaded', initOnair);

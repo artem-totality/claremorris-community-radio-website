@@ -184,6 +184,10 @@
 				border-radius: 50%;
 				background: #ff5a5a;
 				animation: pulse 1.6s infinite;
+				&--off {
+					background: vars.$accent;
+					animation: none;
+				}
 			}
 		}
 		.track {

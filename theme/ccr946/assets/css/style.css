@@ -591,6 +591,10 @@ h1 {
   background: #ff5a5a;
   animation: pulse 1.6s infinite;
 }
+.player__meta .status .live-dot--off {
+  background: #2f7dbb;
+  animation: none;
+}
 .player__meta .track {
   font-size: 14px;
   font-weight: 600;
