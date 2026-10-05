@@ -34,7 +34,7 @@
 					<div class="dial__screen dial__screen--top">
 						<div class="dial__top">
 							<div class="freq">94.6<span>FM</span></div>
-							<div class="eq"><span></span><span></span><span></span><span></span><span></span></div>
+							<div class="eq" id="equaliser"><span></span><span></span><span></span><span></span><span></span></div>
 						</div>
 						<div class="dial__nowplaying">
 							<div class="label">NOW PLAYING</div>
@@ -43,7 +43,7 @@
 					</div>
 					<div class="dial__scale">
 						<svg viewBox="0 0 500 60" preserveAspectRatio="xMidYMid meet">
-							<circle class="dial__glow" cx="160" cy="18" r="22" />
+							<rect class="dial__glow" x="156" y="1" width="8" height="32" rx="4" ry="4" />
 							<g class="ticks">
 								<line x1="10" y1="10" x2="10" y2="24" class="major" />
 								<line x1="60" y1="10" x2="60" y2="20" />

@@ -2132,6 +2132,9 @@ h1 {
   width: 4px;
   border-radius: 2px;
   background: #7fd9a4;
+  transform-origin: bottom;
+}
+.dial__top .eq.playing span {
   animation: eq-top 1s ease-in-out infinite;
 }
 .dial__top .eq span:nth-child(1) {
@@ -2143,7 +2146,7 @@ h1 {
   animation-delay: -0.5s;
 }
 .dial__top .eq span:nth-child(3) {
-  height: 100%;
+  height: 80%;
   animation-delay: -0.2s;
 }
 .dial__top .eq span:nth-child(4) {
