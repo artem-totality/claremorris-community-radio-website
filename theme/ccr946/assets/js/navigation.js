@@ -1,6 +1,17 @@
+let currentController = null;
+
 async function loadPage(url, addToHistory = true) {
+	// Abort previous request
+	if (currentController) {
+		currentController.abort();
+	}
+
+	currentController = new AbortController();
+
 	try {
-		const response = await fetch(url);
+		const response = await fetch(url, {
+			signal: currentController.signal,
+		});
 
 		if (!response.ok) {
 			throw new Error(`HTTP error: ${response.status}`);
@@ -31,7 +42,9 @@ async function loadPage(url, addToHistory = true) {
 		document.body.className = newDocument.body.className;
 
 		// Update document title
-		document.title = newDocument.title;
+		if (newDocument.title) {
+			document.title = newDocument.title;
+		}
 
 		// Update browser history
 		if (addToHistory) {
@@ -39,13 +52,19 @@ async function loadPage(url, addToHistory = true) {
 		}
 
 		// Scroll to top
-		window.scrollTo(0, 0);
+		if (window.scrollY > 38) {
+			window.scrollTo(0, 38);
+		}
 
 		// Reinitialize page-specific JavaScript
 		document.dispatchEvent(new CustomEvent('ccr:page-loaded'));
 
 		console.log('CCR page content replaced');
 	} catch (error) {
+		if (error.name === 'AbortError') {
+			return;
+		}
+
 		console.error('CCR navigation failed:', error);
 
 		window.location.href = url;
@@ -56,14 +75,46 @@ async function loadPage(url, addToHistory = true) {
  * Internal navigation
  */
 document.addEventListener('click', function (event) {
+	// Only normal left-clicks
+	if (
+		event.defaultPrevented ||
+		event.button !== 0 ||
+		event.metaKey ||
+		event.ctrlKey ||
+		event.shiftKey ||
+		event.altKey
+	) {
+		return;
+	}
+
 	const link = event.target.closest('a');
 
 	if (!link) {
 		return;
 	}
 
-	// Ignore external links
+	// External link
 	if (link.origin !== window.location.origin) {
+		return;
+	}
+
+	// New tab / download
+	if (link.target === '_blank' || link.hasAttribute('download')) {
+		return;
+	}
+
+	// WordPress admin / login
+	if (link.pathname.startsWith('/wp-admin') || link.pathname.startsWith('/wp-login')) {
+		return;
+	}
+
+	// Files
+	if (/\.(pdf|zip|mp3|jpg|jpeg|png|gif|webp|svg|mp4|webm|doc|docx|xls|xlsx)$/i.test(link.pathname)) {
+		return;
+	}
+
+	// Same-page anchor
+	if (link.pathname === window.location.pathname && link.hash) {
 		return;
 	}
 
