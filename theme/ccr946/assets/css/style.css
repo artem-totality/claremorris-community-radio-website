@@ -2593,7 +2593,8 @@ h1 {
     gap: 8px;
   }
   .supporter-logo {
-    flex: 0 0 66%;
+    height: 140px;
+    flex: 0 0 85%;
     scroll-snap-align: start;
   }
 }
