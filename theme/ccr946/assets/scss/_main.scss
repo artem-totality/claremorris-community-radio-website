@@ -91,6 +91,22 @@
 	}
 }
 
+/* Mobile hamburger menu */
+.menu-toggle {
+	display: none;
+	background: none;
+	border: 0;
+	padding: 6px;
+	cursor: pointer;
+}
+.menu-toggle span {
+	display: block;
+	width: 24px;
+	height: 3px;
+	margin: 3px 0;
+	background: vars.$primary;
+}
+
 .nav {
 	&__list {
 		display: flex;

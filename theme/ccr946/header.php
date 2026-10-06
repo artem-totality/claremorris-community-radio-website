@@ -123,6 +123,18 @@
                             <span class="logo__freq">94.6 FM</span>
                         </a>
 
+                        <button
+                            class="menu-toggle"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="primary-menu"
+                            aria-label="Open navigation menu"
+                        >
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+
                         <nav class="nav">
 
                             <?php
