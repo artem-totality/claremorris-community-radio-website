@@ -8,11 +8,9 @@
 
                 <div class="breadcrumb">
                     <div class="container">
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+                        <button id="back-button">< Back</button>
                         /
-                        <a href="<?php echo esc_url( home_url( '/#shows' ) ); ?>">Shows</a>
-                        /
-                        Serendipity
+                        <?php the_title(); ?>
                     </div>
                 </div>
 

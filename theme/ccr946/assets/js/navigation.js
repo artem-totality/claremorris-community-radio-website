@@ -129,3 +129,16 @@ document.addEventListener('click', function (event) {
 window.addEventListener('popstate', function () {
 	loadPage(window.location.href, false);
 });
+
+function setBackButton() {
+	const backButton = document.getElementById('back-button');
+	if (backButton) {
+		backButton.addEventListener('click', () => {
+			if (window.history.length > 1) {
+				window.history.back();
+			}
+		});
+	}
+}
+
+document.addEventListener('ccr:page-loaded', setBackButton);

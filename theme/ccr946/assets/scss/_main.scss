@@ -290,12 +290,16 @@
 }
 
 .breadcrumb {
-	padding: vars.$sp-2 0;
+	padding: vars.$sp-1 0;
 	font-size: 13px;
 	color: vars.$text-muted;
-	a {
+	button {
+		padding: vars.$sp-1 0;
 		color: vars.$accent;
 		font-weight: 600;
+		cursor: pointer;
+		border: none;
+		background-color: transparent;
 	}
 }
 
@@ -1170,13 +1174,13 @@
 
 /* ---------- News list ---------- */
 .news-section {
-	padding: vars.$sp-6 0;
+	padding: vars.$sp-5 0;
 }
 .news-list {
 	display: flex;
 	flex-direction: column;
 	gap: vars.$sp-3;
-	margin-bottom: vars.$sp-5;
+	margin: vars.$sp-4 0;
 	&__row {
 		display: grid;
 		grid-template-columns: 200px 1fr;

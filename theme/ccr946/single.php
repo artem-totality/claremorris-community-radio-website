@@ -4,6 +4,14 @@
 
         <?php while ( have_posts() ) : the_post(); ?>
 
+            <div class="breadcrumb">
+                <div class="container">
+                    <button id="back-button">< Back</button>
+                    /
+                    <?php the_title(); ?>
+                </div>
+            </div>
+
             <article <?php post_class(); ?>>
                 <div class="news-article">
                     <div class="container container--narrow">

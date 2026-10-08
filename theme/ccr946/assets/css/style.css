@@ -689,13 +689,17 @@ h1 {
   }
 }
 .breadcrumb {
-  padding: 16px 0;
+  padding: 8px 0;
   font-size: 13px;
   color: #5b7690;
 }
-.breadcrumb a {
+.breadcrumb button {
+  padding: 8px 0;
   color: #2f7dbb;
   font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 
 .hero {
@@ -1535,14 +1539,14 @@ h1 {
 
 /* ---------- News list ---------- */
 .news-section {
-  padding: 64px 0;
+  padding: 48px 0;
 }
 
 .news-list {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-bottom: 48px;
+  margin: 32px 0;
 }
 .news-list__row {
   display: grid;
