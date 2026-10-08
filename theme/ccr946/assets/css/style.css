@@ -534,18 +534,34 @@ h1 {
   color: #1c3d5a;
   border-bottom-color: #2f7dbb;
 }
-.nav__list .menu-item-has-children a {
+.nav__list .menu-item-has-children {
+  cursor: pointer;
+}
+.nav__list .menu-item-has-children > a {
+  padding-right: 8px;
   border-bottom: 3px solid transparent;
 }
-.nav__list .menu-item-has-children a:hover, .nav__list .menu-item-has-children a:focus-visible {
+.nav__list .menu-item-has-children > a:hover, .nav__list .menu-item-has-children > a:focus-visible {
   color: #1c3d5a;
   border-bottom-color: #2f7dbb;
+}
+.nav__list .menu-item-has-children > a::after {
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: 13px;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  border-color: #5b7690 transparent transparent transparent;
 }
 .nav__list .menu-item {
   position: relative;
 }
 .nav__list .menu-item:hover > .sub-menu {
   display: block;
+}
+.nav__list .menu-item.is-closed > .sub-menu {
+  display: none;
 }
 .nav__list .sub-menu {
   display: none;
@@ -2556,7 +2572,27 @@ h1 {
     display: block;
     color: #1c3d5a;
     font-size: 16px;
-    padding: 16px 0;
+    padding: 8px 0;
+  }
+  .nav__list .sub-menu {
+    position: static;
+    border: none;
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    visibility: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s 0.3s;
+  }
+  .nav__list .menu-item-has-children > a::after {
+    top: 17px;
+    border-color: #1c3d5a transparent transparent transparent;
+  }
+  .nav__list .menu-item-has-children.is-open > .sub-menu {
+    max-height: 500px;
+    visibility: visible;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s;
   }
   .nav.is-open {
     display: block;
