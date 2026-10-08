@@ -129,7 +129,7 @@
 			cursor: pointer;
 			& > a {
 				padding-right: vars.$sp-1;
-				border-bottom: 3px solid transparent;
+				border-bottom: 2px solid transparent;
 				&:hover,
 				&:focus-visible {
 					color: vars.$primary;
@@ -159,7 +159,7 @@
 			display: none;
 			position: absolute;
 			z-index: 20;
-			top: 30px;
+			top: 29px;
 			left: 0;
 			padding: vars.$sp-1 vars.$sp-2;
 			background-color: vars.$background;
@@ -290,7 +290,7 @@
 }
 
 .breadcrumb {
-	padding: vars.$sp-1 0;
+	padding: vars.$sp-3 0 vars.$sp-2;
 	font-size: 13px;
 	color: vars.$text-muted;
 	button {
