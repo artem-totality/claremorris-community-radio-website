@@ -478,7 +478,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 0;
+  padding: 8px 0;
 }
 
 .logo {
@@ -509,7 +509,6 @@ h1 {
   padding: 6px;
   cursor: pointer;
 }
-
 .menu-toggle span {
   display: block;
   width: 24px;
@@ -525,12 +524,44 @@ h1 {
   font-weight: 500;
 }
 .nav__list a {
+  display: block;
   color: #5b7690;
   transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 6px 0;
   border-bottom: 2px solid transparent;
 }
 .nav__list a:hover, .nav__list a:focus-visible {
+  color: #1c3d5a;
+  border-bottom-color: #2f7dbb;
+}
+.nav__list .menu-item-has-children a {
+  border-bottom: 3px solid transparent;
+}
+.nav__list .menu-item-has-children a:hover, .nav__list .menu-item-has-children a:focus-visible {
+  color: #1c3d5a;
+  border-bottom-color: #2f7dbb;
+}
+.nav__list .menu-item {
+  position: relative;
+}
+.nav__list .menu-item:hover .sub-menu {
+  display: block;
+}
+.nav__list .sub-menu {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  top: 30px;
+  left: 0;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e6e9ee;
+  border-left: 1px solid #e6e9ee;
+}
+.nav__list .sub-menu a {
+  border-bottom: 2px solid transparent;
+}
+.nav__list .sub-menu a:hover, .nav__list .sub-menu a:focus-visible {
   color: #1c3d5a;
   border-bottom-color: #2f7dbb;
 }
