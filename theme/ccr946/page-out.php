@@ -13,7 +13,7 @@
                         <div class="dial__status">NO STATION FOUND AT THIS FREQUENCY</div>
                     </div>
                     <div class="dial__scale">
-                        <svg viewBox="0 0 500 60" preserveAspectRatio="slice">
+                        <svg viewBox="0 0 500 60" preserveAspectRatio="xMidYMid meet">
                             <g class="ticks">
                                 <line x1="10" y1="10" x2="10" y2="24" class="major" />
                                 <line x1="60" y1="10" x2="60" y2="20" />

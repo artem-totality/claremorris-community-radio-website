@@ -137,7 +137,7 @@
 		}
 		.menu-item {
 			position: relative;
-			&:hover .sub-menu {
+			&:hover > .sub-menu {
 				display: block;
 			}
 		}

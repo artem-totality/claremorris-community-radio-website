@@ -544,7 +544,7 @@ h1 {
 .nav__list .menu-item {
   position: relative;
 }
-.nav__list .menu-item:hover .sub-menu {
+.nav__list .menu-item:hover > .sub-menu {
   display: block;
 }
 .nav__list .sub-menu {
