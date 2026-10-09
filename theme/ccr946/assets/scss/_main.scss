@@ -8,7 +8,7 @@
 		align-items: center;
 		justify-content: space-between;
 		padding: 6px 0;
-		font-size: 13px;
+		font-size: 0.8125rem;
 	}
 	&__phone {
 		display: flex;
@@ -80,7 +80,7 @@
 	&__mark {
 		background: vars.$primary;
 		color: vars.$on-primary;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 		padding: 4px 8px;
 		border-radius: vars.$r-sm;
@@ -111,7 +111,7 @@
 	&__list {
 		display: flex;
 		gap: vars.$sp-3;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 500;
 		a {
 			display: block;
@@ -238,7 +238,7 @@
 			display: flex;
 			align-items: center;
 			gap: 8px;
-			font-size: 11px;
+			font-size: 0.6875rem;
 			font-weight: 700;
 			letter-spacing: 0.02em;
 			color: #9fc4e3;
@@ -256,7 +256,7 @@
 			}
 		}
 		.track {
-			font-size: 14px;
+			font-size: 0.875rem;
 			font-weight: 600;
 			white-space: nowrap;
 			overflow: hidden;
@@ -275,7 +275,7 @@
 	}
 	.player-vol-icon {
 		color: #cfe1ee;
-		font-size: 16px;
+		font-size: 1rem;
 	}
 }
 
@@ -291,7 +291,7 @@
 
 .breadcrumb {
 	padding: vars.$sp-3 0 vars.$sp-2;
-	font-size: 13px;
+	font-size: 0.8125rem;
 	color: vars.$text-muted;
 	button {
 		padding: vars.$sp-1 0;
@@ -312,7 +312,7 @@
 	border-bottom: 1px solid vars.$border;
 	&__eyebrow {
 		display: inline-block;
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: vars.$accent;
 		background: vars.$accent-soft;
@@ -345,7 +345,7 @@
 	gap: 10px;
 	background: vars.$primary;
 	color: vars.$on-primary;
-	font-size: 16px;
+	font-size: 1rem;
 	font-weight: 700;
 	padding: 16px 32px;
 	border: none;
@@ -389,7 +389,7 @@
 	box-shadow: vars.$shadow-card;
 	padding: vars.$sp-3 vars.$sp-4;
 	&__label {
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 700;
 		color: vars.$accent;
 		margin-bottom: vars.$sp-1;
@@ -438,14 +438,14 @@
 		margin: vars.$sp-4 0 vars.$sp-2;
 	}
 	.lead {
-		font-size: 16px;
+		font-size: 1rem;
 		color: vars.$text-muted;
 		max-width: 480px;
 		margin: 0 auto vars.$sp-4;
 		line-height: 1.6;
 	}
 	.stream-note {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: vars.$text-muted;
 		a {
 			color: vars.$accent;
@@ -458,7 +458,7 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 8px;
-	font-size: 12px;
+	font-size: 0.75rem;
 	font-weight: 700;
 	letter-spacing: 0.04em;
 	color: vars.$on-primary;
@@ -499,14 +499,14 @@
 	&__col {
 		min-height: 62px;
 		.tag {
-			font-size: 12px;
+			font-size: 0.75rem;
 			font-weight: 700;
 			letter-spacing: 0.02em;
 			color: #9fc4e3;
 			margin-bottom: vars.$sp-1;
 		}
 		.time {
-			font-size: 14px;
+			font-size: 0.875rem;
 			color: #cfe1ee;
 			margin-bottom: 2px;
 		}
@@ -528,7 +528,7 @@
 		margin: 0 0 vars.$sp-2;
 	}
 	p {
-		font-size: 15px;
+		font-size: 0.9375rem;
 		color: vars.$text-muted;
 		margin: 0 0 vars.$sp-4;
 	}
@@ -542,7 +542,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 8px;
-		font-size: 15px;
+		font-size: 0.9375rem;
 		font-weight: 700;
 		padding: 14px 26px;
 		border-radius: vars.$r-pill;
@@ -608,7 +608,7 @@
 		padding: vars.$sp-3;
 	}
 	&__date {
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: vars.$text-muted;
 		margin-bottom: 6px;
 	}
@@ -620,7 +620,7 @@
 		line-height: 1.3;
 	}
 	p {
-		font-size: 14px;
+		font-size: 0.875rem;
 		line-height: 1.43;
 		color: vars.$text-muted;
 		margin: 0;
@@ -671,16 +671,16 @@
 		margin-bottom: vars.$sp-2;
 		color: vars.$accent;
 		font-weight: 700;
-		font-size: 13px;
+		font-size: 0.8125rem;
 	}
 	h3 {
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 700;
 		color: vars.$primary;
 		margin: 0 0 vars.$sp-1;
 	}
 	&__when {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: vars.$text-muted;
 	}
 }
@@ -688,7 +688,7 @@
 .supporters {
 	&__group {
 		h3 {
-			font-size: 14px;
+			font-size: 0.875rem;
 			font-weight: 700;
 			color: vars.$text-muted;
 			margin: 0 0 vars.$sp-3;
@@ -751,7 +751,7 @@
 	background: vars.$primary;
 	color: #cfe1ee;
 	padding: vars.$sp-1 0;
-	font-size: 13px;
+	font-size: 0.8125rem;
 
 	&__main {
 		display: grid;
@@ -787,7 +787,7 @@
 	}
 	&__social {
 		h3 {
-			font-size: 12px;
+			font-size: 0.75rem;
 			font-weight: 700;
 			letter-spacing: 0.04em;
 			text-transform: uppercase;
@@ -852,7 +852,7 @@
 		justify-content: center;
 		color: rgba(255, 255, 255, 0.85);
 		font-weight: 700;
-		font-size: 14px;
+		font-size: 0.875rem;
 		text-align: center;
 	}
 	&__title-block {
@@ -869,7 +869,7 @@
 	}
 	&__eyebrow {
 		display: inline-block;
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: vars.$accent;
 		background: vars.$accent-soft;
@@ -892,7 +892,7 @@
 	padding: vars.$sp-3;
 	min-width: 0;
 	.label {
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 700;
 		letter-spacing: 0.02em;
 		color: vars.$accent;
@@ -909,7 +909,7 @@
 		}
 	}
 	.sub {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: vars.$text-muted;
 		margin-top: 2px;
 	}
@@ -934,7 +934,7 @@
 			margin: 0 0 vars.$sp-2;
 		}
 		p {
-			font-size: 15px;
+			font-size: 0.9375rem;
 			line-height: 1.6;
 			color: vars.$text;
 			margin: 0 0 vars.$sp-2;
@@ -960,12 +960,12 @@
 		flex: none;
 	}
 	&__name {
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 700;
 		color: vars.$primary;
 	}
 	&__role {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: vars.$text-muted;
 	}
 }
@@ -979,13 +979,13 @@
 	position: sticky;
 	top: 150px;
 	h2 {
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 700;
 		color: vars.$primary;
 		margin: 0 0 vars.$sp-2;
 	}
 	p {
-		font-size: 14px;
+		font-size: 0.875rem;
 		line-height: 1.55;
 		color: vars.$text-muted;
 		margin: 0 0 vars.$sp-3;
@@ -1026,7 +1026,7 @@
 	}
 	&__tag {
 		display: inline-block;
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: vars.$accent;
 		background: vars.$accent-soft;
@@ -1035,7 +1035,7 @@
 		margin-bottom: vars.$sp-3;
 	}
 	&__date {
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: vars.$text-muted;
 		time {
 			font-weight: 600;
@@ -1102,7 +1102,7 @@
 		padding: vars.$sp-3 0;
 		border-top: 1px solid vars.$border;
 		margin-top: vars.$sp-4;
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: vars.$text-muted;
 	}
 	&__back-link {
@@ -1118,7 +1118,7 @@
 	background: radial-gradient(circle at 18% 15%, rgba(47, 125, 187, 0.12), transparent 55%), vars.$background;
 	.eyebrow {
 		display: inline-block;
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: vars.$accent;
 		background: vars.$accent-soft;
@@ -1135,7 +1135,7 @@
 		margin: 0 0 vars.$sp-2;
 	}
 	p {
-		font-size: 16px;
+		font-size: 1rem;
 		color: vars.$text-muted;
 		max-width: 520px;
 		margin: 0 auto;
@@ -1197,7 +1197,7 @@
 			flex: 1 1 auto;
 			min-width: 0;
 			h3 {
-				font-size: 16px;
+				font-size: 1rem;
 				font-weight: 700;
 				color: vars.$primary;
 				margin: 0 0 2px;
@@ -1206,7 +1206,7 @@
 				text-overflow: ellipsis;
 			}
 			.host {
-				font-size: 13px;
+				font-size: 0.8125rem;
 				color: vars.$text-muted;
 				white-space: nowrap;
 				overflow: hidden;
@@ -1216,11 +1216,11 @@
 		.time {
 			flex: none;
 			text-align: right;
-			font-size: 13px;
+			font-size: 0.8125rem;
 			color: vars.$text-muted;
 			strong {
 				display: block;
-				font-size: 14px;
+				font-size: 0.875rem;
 				color: vars.$primary;
 				font-weight: 700;
 			}
@@ -1239,7 +1239,7 @@
 		margin-bottom: 0;
 	}
 	h2 {
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 		letter-spacing: 0.04em;
 		text-transform: uppercase;
@@ -1297,7 +1297,7 @@
 		.tag {
 			display: inline-block;
 			align-self: flex-start;
-			font-size: 11px;
+			font-size: 0.6875rem;
 			font-weight: 700;
 			color: vars.$accent;
 			background: vars.$accent-soft;
@@ -1313,12 +1313,12 @@
 			line-height: 1.3;
 		}
 		.date {
-			font-size: 13px;
+			font-size: 0.8125rem;
 			color: vars.$text-muted;
 			margin-bottom: 8px;
 		}
 		.excerpt {
-			font-size: 14px;
+			font-size: 0.875rem;
 			line-height: 1.5;
 			color: vars.$text-muted;
 			margin: 0;
@@ -1344,7 +1344,7 @@
 		border: 1px solid vars.$border;
 		background: vars.$background;
 		color: vars.$text-muted;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		transition:
 			background vars.$transition-speed vars.$ease,
@@ -1396,7 +1396,7 @@
 		border-radius: vars.$r-sm;
 		background: vars.$background;
 		color: vars.$accent;
-		font-size: 15px;
+		font-size: 0.9375rem;
 		font-weight: 700;
 		cursor: pointer;
 		transition:
@@ -1413,7 +1413,7 @@
 			gap: 2px;
 		}
 		.full {
-			font-size: 12px;
+			font-size: 0.75rem;
 			font-weight: 500;
 			color: vars.$text-muted;
 		}
@@ -1494,7 +1494,7 @@
 	.time {
 		flex: none;
 		width: 76px;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 		color: vars.$primary;
 	}
@@ -1509,7 +1509,7 @@
 		flex: 1 1 auto;
 		min-width: 0;
 		h3 {
-			font-size: 15px;
+			font-size: 0.9375rem;
 			font-weight: 700;
 			color: vars.$accent;
 			margin: 0 0 2px;
@@ -1518,7 +1518,7 @@
 			text-overflow: ellipsis;
 		}
 		.host {
-			font-size: 13px;
+			font-size: 0.8125rem;
 			color: vars.$text-muted;
 		}
 	}
@@ -1530,12 +1530,12 @@
 	border: 1px dashed vars.$border;
 	border-radius: vars.$r-md;
 	color: vars.$text-muted;
-	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 .schedule-note {
 	margin-top: vars.$sp-4;
-	font-size: 13px;
+	font-size: 0.8125rem;
 	color: vars.$text-muted;
 	a {
 		color: vars.$accent;
@@ -1602,7 +1602,7 @@
 	&__body {
 		padding: vars.$sp-4;
 		.label {
-			font-size: 12px;
+			font-size: 0.75rem;
 			font-weight: 700;
 			letter-spacing: 0.04em;
 			text-transform: uppercase;
@@ -1611,7 +1611,7 @@
 		}
 		address {
 			font-style: normal;
-			font-size: 16px;
+			font-size: 1rem;
 			line-height: 1.55;
 			font-weight: 600;
 			margin: 0 0 vars.$sp-3;
@@ -1625,7 +1625,7 @@
 			display: inline-flex;
 			align-items: center;
 			gap: 8px;
-			font-size: 13px;
+			font-size: 0.8125rem;
 			font-weight: 700;
 			background: rgba(255, 255, 255, 0.12);
 			padding: 10px 14px;
@@ -1688,13 +1688,13 @@
 	}
 	.info {
 		.label {
-			font-size: 12px;
+			font-size: 0.75rem;
 			font-weight: 700;
 			color: vars.$text-muted;
 			margin-bottom: 2px;
 		}
 		.value {
-			font-size: 15px;
+			font-size: 0.9375rem;
 			font-weight: 700;
 			color: vars.$primary;
 		}
@@ -1704,7 +1704,7 @@
 /* Who to contact */
 .who {
 	&__heading {
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 		color: vars.$text-muted;
 		margin: 0 0 vars.$sp-3;
@@ -1756,13 +1756,13 @@
 		min-width: 0;
 	}
 	h3 {
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 700;
 		color: vars.$primary;
 		margin: 0 0 2px;
 	}
 	p {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: vars.$text-muted;
 		margin: 0 0 8px;
 	}
@@ -1770,7 +1770,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 6px;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 		color: vars.$accent;
 	}
@@ -1808,13 +1808,13 @@
 	}
 	.body {
 		h3 {
-			font-size: 15px;
+			font-size: 0.9375rem;
 			font-weight: 700;
 			color: vars.$primary;
 			margin: 0 0 2px;
 		}
 		p {
-			font-size: 13px;
+			font-size: 0.8125rem;
 			color: vars.$text-muted;
 			margin: 0;
 		}
@@ -1874,7 +1874,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 8px;
-		font-size: 15px;
+		font-size: 0.9375rem;
 		font-weight: 700;
 		padding: 14px 26px;
 		border-radius: vars.$r-pill;
@@ -1981,7 +1981,7 @@
 		padding-top: 10px;
 		border-top: 1px solid rgba(255, 255, 255, 0.14);
 		.label {
-			font-size: 10px;
+			font-size: 0.625rem;
 			font-weight: 700;
 			letter-spacing: 0.08em;
 			color: #9fc4e3;
@@ -2015,7 +2015,7 @@
 		}
 	}
 	&__status {
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 700;
 		letter-spacing: 0.06em;
 		color: #ff9b9b;
@@ -2039,7 +2039,7 @@
 		}
 		.labels text {
 			fill: #9fc4e3;
-			font-size: 16px;
+			font-size: 1rem;
 			font-family: 'Inter', sans-serif;
 			font-weight: 600;
 		}
@@ -2110,7 +2110,7 @@
 		}
 		.caption {
 			margin-left: vars.$sp-2;
-			font-size: 16px;
+			font-size: 1rem;
 			font-weight: 700;
 		}
 	}

@@ -66,6 +66,9 @@ h1 {
 }
 
 @media (max-width: 576px) {
+	html {
+		font-size: 18px;
+	}
 	.container {
 		padding: 0 vars.$sp-2;
 	}
@@ -93,7 +96,7 @@ h1 {
 		margin: 0;
 	}
 	a {
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: vars.$accent;
 	}
