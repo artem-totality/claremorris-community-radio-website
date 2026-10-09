@@ -644,7 +644,6 @@
 	transition:
 		box-shadow vars.$transition-speed vars.$ease,
 		transform vars.$transition-speed vars.$ease;
-
 	&:hover {
 		box-shadow: vars.$shadow-elevated;
 		transform: translateY(-3px);
@@ -717,23 +716,28 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 160px;
+	height: 180px;
 	padding: vars.$sp-1;
 	background: vars.$background;
 	border: 1px solid vars.$border;
 	border-radius: vars.$r-md;
+	box-shadow: vars.$shadow-card;
 	transition:
 		box-shadow vars.$transition-speed vars.$ease,
-		border-color vars.$transition-speed vars.$ease;
+		border-color vars.$transition-speed vars.$ease,
+		transform vars.$transition-speed vars.$ease;
 	&:hover,
 	&:focus-visible {
-		box-shadow: vars.$shadow-card;
+		// box-shadow: vars.$shadow-card;
 		border-color: vars.$accent;
+		box-shadow: vars.$shadow-elevated;
+		transform: translateY(-3px);
 	}
 	img {
 		max-width: 100%;
 		max-height: 100%;
-		width: auto;
+		object-fit: contain;
+		aspect-ratio: 1 / 1;
 		filter: grayscale(0.2) opacity(0.85);
 		transition: filter vars.$transition-speed vars.$ease;
 	}
@@ -803,8 +807,8 @@
 				color: vars.$on-primary;
 				background: rgba(255, 255, 255, 0.12);
 				transition:
-					background 0.3s vars.$ease,
-					transform 0.3s vars.$ease;
+					background vars.$transition-speed vars.$ease,
+					transform vars.$transition-speed vars.$ease;
 				&:hover,
 				&:focus-visible {
 					background: vars.$accent;

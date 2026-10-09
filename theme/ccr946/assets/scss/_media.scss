@@ -143,8 +143,6 @@
 		}
 	}
 	.supporter-logo {
-		box-shadow: vars.$shadow-card;
-
 		img {
 			filter: none;
 		}
@@ -361,7 +359,6 @@
 		}
 	}
 	.supporter-logo {
-		height: 140px;
 		flex: 0 0 85%;
 		scroll-snap-align: start;
 	}
