@@ -178,3 +178,15 @@ function ccr946_customize_register( $wp_customize ) {
 }
 
 add_action( 'customize_register', 'ccr946_customize_register' );
+
+add_filter( 'wp_resource_hints', function ( $urls, $relation_type ) {
+    if ( 'preconnect' === $relation_type ) {
+        $urls[] = 'https://fonts.googleapis.com';
+        $urls[] = [
+            'href'        => 'https://fonts.gstatic.com',
+            'crossorigin' => 'anonymous',
+        ];
+    }
+
+    return $urls;
+}, 10, 2 );
