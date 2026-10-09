@@ -49,6 +49,11 @@
 			gap: vars.$sp-2;
 		}
 	}
+	.footer {
+		&__main {
+			grid-template-columns: 1fr 1px 160px;
+		}
+	}
 }
 
 @media (max-width: 768px) {
@@ -96,6 +101,7 @@
 	}
 	.schedule-item {
 		gap: vars.$sp-2;
+		padding: vars.$sp-2;
 		.time {
 			width: 48px;
 		}
@@ -141,6 +147,12 @@
 
 		img {
 			filter: none;
+		}
+	}
+	.footer {
+		&__main {
+			grid-template-columns: 1fr 1px 140px;
+			gap: vars.$sp-2;
 		}
 	}
 }
@@ -282,7 +294,7 @@
 		padding: vars.$sp-5 0;
 	}
 	.schedule-item {
-		padding: vars.$sp-2;
+		padding: vars.$sp-2 vars.$sp-1;
 		gap: vars.$sp-1;
 		.time {
 			width: 42px;
@@ -352,6 +364,15 @@
 		height: 140px;
 		flex: 0 0 85%;
 		scroll-snap-align: start;
+	}
+	.footer {
+		&__main {
+			display: block;
+		}
+		&__divider {
+			height: 1px;
+			margin: vars.$sp-4 0;
+		}
 	}
 }
 

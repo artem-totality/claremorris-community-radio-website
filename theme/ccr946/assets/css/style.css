@@ -373,6 +373,11 @@ h1 {
   max-width: 760px;
 }
 
+@media (max-width: 576px) {
+  .container {
+    padding: 0 16px;
+  }
+}
 .block {
   padding: 64px 0;
 }
@@ -1119,9 +1124,74 @@ h1 {
 .footer {
   background: #1c3d5a;
   color: #cfe1ee;
-  padding: 32px 0;
+  padding: 8px 0;
   font-size: 13px;
+}
+.footer__main {
+  display: grid;
+  grid-template-columns: 1fr 1px 240px;
+  gap: 32px;
+  padding: 32px 0;
+  text-align: left;
+}
+.footer__info p {
+  margin: 0 0 16px;
+  line-height: 1.65;
+  max-width: 600px;
+}
+.footer__info p:last-child {
+  margin-bottom: 0;
+}
+.footer__info a {
+  color: #2093f1;
+  font-weight: 600;
+}
+.footer__info .reg {
+  color: #9fc4e3;
+  margin-top: 16px;
+}
+.footer__info .reg strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+.footer__divider {
+  background: rgba(255, 255, 255, 0.18);
+}
+.footer__social h3 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #9fc4e3;
+  margin: 0 0 16px;
+}
+.footer__social .icons {
+  display: flex;
+  gap: 12px;
+}
+.footer__social .icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer__social .icons a:hover, .footer__social .icons a:focus-visible {
+  background: #2f7dbb;
+  transform: translateY(-2px);
+}
+.footer__social .icons svg {
+  width: 18px;
+  height: 18px;
+}
+.footer__bottom {
   text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 32px 0 24px;
 }
 
 .show-hero__inner {
@@ -2486,6 +2556,9 @@ h1 {
     grid-template-columns: repeat(3, minmax(200px, 1fr));
     gap: 16px;
   }
+  .footer__main {
+    grid-template-columns: 1fr 1px 160px;
+  }
 }
 @media (max-width: 768px) {
   .player__volume {
@@ -2520,6 +2593,7 @@ h1 {
   }
   .schedule-item {
     gap: 16px;
+    padding: 16px;
   }
   .schedule-item .time {
     width: 48px;
@@ -2553,6 +2627,10 @@ h1 {
   }
   .supporter-logo img {
     filter: none;
+  }
+  .footer__main {
+    grid-template-columns: 1fr 1px 140px;
+    gap: 16px;
   }
 }
 @media (max-width: 576px) {
@@ -2663,7 +2741,7 @@ h1 {
     padding: 48px 0;
   }
   .schedule-item {
-    padding: 16px;
+    padding: 16px 8px;
     gap: 8px;
   }
   .schedule-item .time {
@@ -2727,6 +2805,13 @@ h1 {
     height: 140px;
     flex: 0 0 85%;
     scroll-snap-align: start;
+  }
+  .footer__main {
+    display: block;
+  }
+  .footer__divider {
+    height: 1px;
+    margin: 32px 0;
   }
 }
 @media (prefers-reduced-motion: reduce) {

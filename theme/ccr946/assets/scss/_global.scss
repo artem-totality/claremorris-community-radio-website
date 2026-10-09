@@ -65,6 +65,12 @@ h1 {
 	}
 }
 
+@media (max-width: 576px) {
+	.container {
+		padding: 0 vars.$sp-2;
+	}
+}
+
 .block {
 	padding: vars.$sp-6 0;
 	&--alt {
