@@ -4,8 +4,11 @@
 <head>
 
     <meta charset="<?php bloginfo( 'charset' ); ?>">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+			name="description"
+			content="Claremorris Community Radio 94.6 FM — your local community radio station in County Mayo, Ireland. Listen live, discover our shows and presenters, and keep up with local news and events."
+    />
 
     <?php wp_head(); ?>
 
