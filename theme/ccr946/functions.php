@@ -75,7 +75,10 @@ function ccr946_assets() {
         get_template_directory_uri() . '/assets/js/schedule.js',
         array(),
         '1.0',
-        true
+        [
+            'in_footer' => true,
+            'strategy'  => 'defer',
+        ]
     );
 
     wp_enqueue_script(
@@ -83,7 +86,10 @@ function ccr946_assets() {
         get_template_directory_uri() . '/assets/js/onair.js',
         array(),
         '1.0',
-        true
+        [
+            'in_footer' => true,
+            'strategy'  => 'defer',
+        ]
     );
 
     wp_enqueue_script(
@@ -91,7 +97,10 @@ function ccr946_assets() {
         get_template_directory_uri() . '/assets/js/player.js',
         array(),
         filemtime( get_template_directory() . '/assets/js/player.js' ),
-        true
+        [
+            'in_footer' => true,
+            'strategy'  => 'defer',
+        ]
     );
 
     wp_enqueue_script(
@@ -99,7 +108,10 @@ function ccr946_assets() {
         get_template_directory_uri() . '/assets/js/navigation.js',
         array(),
         filemtime( get_template_directory() . '/assets/js/navigation.js' ),
-        true
+        [
+            'in_footer' => true,
+            'strategy'  => 'defer',
+        ]
     );
 
     wp_enqueue_script( 
@@ -107,7 +119,11 @@ function ccr946_assets() {
         get_template_directory_uri() . '/assets/js/mobile-menu.js', 
         [], 
         '1.0.0', 
-        true );
+        [
+            'in_footer' => true,
+            'strategy'  => 'defer',
+        ]
+    );
 }
 
 add_action( 'wp_enqueue_scripts', 'ccr946_assets' );
