@@ -1,6 +1,6 @@
 let currentController = null;
 
-async function loadPage(url, addToHistory = true) {
+async function loadPage(url, addToHistory = true, state = {}) {
 	// Abort previous request
 	if (currentController) {
 		currentController.abort();
@@ -52,8 +52,12 @@ async function loadPage(url, addToHistory = true) {
 		}
 
 		// Scroll to top
-		if (window.scrollY > 38) {
-			window.scrollTo(0, 38);
+		if (state.yScroll) {
+			window.scrollTo(0, state.yScroll);
+		} else {
+			if (window.scrollY > 38) {
+				window.scrollTo(0, 38);
+			}
 		}
 
 		// Reinitialize page-specific JavaScript
@@ -120,14 +124,23 @@ document.addEventListener('click', function (event) {
 
 	event.preventDefault();
 
+	// Save current scroll position in the current history entry
+	window.history.replaceState(
+		{
+			...window.history.state,
+			yScroll: window.scrollY,
+		},
+		'',
+	);
+
 	loadPage(link.href);
 });
 
 /**
  * Browser Back / Forward
  */
-window.addEventListener('popstate', function () {
-	loadPage(window.location.href, false);
+window.addEventListener('popstate', function (event) {
+	loadPage(window.location.href, false, event.state);
 });
 
 function setBackButton() {
