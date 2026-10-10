@@ -2583,7 +2583,13 @@ h1 {
   }
   .nav {
     display: none;
-    width: 100%;
+    max-height: calc(100vh - 80px);
+    max-height: calc(100dvh - 80px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    flex: 1 1 100%;
+    overflow-x: hidden;
   }
   .nav__list {
     flex-direction: column;
@@ -2617,10 +2623,11 @@ h1 {
   }
   .nav__list .menu-item-has-children > a::after {
     top: 17px;
+    right: 0;
     border-color: #1c3d5a transparent transparent transparent;
   }
   .nav__list .menu-item-has-children.is-open > .sub-menu {
-    max-height: 500px;
+    max-height: 1000px;
     visibility: visible;
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s;
   }
