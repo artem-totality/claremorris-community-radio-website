@@ -1735,14 +1735,19 @@ h1 {
 
 /* ---------- Schedule ---------- */
 .schedule-section {
-  padding: 64px 0;
+  padding: 48px 0 64px;
 }
 
 .day-tabs {
+  position: sticky;
+  top: 110px;
+  z-index: 19;
   display: flex;
   gap: 8px;
+  padding-top: 16px;
   padding-bottom: 2px;
   margin-bottom: 32px;
+  background-color: #ffffff;
 }
 .day-tabs__tab {
   flex: 1 1 0;
@@ -1798,6 +1803,8 @@ h1 {
 }
 
 .day-panel {
+  max-width: 712px;
+  margin: 0 auto;
   display: none;
 }
 .day-panel--active {
@@ -2646,6 +2653,7 @@ h1 {
     grid-template-columns: repeat(2, 1fr);
   }
   .day-tabs {
+    position: static;
     flex-direction: column;
     gap: 8px;
   }
@@ -2745,7 +2753,7 @@ h1 {
     display: none;
   }
   .schedule-section {
-    padding: 48px 0;
+    padding: 32px 0 48px;
   }
   .schedule-item {
     padding: 16px 8px;

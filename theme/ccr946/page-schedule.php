@@ -121,11 +121,6 @@
 
                 </div>
 
-            </div>
-
-
-            <div class="container container--narrow">
-
                 <?php foreach ( $days as $index => $day ) : ?>
 
                     <?php
@@ -203,7 +198,10 @@
                     </div>
 
                 <?php endforeach; ?>
+                
+            </div>
 
+            <div class="container container--narrow">
 
                 <p class="schedule-note">
                     Confirmed slots shown above; the rest of each day is kept open

@@ -157,6 +157,7 @@
 		}
 	}
 	.day-tabs {
+		position: static;
 		flex-direction: column;
 		gap: vars.$sp-1;
 		&__tab {
@@ -295,7 +296,7 @@
 		}
 	}
 	.schedule-section {
-		padding: vars.$sp-5 0;
+		padding: vars.$sp-4 0 vars.$sp-5;
 	}
 	.schedule-item {
 		padding: vars.$sp-2 vars.$sp-1;
