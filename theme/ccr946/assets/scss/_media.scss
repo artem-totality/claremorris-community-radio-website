@@ -57,6 +57,77 @@
 }
 
 @media (max-width: 768px) {
+	.header {
+		&__top-inner {
+			flex-wrap: wrap;
+		}
+	}
+	.menu-toggle {
+		display: block;
+	}
+	.nav {
+		display: none;
+		width: 100%;
+		&__list {
+			flex-direction: column;
+			align-items: stretch;
+			gap: 0;
+			margin-top: vars.$sp-2;
+			a {
+				display: block;
+				color: vars.$primary;
+				font-size: 16px;
+				padding: vars.$sp-1 0;
+			}
+			.sub-menu {
+				position: static;
+				border: none;
+				display: block;
+				max-height: 0;
+				overflow: hidden;
+				padding-top: 0;
+				padding-bottom: 0;
+				visibility: hidden;
+				background-color: transparent;
+				transition:
+					max-height 0.3s vars.$ease,
+					padding 0.3s vars.$ease,
+					visibility 0s 0.3s;
+			}
+			.menu-item-has-children {
+				& > a {
+					border-bottom: 2px solid transparent;
+					&:hover,
+					&:focus-visible {
+						border-bottom-color: transparent;
+					}
+					&::after {
+						top: 17px;
+						border-color: vars.$primary transparent transparent transparent;
+					}
+				}
+
+				&.is-open > .sub-menu {
+					max-height: 500px;
+					visibility: visible;
+					transition:
+						max-height vars.$transition-speed vars.$ease,
+						padding vars.$transition-speed vars.$ease,
+						visibility 0s;
+				}
+			}
+		}
+		&.is-open {
+			display: block;
+		}
+		.main-menu {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+			margin: 0;
+			padding: 16px 0;
+		}
+	}
 	.player {
 		&__volume {
 			display: none;
@@ -156,11 +227,6 @@
 }
 
 @media (max-width: 576px) {
-	.header {
-		&__top-inner {
-			flex-wrap: wrap;
-		}
-	}
 	.player {
 		&__meta {
 			.status {
@@ -168,73 +234,6 @@
 			}
 		}
 	}
-	.menu-toggle {
-		display: block;
-	}
-	.nav {
-		display: none;
-		width: 100%;
-		&__list {
-			flex-direction: column;
-			align-items: stretch;
-			gap: 0;
-			margin-top: vars.$sp-2;
-			a {
-				display: block;
-				color: vars.$primary;
-				font-size: 16px;
-				padding: vars.$sp-1 0;
-			}
-			.sub-menu {
-				position: static;
-				border: none;
-				display: block;
-				max-height: 0;
-				overflow: hidden;
-				padding-top: 0;
-				padding-bottom: 0;
-				visibility: hidden;
-				background-color: transparent;
-				transition:
-					max-height 0.3s vars.$ease,
-					padding 0.3s vars.$ease,
-					visibility 0s 0.3s;
-			}
-			.menu-item-has-children {
-				& > a {
-					border-bottom: 2px solid transparent;
-					&:hover,
-					&:focus-visible {
-						border-bottom-color: transparent;
-					}
-					&::after {
-						top: 17px;
-						border-color: vars.$primary transparent transparent transparent;
-					}
-				}
-
-				&.is-open > .sub-menu {
-					max-height: 500px;
-					visibility: visible;
-					transition:
-						max-height vars.$transition-speed vars.$ease,
-						padding vars.$transition-speed vars.$ease,
-						visibility 0s;
-				}
-			}
-		}
-		&.is-open {
-			display: block;
-		}
-		.main-menu {
-			display: flex;
-			flex-direction: column;
-			gap: 12px;
-			margin: 0;
-			padding: 16px 0;
-		}
-	}
-
 	.hero {
 		&__header {
 			font-size: 48px;
