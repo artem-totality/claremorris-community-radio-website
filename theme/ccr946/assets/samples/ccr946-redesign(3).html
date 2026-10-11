@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claremorris Community Radio — 94.6FM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#1c3d5a;
+    --on-primary:#ffffff;
+    --background:#ffffff;
+    --surface:#2f7dbb;
+    --border:#e6e9ee;
+    --text:#1c3d5a;
+    --text-muted:#5b7690;
+    --accent:#2f7dbb;
+    --accent-soft:#eaf2f9;
+
+    --sp-1:8px; --sp-2:16px; --sp-3:24px; --sp-4:32px; --sp-5:48px; --sp-6:64px;
+
+    --r-sm:8px; --r-md:16px; --r-pill:9999px;
+
+    --shadow-card:0 1px 2px rgba(0,0,0,.05);
+    --shadow-elevated:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);
+
+    --ease:cubic-bezier(0.4,0,0.2,1);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--text);
+    background:var(--background);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  button{font-family:inherit;}
+
+  .wrap{
+    max-width:1160px;
+    margin:0 auto;
+    padding:0 var(--sp-3);
+  }
+
+  /* ---------- Top utility bar ---------- */
+  .topbar{
+    background:var(--primary);
+    color:#cfe1ee;
+  }
+  .topbar .inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:8px 0;
+    font-size:13px;
+  }
+  .topbar-phone{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:var(--on-primary);
+    font-weight:600;
+    transition:opacity .3s var(--ease);
+  }
+  .topbar-phone:hover{opacity:.8;}
+  .topbar-phone svg{width:14px;height:14px;flex:none;}
+  .topbar-social{
+    display:flex;
+    align-items:center;
+    gap:var(--sp-2);
+  }
+  .topbar-social a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:26px;height:26px;
+    border-radius:50%;
+    color:var(--on-primary);
+    background:rgba(255,255,255,.12);
+    transition:background .3s var(--ease), transform .3s var(--ease);
+  }
+  .topbar-social a:hover, .topbar-social a:focus-visible{
+    background:var(--accent);
+    transform:translateY(-1px);
+  }
+  .topbar-social svg{width:14px;height:14px;}
+
+  @media (max-width:480px){
+    .topbar-phone span.txt{display:none;}
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:20;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:var(--sp-2) 0;
+  }
+  .logo{
+    display:flex;
+    align-items:baseline;
+    gap:6px;
+    font-weight:800;
+    letter-spacing:-0.01em;
+  }
+  .logo .mark{
+    background:var(--primary);
+    color:var(--on-primary);
+    font-size:14px;
+    font-weight:700;
+    padding:4px 8px;
+    border-radius:var(--r-sm);
+  }
+  .logo .freq{
+    font-size:18px;
+    color:var(--primary);
+  }
+  .navlinks{
+    display:flex;
+    gap:var(--sp-4);
+    font-size:14px;
+    font-weight:500;
+  }
+  .navlinks a{
+    color:var(--text-muted);
+    transition:color .3s var(--ease);
+    padding:6px 0;
+    border-bottom:2px solid transparent;
+  }
+  .navlinks a:hover, .navlinks a:focus-visible{
+    color:var(--primary);
+    border-bottom-color:var(--accent);
+  }
+  .nav-toggle{display:none;}
+
+  /* ---------- Persistent player bar ---------- */
+  .player-bar{
+    border-top:1px solid var(--border);
+    background:var(--primary);
+  }
+  .player-bar .inner{
+    display:flex;
+    align-items:center;
+    gap:var(--sp-3);
+    padding:10px 0;
+  }
+  .player-btn{
+    flex:none;
+    width:44px;height:44px;
+    border-radius:50%;
+    border:none;
+    background:var(--on-primary);
+    color:var(--primary);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:transform .2s var(--ease), background .2s var(--ease);
+  }
+  .player-btn:hover{transform:scale(1.06);}
+  .player-btn .icon-play{
+    width:0;height:0;
+    border-top:7px solid transparent;
+    border-bottom:7px solid transparent;
+    border-left:11px solid currentColor;
+    margin-left:2px;
+  }
+  .player-btn .icon-pause{
+    display:none;
+    gap:3px;
+  }
+  .player-btn .icon-pause span{
+    width:3px;height:13px;
+    background:currentColor;
+    display:inline-block;
+  }
+  .player-btn.playing .icon-play{display:none;}
+  .player-btn.playing .icon-pause{display:inline-flex;}
+
+  .player-meta{
+    flex:1 1 auto;
+    min-width:0;
+    color:var(--on-primary);
+  }
+  .player-meta .status{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.02em;
+    color:#9fc4e3;
+    margin-bottom:2px;
+  }
+  .player-meta .status .live-dot{
+    width:7px;height:7px;border-radius:50%;
+    background:#ff5a5a;
+    animation:pulse 1.6s infinite;
+  }
+  .player-meta .track{
+    font-size:14px;
+    font-weight:600;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .player-meta .track .artist{color:#cfe1ee; font-weight:500;}
+
+  .player-volume{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex:none;
+  }
+  .player-volume input[type="range"]{
+    width:90px;
+    accent-color:var(--on-primary);
+  }
+  .player-vol-icon{color:#cfe1ee; font-size:16px;}
+
+  @media (max-width:640px){
+    .player-volume{display:none;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:
+      radial-gradient(circle at 18% 15%, rgba(47,125,187,.14), transparent 55%),
+      radial-gradient(circle at 82% 85%, rgba(28,61,90,.10), transparent 50%),
+      var(--background);
+    padding:var(--sp-6) 0 var(--sp-5);
+    text-align:center;
+    border-bottom:1px solid var(--border);
+  }
+  .hero .eyebrow{
+    display:inline-block;
+    font-size:13px;
+    font-weight:600;
+    color:var(--accent);
+    background:var(--accent-soft);
+    padding:6px 14px;
+    border-radius:var(--r-pill);
+    margin-bottom:var(--sp-3);
+  }
+  .hero h1{
+    font-size:60px;
+    line-height:1;
+    font-weight:800;
+    letter-spacing:-0.02em;
+    color:var(--primary);
+    margin:0 0 var(--sp-4);
+  }
+  .hero h1 span{
+    display:block;
+    font-size:22px;
+    font-weight:600;
+    color:var(--text-muted);
+    letter-spacing:0;
+    margin-top:var(--sp-2);
+  }
+  .listen-live{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--primary);
+    color:var(--on-primary);
+    font-size:16px;
+    font-weight:700;
+    padding:16px 32px;
+    border:none;
+    border-radius:var(--r-pill);
+    cursor:pointer;
+    box-shadow:var(--shadow-elevated);
+    transition:transform .3s var(--ease), background .3s var(--ease);
+  }
+  .listen-live:hover{background:var(--accent); transform:translateY(-2px);}
+  .listen-live .dot{
+    width:8px;height:8px;border-radius:50%;
+    background:#ff5a5a;
+    animation:pulse 1.6s infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;}
+    50%{opacity:.35;}
+  }
+  .play-tri{
+    width:0;height:0;
+    border-top:7px solid transparent;
+    border-bottom:7px solid transparent;
+    border-left:11px solid var(--on-primary);
+  }
+  .icon-pause-hero span{
+    width:3px;height:13px;
+    background:var(--on-primary);
+    display:inline-block;
+  }
+  .listen-live.playing .play-tri{display:none;}
+  .listen-live.playing .icon-pause-hero{display:inline-flex;}
+
+  .now-playing{
+    margin:var(--sp-5) auto 0;
+    max-width:420px;
+    background:var(--background);
+    border:1px solid var(--border);
+    border-radius:var(--r-md);
+    box-shadow:var(--shadow-card);
+    padding:var(--sp-3) var(--sp-4);
+  }
+  .now-playing .label{
+    font-size:12px;
+    font-weight:700;
+    color:var(--accent);
+    margin-bottom:var(--sp-1);
+  }
+  .now-playing hr{
+    border:none;
+    border-top:1px solid var(--border);
+    margin:var(--sp-1) 0 var(--sp-2);
+  }
+  .now-playing .track{
+    font-size:17px;
+    font-weight:600;
+    color:var(--primary);
+  }
+  .now-playing .track .artist{color:var(--text-muted); font-weight:500;}
+
+  /* ---------- On air strip ---------- */
+  .onair{
+    background:var(--primary);
+    color:var(--on-primary);
+  }
+  .onair .grid{
+    display:grid;
+    grid-template-columns:1fr 1px 1fr;
+    gap:var(--sp-4);
+    padding:var(--sp-4) 0;
+  }
+  .onair .divider{background:rgba(255,255,255,.18);}
+  .onair .col .tag{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.02em;
+    color:#9fc4e3;
+    margin-bottom:var(--sp-1);
+  }
+  .onair .col .time{
+    font-size:14px;
+    color:#cfe1ee;
+    margin-bottom:2px;
+  }
+  .onair .col .show{
+    font-size:20px;
+    font-weight:700;
+  }
+
+  /* ---------- Section shell ---------- */
+  section.block{
+    padding:var(--sp-6) 0;
+    scroll-margin-top:110px;
+  }
+  footer{scroll-margin-top:110px;}
+  section.block.alt{
+    background:#f8fafc;
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .block-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    margin-bottom:var(--sp-4);
+  }
+  .block-head h2{
+    font-size:36px;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    color:var(--primary);
+    margin:0;
+  }
+  .block-head a{
+    font-size:14px;
+    font-weight:600;
+    color:var(--accent);
+  }
+
+  /* ---------- News ---------- */
+  .news-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:var(--sp-3);
+  }
+  .news-card{
+    background:var(--background);
+    border:1px solid var(--border);
+    border-radius:var(--r-md);
+    box-shadow:var(--shadow-card);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:box-shadow .3s var(--ease), transform .3s var(--ease);
+  }
+  .news-card:hover{box-shadow:var(--shadow-elevated); transform:translateY(-3px);}
+  .news-card .thumb{
+    height:140px;
+    background:linear-gradient(135deg,var(--accent),var(--primary));
+  }
+  .news-card .body{padding:var(--sp-3);}
+  .news-card .date{
+    font-size:12px;
+    color:var(--text-muted);
+    margin-bottom:6px;
+  }
+  .news-card h3{
+    font-size:17px;
+    font-weight:700;
+    margin:0 0 var(--sp-1);
+    color:var(--primary);
+    line-height:1.3;
+  }
+  .news-card p{
+    font-size:14px;
+    line-height:1.43;
+    color:var(--text-muted);
+    margin:0;
+  }
+
+  /* ---------- Shows ---------- */
+  .shows-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:var(--sp-3);
+  }
+  .show-card{
+    background:var(--background);
+    border:1px solid var(--border);
+    border-radius:var(--r-md);
+    box-shadow:var(--shadow-card);
+    padding:var(--sp-3);
+    transition:box-shadow .3s var(--ease), transform .3s var(--ease);
+  }
+  .show-card:hover{box-shadow:var(--shadow-elevated); transform:translateY(-3px);}
+  .show-card .swatch{
+    width:100%;
+    height:88px;
+    border-radius:var(--r-sm);
+    background:var(--accent-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:var(--sp-2);
+    color:var(--accent);
+    font-weight:700;
+    font-size:13px;
+  }
+  .show-card h3{
+    font-size:16px;
+    font-weight:700;
+    color:var(--primary);
+    margin:0 0 4px;
+  }
+  .show-card .when{
+    font-size:13px;
+    color:var(--text-muted);
+  }
+
+  /* ---------- Sponsors / Funders / Partners ---------- */
+  .supporters-group{
+    margin-bottom:var(--sp-5);
+  }
+  .supporters-group:last-child{margin-bottom:0;}
+  .supporters-group h3{
+    font-size:14px;
+    font-weight:700;
+    color:var(--text-muted);
+    margin:0 0 var(--sp-3);
+  }
+  .supporters-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-3);
+  }
+  .supporter-logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:96px;
+    padding:var(--sp-2);
+    background:var(--background);
+    border:1px solid var(--border);
+    border-radius:var(--r-md);
+    transition:box-shadow .3s var(--ease), border-color .3s var(--ease);
+  }
+  .supporter-logo:hover, .supporter-logo:focus-visible{
+    box-shadow:var(--shadow-card);
+    border-color:var(--accent);
+  }
+  .supporter-logo img{
+    max-width:100%;
+    max-height:44px;
+    width:auto;
+    filter:grayscale(1) opacity(.55);
+    transition:filter .3s var(--ease);
+  }
+  .supporter-logo:hover img, .supporter-logo:focus-visible img{
+    filter:grayscale(0) opacity(1);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--primary);
+    color:#cfe1ee;
+    padding:var(--sp-4) 0;
+    font-size:13px;
+    text-align:center;
+  }
+
+  @media (max-width:900px){
+    .hero h1{font-size:40px;}
+    .news-grid{grid-template-columns:1fr;}
+    .shows-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:640px){
+    .navlinks{display:none;}
+    .onair .grid{grid-template-columns:1fr;}
+    .onair .divider{display:none;}
+    .shows-grid{grid-template-columns:1fr;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap inner">
+    <a class="topbar-phone" href="tel:0873262007">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span class="txt">087 326 2007</span>
+    </a>
+    <div class="topbar-social">
+      <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg>
+      </a>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter / X">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.6L4.4 22H1.3l8.1-9.3L1 2h7.1l4.9 6.1L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">
+      <span class="mark">CCR</span>
+      <span class="freq">94.6 FM</span>
+    </div>
+    <nav class="navlinks">
+      <a href="#news">News</a>
+      <a href="#shows">Shows</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+
+  <div class="player-bar">
+    <div class="wrap inner">
+      <button class="player-btn" id="playBtn" aria-label="Play live stream" aria-pressed="false">
+        <span class="icon-play"></span>
+        <span class="icon-pause"><span></span><span></span></span>
+      </button>
+
+      <div class="player-meta">
+        <div class="status"><span class="live-dot"></span>LIVE · 94.6 FM</div>
+        <div class="track"><span class="artist">The Saw Doctors —</span> N17</div>
+      </div>
+
+      <div class="player-volume">
+        <span class="player-vol-icon">🔊</span>
+        <input type="range" id="volumeSlider" min="0" max="100" value="80" aria-label="Volume">
+      </div>
+
+      <!-- Replace the src below with CCR's real stream URL -->
+      <audio id="radioStream" preload="none">
+        <source src="https://stream.example.com/ccr946.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Broadcasting from Claremorris, Co. Mayo</span>
+    <h1>Claremorris Community Radio
+      <span>Local voices, local stories — on air every day.</span>
+    </h1>
+    <button class="listen-live" id="heroPlayBtn">
+      <span class="play-tri"></span>
+      <span class="icon-pause-hero" style="display:none;gap:3px;"><span></span><span></span></span>
+      <span class="label">Listen Live</span>
+      <span class="dot"></span>
+    </button>
+    <p style="margin-top:var(--sp-2); font-size:13px; color:var(--text-muted);">
+      The player stays docked at the top — keep listening while you browse News, Shows or About.
+    </p>
+  </div>
+</section>
+
+<section class="onair">
+  <div class="wrap grid">
+    <div class="col">
+      <div class="tag">On Air Now</div>
+      <div class="time">09:00 — 11:00</div>
+      <div class="show">Good Morning Show</div>
+    </div>
+    <div class="divider"></div>
+    <div class="col">
+      <div class="tag">Next</div>
+      <div class="time">11:00</div>
+      <div class="show">Midday Mix</div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="news">
+  <div class="wrap">
+    <div class="block-head">
+      <h2>Latest News</h2>
+      <a href="#">View all news</a>
+    </div>
+    <div class="news-grid">
+      <article class="news-card">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="date">December</div>
+          <h3>Annual General Meeting — December 16th</h3>
+          <p>Claremorris Community Radio's AGM takes place at 8pm in Digispace Claremorris. All members welcome.</p>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="date">May</div>
+          <h3>EU Election Debate comes to Claremorris</h3>
+          <p>Thirteen Midlands-North-West candidates faced questions at the McWilliam Hotel. Anthony McNicholas brings a special report on air tonight at 9pm.</p>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="date">This week</div>
+          <h3>Niamh O'Kelly launches two new shows</h3>
+          <p>Broadcaster Niamh O'Kelly joins the schedule with Serendipity on Thursdays and Sentimental Journey on Sundays.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="shows">
+  <div class="wrap">
+    <div class="block-head">
+      <h2>Our Shows</h2>
+      <a href="#">Full schedule</a>
+    </div>
+    <div class="shows-grid">
+      <div class="show-card">
+        <div class="swatch">MON–FRI · 09:00</div>
+        <h3>Good Morning Show</h3>
+        <div class="when">Weekdays, 09:00 — 11:00</div>
+      </div>
+      <div class="show-card">
+        <div class="swatch">THU · 17:00</div>
+        <h3>Serendipity</h3>
+        <div class="when">Thursdays at 5pm with Niamh O'Kelly</div>
+      </div>
+      <div class="show-card">
+        <div class="swatch">SUN · 17:00</div>
+        <h3>Sentimental Journey</h3>
+        <div class="when">Sundays at 5pm with Niamh O'Kelly</div>
+      </div>
+      <div class="show-card">
+        <div class="swatch">SPECIAL</div>
+        <h3>EU Debate Report</h3>
+        <div class="when">Anthony McNicholas, on air 9pm</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="support">
+  <div class="wrap">
+    <div class="block-head">
+      <h2>Sponsors, Funders &amp; Partners</h2>
+    </div>
+
+    <div class="supporters-group">
+      <h3>Funders</h3>
+      <div class="supporters-grid">
+        <a class="supporter-logo" href="https://www.cnam.ie" target="_blank" rel="noopener" aria-label="Coimisiún na Meán website">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='13' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3ECoimisi%C3%BAn na Me%C3%A1n%3C/text%3E%3C/svg%3E" alt="Coimisiún na Meán logo">
+        </a>
+        <a class="supporter-logo" href="https://www.pobal.ie" target="_blank" rel="noopener" aria-label="Pobal website">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='16' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EPobal%3C/text%3E%3C/svg%3E" alt="Pobal logo">
+        </a>
+        <a class="supporter-logo" href="https://www.gov.ie/en/organisation/department-of-rural-and-community-development/" target="_blank" rel="noopener" aria-label="Department of Rural and Community Development website">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='11' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EDept. Rural %26 Community Dev.%3C/text%3E%3C/svg%3E" alt="Department of Rural and Community Development logo">
+        </a>
+        <a class="supporter-logo" href="https://www.mayo.ie" target="_blank" rel="noopener" aria-label="Mayo County Council website">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='13' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EMayo County Council%3C/text%3E%3C/svg%3E" alt="Mayo County Council logo">
+        </a>
+      </div>
+    </div>
+
+    <div class="supporters-group">
+      <h3>Partners</h3>
+      <div class="supporters-grid">
+        <a class="supporter-logo" href="https://craol.ie" target="_blank" rel="noopener" aria-label="Craol — Community Radio Forum of Ireland website">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='16' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3ECraol%3C/text%3E%3C/svg%3E" alt="Craol — Community Radio Forum of Ireland logo">
+        </a>
+        <a class="supporter-logo" href="https://ccr946.ie" target="_blank" rel="noopener" aria-label="Digispace Claremorris">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='14' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EDigispace%3C/text%3E%3C/svg%3E" alt="Digispace Claremorris logo">
+        </a>
+      </div>
+    </div>
+
+    <div class="supporters-group">
+      <h3>Local Sponsors</h3>
+      <div class="supporters-grid">
+        <a class="supporter-logo" href="#" aria-label="Sponsor logo placeholder 1">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='16' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EGilligan%E2%80%99s Bar%3C/text%3E%3C/svg%3E" alt="Sponsor logo placeholder">
+        </a>
+        <a class="supporter-logo" href="#" aria-label="Sponsor logo placeholder 2">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='16' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EWarde%E2%80%99s Pub%3C/text%3E%3C/svg%3E" alt="Sponsor logo placeholder">
+        </a>
+        <a class="supporter-logo" href="#" aria-label="Sponsor logo placeholder 3">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='14' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EMacken%E2%80%99s Plumbing%3C/text%3E%3C/svg%3E" alt="Sponsor logo placeholder">
+        </a>
+        <a class="supporter-logo" href="#" aria-label="Sponsor logo placeholder 4">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='48'%3E%3Ctext x='50%25' y='50%25' font-family='Inter,sans-serif' font-size='16' font-weight='700' fill='%231c3d5a' text-anchor='middle' dominant-baseline='middle'%3EPJ Byrne%E2%80%99s%3C/text%3E%3C/svg%3E" alt="Sponsor logo placeholder">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="about">
+  <div class="wrap">
+    Claremorris Community Radio · 94.6 FM · Claremorris, Co. Mayo, Ireland
+  </div>
+</footer>
+
+<script>
+(function(){
+  var audio = document.getElementById('radioStream');
+  var playBtn = document.getElementById('playBtn');
+  var heroBtn = document.getElementById('heroPlayBtn');
+  var heroLabel = heroBtn.querySelector('.label');
+  var volumeSlider = document.getElementById('volumeSlider');
+
+  audio.volume = 0.8;
+
+  function setPlayingUI(isPlaying){
+    playBtn.classList.toggle('playing', isPlaying);
+    playBtn.setAttribute('aria-pressed', isPlaying ? 'true' : 'false');
+    heroBtn.classList.toggle('playing', isPlaying);
+    heroLabel.textContent = isPlaying ? 'Pause' : 'Listen Live';
+  }
+
+  function togglePlay(){
+    if (audio.paused){
+      audio.play().catch(function(){
+        // stream not reachable in this preview — still reflect the intended state
+      });
+      setPlayingUI(true);
+    } else {
+      audio.pause();
+      setPlayingUI(false);
+    }
+  }
+
+  playBtn.addEventListener('click', togglePlay);
+  heroBtn.addEventListener('click', togglePlay);
+
+  audio.addEventListener('pause', function(){ setPlayingUI(false); });
+  audio.addEventListener('play', function(){ setPlayingUI(true); });
+
+  volumeSlider.addEventListener('input', function(){
+    audio.volume = volumeSlider.value / 100;
+  });
+
+  // Smooth in-page navigation: anchor links scroll within the same
+  // document, so the audio element is never unmounted and playback
+  // is never interrupted when switching between News / Shows / About.
+  document.querySelectorAll('.navlinks a').forEach(function(link){
+    link.addEventListener('click', function(e){
+      var id = link.getAttribute('href');
+      var target = document.querySelector(id);
+      if (target){
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth', block:'start'});
+        history.pushState(null, '', id);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
