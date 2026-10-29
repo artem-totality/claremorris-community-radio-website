@@ -85,7 +85,8 @@
 
 				<p class="stream-note">
 					Listening on your phone? The player stays docked at the top of every page, so you can browse
-					<a href="ccr946-shows.html">Shows</a> or <a href="ccr946-news-list.html">News</a> without losing the
+					<a href="<?php echo esc_url( get_post_type_archive_link( 'show' ) ); ?>">Shows</a> 
+					or <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>">News</a> without losing the
 					signal.
 				</p>
 			</div>
